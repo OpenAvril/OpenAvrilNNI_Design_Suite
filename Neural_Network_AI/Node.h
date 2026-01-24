@@ -6,5 +6,7 @@ namespace Avril_NNAI
 	public:
 		Node();
 		virtual ~Node();
+
+		void Set_NumberOfNodeInputs(INT64 numberOfNodeInputs);
 	};
 }

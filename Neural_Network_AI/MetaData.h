@@ -7,5 +7,6 @@ namespace Avril_NNAI
 		MetaData();
 		virtual ~MetaData();
 
+		void Set_NumberOTotalInputs(INT64 numberOfNodeInputs);
 	};
 }
