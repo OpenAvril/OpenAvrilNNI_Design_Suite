@@ -3,10 +3,7 @@
 ## Interface for Windows.
  - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Develop_Neural_Network_AI
 
-## Build, Train, Save a Neural Network.
- - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
-
-## AI Neural Network MetaData.
+## Build, Train, Save, Merge an AI Neural Network MetaData
  - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
 
 ### C++
