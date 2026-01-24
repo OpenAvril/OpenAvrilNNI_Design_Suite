@@ -1,6 +1,9 @@
 # Avril - Neural Network AI IO Device
-## Build, Train, Save a Neural Network with Neural_Network_AI_IO_Device.
-## TestBench a Neural Network with TESTBENCH_Neural_Network_AI_IO_Device.
+## Build, Train, Save a Neural Network w/ Develop_Neural_Network_AI.
+ - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Develop_Neural_Network_AI
+
+## AI Neural Network MetaData.
+ - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/Neural_Network_AI
 
 ### C++
 
@@ -21,6 +24,4 @@ Version: .Net 8.0
  - https://developers.google.com/machine-learning/crash-course/neural-networks
    
 ## TestBench in C++ Console.
- - 
-
-## Development History.
+ - https://github.com/AvrilOpenCFSD/Neural_Network_AI_IO_Device/tree/master/TESTBENCH_Neural_Network_AI_IO_Device
