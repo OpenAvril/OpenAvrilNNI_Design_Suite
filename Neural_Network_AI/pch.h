@@ -9,6 +9,7 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
+#include <cstddef>
 #include <iostream>
 #include <vector>
 #include "Framework_NNAI.h"
@@ -19,6 +20,6 @@
 #include "Output.h"
 #include "Execute.h"
 #include "MetaData.h"
-
+#include "Node.h"
 
 #endif //PCH_H

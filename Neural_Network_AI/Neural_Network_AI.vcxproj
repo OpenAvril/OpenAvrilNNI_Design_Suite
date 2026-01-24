@@ -163,6 +163,7 @@
     <ClInclude Include="MetaData.h" />
     <ClInclude Include="NeuralNetworks.h" />
     <ClInclude Include="Neural_Network_AI.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -176,6 +177,7 @@
     <ClCompile Include="MetaData.cpp" />
     <ClCompile Include="NeuralNetworks.cpp" />
     <ClCompile Include="Neural_Network_AI.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
