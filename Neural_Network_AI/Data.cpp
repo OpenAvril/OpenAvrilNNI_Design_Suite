@@ -4,13 +4,16 @@
 
 std::vector<class Avril_NNAI::Input*> ptr_Inputs;
 std::vector<class Avril_NNAI::Node*> ptr_Nodes;
-std::vector<class Avril_NNAI::Output*> ptr_Outputs;
+class Avril_NNAI::Output* ptr_Output;
 
 Avril_NNAI::Data::Data()
 {
     ptr_Inputs.clear();
+
     ptr_Nodes.clear();
-    ptr_Outputs.clear();
+
+	ptr_Output = new class Avril_NNAI::Output();
+	while (ptr_Output == NULL) {}
 }
 
 Avril_NNAI::Data::~Data()
@@ -23,17 +26,17 @@ void Avril_NNAI::Data::Initialise_Control()
 
 }
 
-std::vector<class Avril_NNAI::Input*> Avril_NNAI::Data::Get_Inputs()
+class Avril_NNAI::Input* Avril_NNAI::Data::Get_Inputs(INT64 node)
 {
-    return ptr_Inputs;
+    return ptr_Inputs.at(node);
 }
 
-std::vector<class Avril_NNAI::Node*> Avril_NNAI::Data::Get_Nodes()
+class Avril_NNAI::Node* Avril_NNAI::Data::Get_Nodes(INT64 node)
 {
-    return ptr_Nodes;
+    return ptr_Nodes.at(node);
 }
 
-std::vector<class Avril_NNAI::Output*> Avril_NNAI::Data::Get_Outputs()
+class Avril_NNAI::Output* Avril_NNAI::Data::Get_Output()
 {
-    return ptr_Outputs;
+    return ptr_Output;
 }

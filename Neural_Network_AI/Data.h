@@ -8,8 +8,8 @@ namespace Avril_NNAI
 		virtual ~Data();
 		void Initialise_Control();
 
-		std::vector<class Avril_NNAI::Input*> Get_Inputs();
-		std::vector<class Avril_NNAI::Node*> Get_Nodes();
-		std::vector<class Avril_NNAI::Output*> Get_Outputs();
+		class Avril_NNAI::Input* Get_Inputs(INT64 node);
+		class Avril_NNAI::Node* Get_Nodes(INT64 node);
+		class Avril_NNAI::Output* Get_Output();
 	};
 }

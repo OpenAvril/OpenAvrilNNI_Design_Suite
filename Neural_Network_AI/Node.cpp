@@ -27,6 +27,36 @@ Avril_NNAI::Node::~Node()
 	//delete ;
 }
 
+Avril_NNAI::Input* Avril_NNAI::Node::Get_Node_Input(INT64 node)
+{
+	return ptr_Node_Inputs.at(node);
+}
+
+Avril_NNAI::NeuralPath* Avril_NNAI::Node::Get_Node_NeuralPathOfInput(INT64 node)
+{
+	return ptr_NeuralPathOfInput.at(node);
+}
+
+Avril_NNAI::Output* Avril_NNAI::Node::Get_Node_Output()
+{
+	return ptr_Node_Output;
+}
+
+void Avril_NNAI::Node::Set_Node_Input(INT64 node, Avril_NNAI::Input* input)
+{
+	ptr_Node_Inputs.at(node) = input;
+}
+
+void Avril_NNAI::Node::Set_Node_NeuralPathOfInput(INT64 node, Avril_NNAI::NeuralPath* neuralPath)
+{
+	ptr_NeuralPathOfInput.at(node) = neuralPath;
+}
+
+void Avril_NNAI::Node::Set_Node_Output(Avril_NNAI::Output* output)
+{
+	ptr_Node_Output = output;
+}
+
 void Avril_NNAI::Node::Set_NumberOfNodeInputs(INT64 numberOfNodeInputs)
 {
 	_numberOfNodeInputs = numberOfNodeInputs;
