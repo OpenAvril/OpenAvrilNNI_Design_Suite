@@ -8,7 +8,7 @@ namespace Avril_NNAI
 		Input_Praise_0();
 		virtual ~Input_Praise_0();
 
-		bool Get_ping_Active();
-		void Set_ping_Active(bool value);
+		INT8 Get_ping_Active();
+		void Set_ping_Active(INT8 value);
 	};
 }

@@ -17,7 +17,7 @@ Avril_NNAI::Input::~Input()
     //delete ;
 }
 
-Object* Avril_NNAI::Input::Get_Item_On_List_Of_Input_SubSet(INT64 nodeID)
+class Object* Avril_NNAI::Input::Get_Item_On_List_Of_Input_SubSet(INT64 nodeID)
 {
 	return ptr_List_Of_Input_SubSet->at(nodeID);
 }

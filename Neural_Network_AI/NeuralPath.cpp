@@ -20,12 +20,9 @@ Object* Avril_NNAI::NeuralPath::Get_NatureOfThePath(Avril_NNAI::Framework_NNAI* 
 	return ptr_NatureOfInputEquation;
 }
 
-void Avril_NNAI::NeuralPath::Set_NatureOfThePath_NIL(INT8 natureOfInputEquation)
+void Avril_NNAI::NeuralPath::Set_NatureOfThePath_NIL()
 {
-	if (natureOfInputEquation == INT8(0))
-	{
-		ptr_NatureOfInputEquation = (Object*)natureOfInputEquation;
-	}
+	ptr_NatureOfInputEquation = (Object*)INT64(0);
 }
 
 void Avril_NNAI::NeuralPath::Set_NatureOfThePath_LINEAR(Avril_NNAI::Linear* natureOfInputEquation)
