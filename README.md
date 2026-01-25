@@ -18,13 +18,13 @@
 *			   |                    |																 |																												  |
 * 			Global				Algorithms															Data																											Execute
 *									|																 |
-*									|________________________________________						 |____________________________________________________________________________
-*									|										|						 |									  |										 |		
-*								SolutionLogic							NeuralPath					Input								Output									Node (dynamic)
-*									|										|						 |									  |										 |				
+*									|____________________________________________					 |____________________________________________________________________________
+*									|											|					 |									  |										 |		
+*								SolutionLogic								NeuralPath				Input								Output									Node (dynamic)
+*									|											|					 |									  |										 |				
 *									L------------	Algorithms_Praise_0		 ___|__________			 L------------	Input_Praise_0		  L------------	Output_Praise_0			 |_______________________________________________
 *									L------------	Algorithms_Praise_1		 |			  |			 L------------	Input_Praise_1		  L------------	Output_Praise_1			 |					        |					|
-*									L------------	Algorithms_Praise_2		Linear					 L------------	Intput_Praise_1		  L------------	Output_Praise_1			NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet
+*									L------------	Algorithms_Praise_2		Linear		//ToDo		 L------------	Intput_Praise_1		  L------------	Output_Praise_1			NeuralPathSubSet	InputPraiseSubSet	OuputPraiseSubSet
 *																																																
 *																																																
 *																																																
