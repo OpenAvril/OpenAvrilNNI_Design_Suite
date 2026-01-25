@@ -18,6 +18,7 @@ namespace Avril_NNAI
 		CNeuralNetworkAI(void);
 		// TODO: add your methods here.
 		static void* InitialiseThisNeuralNetworkAI();
+		static void ConstructNeuralNetworkAI_Frame(Avril_NNAI::Framework_NNAI* obj, INT64 _numberOfTotalInputs);
 	};
 
 	extern NEURALNETWORKAI_API int nNeuralNetworkAI;

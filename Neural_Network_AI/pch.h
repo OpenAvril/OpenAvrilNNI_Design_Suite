@@ -14,12 +14,17 @@
 #include <vector>
 #include "Framework_NNAI.h"
 #include "NeuralNetworks.h"
+#include "Global.cpp"
 #include "Algorithms.h"
+#include "Linear.h"
 #include "Data.h"
+#include "MetaData.h"
+#include "Node.h"
+#include "NeuralPath.h"
+#include "Linear.h"
 #include "Input.h"
 #include "Output.h"
 #include "Execute.h"
-#include "MetaData.h"
-#include "Node.h"
+
 
 #endif //PCH_H

@@ -23,10 +23,30 @@ void Avril_NNAI::MetaData::Set_NumberOTotalInputs(INT64 numberOfNodeInputs)
 	_numberOfTotalInputs = numberOfNodeInputs;
 	if ((_numberOfTotalInputs > INT64(0)) && (_numberOfTotalInputs < INT64(9223372036854775807)))
 	{
-		ptr_Layer4_Node_Inputs.resize(_numberOfTotalInputs / INT64(5 / 5));
-		ptr_Layer3_Node_Inputs.resize(_numberOfTotalInputs / INT64(4 / 5));
-		ptr_Layer2_Node_Inputs.resize(_numberOfTotalInputs / INT64(3 / 5));
-		ptr_Layer1_Node_Inputs.resize(_numberOfTotalInputs / INT64(2 / 5));
-		ptr_Layer0_Node_Output->Set_NumberOfNodeInputs(_numberOfTotalInputs / INT64(1 / 5));
+		ptr_Layer4_Node_Inputs.resize(INT64(_numberOfTotalInputs));
+		for (INT64 index = 0; index < (INT64(_numberOfTotalInputs)); index++)
+		{
+			ptr_Layer4_Node_Inputs.at(index)->Set_NumberOfNodeInputs(ptr_Layer4_Node_Inputs.size());
+		}
+		
+		ptr_Layer3_Node_Inputs.resize(INT64(_numberOfTotalInputs / double(4 / 5)));
+		for (INT64 index = 0; index < (INT64(_numberOfTotalInputs / double(5 / 5))); index++)
+		{
+			ptr_Layer3_Node_Inputs.at(index)->Set_NumberOfNodeInputs(ptr_Layer3_Node_Inputs.size());
+		}
+
+		ptr_Layer2_Node_Inputs.resize(INT64(_numberOfTotalInputs / double(3 / 5)));
+		for (INT64 index = 0; index < (INT64(_numberOfTotalInputs / double(5 / 5))); index++)
+		{
+			ptr_Layer2_Node_Inputs.at(index)->Set_NumberOfNodeInputs(ptr_Layer2_Node_Inputs.size());
+		}
+
+		ptr_Layer1_Node_Inputs.resize(INT64(_numberOfTotalInputs / double(2 / 5)));
+		for (INT64 index = 0; index < (INT64(_numberOfTotalInputs / double(5 / 5))); index++)
+		{
+			ptr_Layer1_Node_Inputs.at(index)->Set_NumberOfNodeInputs(ptr_Layer1_Node_Inputs.size());
+		}
+
+		ptr_Layer0_Node_Output->Set_NumberOfNodeInputs(INT64(_numberOfTotalInputs / double(1 / 5)));
 	}
 }

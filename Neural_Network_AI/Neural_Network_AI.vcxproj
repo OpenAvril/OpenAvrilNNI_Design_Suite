@@ -159,9 +159,12 @@
     <ClInclude Include="Execute.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Framework_NNAI.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Linear.h" />
     <ClInclude Include="MetaData.h" />
     <ClInclude Include="NeuralNetworks.h" />
+    <ClInclude Include="NeuralPath.h" />
     <ClInclude Include="Neural_Network_AI.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Output.h" />
@@ -173,9 +176,12 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Execute.cpp" />
     <ClCompile Include="Framework_NNAI.cpp" />
+    <ClCompile Include="Global.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Linear.cpp" />
     <ClCompile Include="MetaData.cpp" />
     <ClCompile Include="NeuralNetworks.cpp" />
+    <ClCompile Include="NeuralPath.cpp" />
     <ClCompile Include="Neural_Network_AI.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Output.cpp" />

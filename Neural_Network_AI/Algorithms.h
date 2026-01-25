@@ -7,5 +7,7 @@ namespace Avril_NNAI
 		Algorithms();
 		virtual ~Algorithms();
 		void Initialise_Control();
+
+		class Avril_NNAI::NeuralPath* Get_NeuralPath();
 	};
 }

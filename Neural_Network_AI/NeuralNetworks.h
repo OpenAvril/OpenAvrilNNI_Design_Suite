@@ -10,12 +10,12 @@ namespace Avril_NNAI
         class Algorithms* Get_Algorithms();
         class Data* Get_Data();
         class Execute* Get_Execute();
-        class Global* Get_Global();
+        class MetaData* Get_MetaData();
 
     private:
         static void Set_Algorithms(class Algorithms* algorithms);
         static void Set_Data(class Data* data);
         static void Set_Execute(class Execute* execute);
-        static void Set_Global(class Global* global);
+        static void Set_MetaData(class MetaData* global);
 	};
 }
