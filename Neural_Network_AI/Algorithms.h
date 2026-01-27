@@ -10,6 +10,6 @@ namespace Avril_NNAI
 
 		void ConstructNeuralNetworkAI_Frame(Avril_NNAI::Framework_NNAI* obj, INT64 _numberOfTotalInputs);
 
-		class Avril_NNAI::NeuralPath* Get_NeuralPath();
+		class NeuralPath* Get_NeuralPath();
 	};
 }

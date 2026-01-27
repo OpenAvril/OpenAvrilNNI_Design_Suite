@@ -46,6 +46,70 @@ namespace Avril_NNAI
             _REGISTERED_Output = 0;
         }
 
+        public void Create_Nodes(Avril_NNAI.Framework_NNAI obj)
+        {
+            if ((obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() > 0) && (obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() <= 9223372036854775807))
+            {
+                Avril_NNAI.Node newEmpty = new Avril_NNAI.Node();
+                while (newEmpty == null) { }
+                //newEmpty.
+
+                _Layer4_Node_Inputs = new Avril_NNAI.Node[obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs()];
+                for (ulong index = 0; index < obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs(); index++)
+                {
+                    _Layer4_Node_Inputs[index] = newEmpty;
+                }
+                    for (ulong index = 0; index < obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs(); index++)
+                {
+                    _Layer4_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs());
+                }
+
+                double ratio = (4 / 5);
+                _Layer3_Node_Inputs = new Avril_NNAI.Node[(ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio)];
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer3_Node_Inputs[index] = newEmpty;
+                }
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer3_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() / ratio));
+                }
+
+                ratio = (3 / 5);
+                _Layer2_Node_Inputs = new Avril_NNAI.Node[(ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio)];
+                for(ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer2_Node_Inputs[index] = newEmpty;
+                }    
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer2_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() / ratio));
+                }
+
+                ratio = (2 / 5);
+                _Layer1_Node_Inputs = new Avril_NNAI.Node[(ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio)];
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer1_Node_Inputs[index] = newEmpty;
+                }
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer1_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() / ratio));
+                }
+
+                ratio = (1 / 5);
+                _Layer0_Node_Inputs = new Avril_NNAI.Node[(ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio)];
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer0_Node_Inputs[index] = newEmpty;
+                }
+                for (ulong index = 0; index < (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio); index++)
+                {
+                    _Layer0_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(obj.Get_Neural_Networks().Get_Data().Get_NumberOfTotalInputs() * ratio));
+                }
+            }
+        }
+
         public Avril_NNAI.Input Get_Input()
         {
             return _input;
@@ -97,46 +161,9 @@ namespace Avril_NNAI
             _input = input;
         }
 
-        public void Set_NumberOfTotalInputs(Avril_NNAI.Framework_NNAI obj, ulong numberOfTotalInputs)
+        public void Set_NumberOfTotalInputs(ulong numberOfTotalInputs)
         {
             _NumberOfTotalInputs = numberOfTotalInputs;
-
-            if ((Get_NumberOfTotalInputs() > 0) && (Get_NumberOfTotalInputs() <= 9223372036854775807))
-            {
-                _Layer4_Node_Inputs = new Avril_NNAI.Node[Get_NumberOfTotalInputs()];
-                for (ulong index = 0; index < Get_NumberOfTotalInputs(); index++)
-                {
-                    _Layer4_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, Get_NumberOfTotalInputs());
-                }
-
-                double ratio = (4 / 5);
-                _Layer3_Node_Inputs = new Avril_NNAI.Node[(ulong)(Get_NumberOfTotalInputs() / ratio)];
-                for (ulong index = 0; index < (ulong)(Get_NumberOfTotalInputs() / ratio); index++)
-                {
-                    _Layer3_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(Get_NumberOfTotalInputs() / ratio));
-                }
-
-                ratio = (3 / 5);
-                _Layer2_Node_Inputs = new Avril_NNAI.Node[(ulong)(Get_NumberOfTotalInputs() / ratio)];
-                for (ulong index = 0; index < (ulong)(Get_NumberOfTotalInputs() / ratio); index++)
-                {
-                    _Layer2_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(Get_NumberOfTotalInputs() / ratio));
-                }
-
-                ratio = (2 / 5);
-                _Layer1_Node_Inputs = new Avril_NNAI.Node[(ulong)(Get_NumberOfTotalInputs() / ratio)];
-                for (ulong index = 0; index < (ulong)(Get_NumberOfTotalInputs() / ratio); index++)
-                {
-                    _Layer1_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(Get_NumberOfTotalInputs() / ratio));
-                }
-
-                ratio = (1 / 5);
-                _Layer0_Node_Inputs = new Avril_NNAI.Node[(ulong)(Get_NumberOfTotalInputs() / ratio)];
-                for (ulong index = 0; index < (ulong)(Get_NumberOfTotalInputs() / ratio); index++)
-                {
-                    _Layer0_Node_Inputs.ElementAt((int)index).Set_NumberOfInputs(obj, (ulong)(Get_NumberOfTotalInputs() / ratio));
-                }
-            }
         }
 
         private void Set_Output(Avril_NNAI.Output output)

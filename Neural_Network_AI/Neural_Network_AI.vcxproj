@@ -24,6 +24,7 @@
     <ProjectGuid>{cd392d5e-079a-4baf-8260-18cd6b7bd436}</ProjectGuid>
     <RootNamespace>NeuralNetworkAI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Pseudocode - Neural_Network_AI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

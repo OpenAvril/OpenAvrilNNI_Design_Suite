@@ -49,7 +49,7 @@ namespace Avril_NNAI
             framework.Initialise(framework);
         }
 
-        static public Avril_NNAI.Framework_NNAI Get_framework_Client()
+        static public Avril_NNAI.Framework_NNAI Get_Framework_NNAI()
         {
             return framework;
         }

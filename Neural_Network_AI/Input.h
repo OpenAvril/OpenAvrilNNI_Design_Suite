@@ -11,6 +11,6 @@ namespace Avril_NNAI
 
 	private:
 		
-		void Set_PraiseSubSet(INT64 nodeID, class Avril_NNAI::Input_Praise_0* inputSubSet);
+		void Set_PraiseSubSet(INT64 nodeID, class Input_Praise_0* inputSubSet);
 	};
 }
