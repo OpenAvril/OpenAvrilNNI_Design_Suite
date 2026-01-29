@@ -1,4 +1,14 @@
-﻿
+﻿// classes.
+// registers.
+// constructor.
+// destructor
+// public.
+// get.
+// set.
+// private.
+// get.
+// set.
+
 namespace Avril_NNAI
 {
     public class Input_Praise_2
@@ -42,32 +52,59 @@ namespace Avril_NNAI
                     break;
             }
         }
-
         public double Get_Direction_X()
         {
             return _direction_X;
         }
-
         public double Get_Direction_Y()
         {
             return _direction_y;
         }
-
         public double Get_Direction_Z()
         {
             return _direction_Z;
         }
-
         public double Get_Period()
         {
             return _period;
         }
-
         public ulong Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
         }
 
+        public void Set_Direction_X(double value)
+        {
+            _direction_X = value;
+        }
+        public void Set_Direction_Y(double value)
+        {
+            _direction_y = value;
+        }
+        public void Set_Direction_Z(double value)
+        {
+            _direction_Z = value;
+        }
+        public void Set_Item_Of_Input_Praise(byte index, double value)
+        {
+            switch (index)
+            {
+                case 0:
+                    Set_Direction_X(value);
+                    break;
+                
+                case 1:
+                    Set_Direction_Y(value);
+                    break;
+                
+                case 2:
+                    Set_Direction_Z(value);
+                    break;
+                
+                default:
+                    break;
+            }
+        }
         private void Set_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;

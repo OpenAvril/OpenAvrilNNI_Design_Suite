@@ -1,5 +1,13 @@
-﻿
-using System;
+﻿// classes.
+// registers.
+// constructor.
+// destructor
+// public.
+// get.
+// set.
+// private.
+// get.
+// set.
 
 namespace Avril_NNAI
 {

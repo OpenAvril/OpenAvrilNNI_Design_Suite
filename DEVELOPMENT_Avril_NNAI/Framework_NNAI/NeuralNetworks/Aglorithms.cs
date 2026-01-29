@@ -1,23 +1,32 @@
 ﻿
-using System.Linq;
-
 namespace Avril_NNAI
 {
     public class Aglorithms
     {
+// classes.
         private Avril_NNAI.NeuralPath _NeuralPath;
         private Avril_NNAI.SolutionLogic _SolutionLogic;
 
+// registers.
+
+// constructor.
         public Aglorithms()
         {
             System.Console.WriteLine("entered Aglorithms.");
-            Set_NeuralPath(new Avril_NNAI.NeuralPath());
+            Create_NeuralPath(new Avril_NNAI.NeuralPath());
             while (Get_NeuralPath() == null) { }
 
-            Set_SolutionLogic(new Avril_NNAI.SolutionLogic());
+            Create_SolutionLogic(new Avril_NNAI.SolutionLogic());
             while (Get_SolutionLogic() == null) { }
         }
 
+// destructor.
+        ~Aglorithms()
+        {
+            System.Console.WriteLine("exited Aglorithms.");
+        }
+
+// public.
         public Avril_NNAI.MachineAI ConstructNeuralNetworkAI_Frame(Avril_NNAI.Framework_NNAI obj, string nameOfNNAI, ulong[] praiseID)
         {
             Avril_NNAI.MachineAI _AvrilNNAI = new Avril_NNAI.MachineAI();
@@ -32,25 +41,27 @@ namespace Avril_NNAI
             obj.Get_Neural_Networks().Get_Data().Save_New_Neural_Network(_AvrilNNAI);
             return _AvrilNNAI;
         }
-
+    // get.
         public Avril_NNAI.NeuralPath Get_NeuralPath()
         {
             return _NeuralPath;
         }
-
         public Avril_NNAI.SolutionLogic Get_SolutionLogic()
         {
             return _SolutionLogic;
         }
+    // set.
 
-        private void Set_NeuralPath(Avril_NNAI.NeuralPath neuralPath)
+// private.
+        private void Create_NeuralPath(Avril_NNAI.NeuralPath neuralPath)
         {
             _NeuralPath = neuralPath;
         }
-
-        private void Set_SolutionLogic(Avril_NNAI.SolutionLogic solutionLogic)
+        private void Create_SolutionLogic(Avril_NNAI.SolutionLogic solutionLogic)
         {
             _SolutionLogic = solutionLogic;
         }
+    // get.
+    // set.
     }
 }

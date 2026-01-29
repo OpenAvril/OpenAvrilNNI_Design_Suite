@@ -43,6 +43,10 @@ namespace Avril_NNAI
             System.Console.WriteLine("created framework.");
             framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
+
+            ulong[] praiseIDs = { 1 };
+            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseIDs);
+            //ToDO: train network
         }
 
         static public Avril_NNAI.Framework_NNAI Get_Framework_NNAI()

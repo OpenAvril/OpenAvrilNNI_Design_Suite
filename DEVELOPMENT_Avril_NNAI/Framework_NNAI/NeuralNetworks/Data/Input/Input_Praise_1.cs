@@ -3,74 +3,324 @@ namespace Avril_NNAI
 {
     public class Input_Praise_1
     {
-        enum PRAISE_1
+// classes.
+
+// registers.
+        private enum PRAISE_1 : byte
         {
-            Mouse_X,
-            Mouse_Y
+            Mouse_Screen_X,
+            Mouse_Screen_Y,
+            Capsuale_Fowards_X,
+            Capsuale_Fowards_Y,
+            Capsuale_Fowards_Z,
+            Capsuale_Up_X,
+            Capsuale_Up_Y,
+            Capsuale_Up_Z,
+            Capsuale_Right_X,
+            Capsuale_Right_Y,
+            Capsuale_Right_Z,
         }
         private byte _numberOfInputValues;
-        private double _mouseX;
-        private double _mouseY;
+        private double _Mouse_Screen_X;
+        private double _Mouse_Screen_Y;
+        private double _Capsuale_Fowards_X;
+        private double _Capsuale_Fowards_Y;
+        private double _Capsuale_Fowards_Z;
+        private double _Capsuale_Up_X;
+        private double _Capsuale_Up_Y;
+        private double _Capsuale_Up_Z;
+        private double _Capsuale_Right_X;
+        private double _Capsuale_Right_Y;
+        private double _Capsuale_Right_Z;
 
+// constructor.
         public Input_Praise_1()
         {
+            Create_NumberOfInputValues(new byte());
             Set_NumberOfInputValues(2);
-            Set_MouseX(0);
-            Set_MouseY(0);
+
+            Create_Mouse_Screen_X(new double());
+            Set_Mouse_Screen_X(0.0);
+
+            Create_Mouse_Screen_Y(new double());
+            Set_Mouse_Screen_Y(0.0);
+
+            Create_Capsuale_Fowards_X(new double());
+            Set_Capsuale_Fowards_X(0.0);
+
+            Create_Capsuale_Fowards_Y(new double());
+            Set_Capsuale_Fowards_Y(0.0);
+
+            Create_Capsuale_Fowards_Z(new double());
+            Set_Capsuale_Fowards_Z(0.0);
+
+            Create_Capsuale_Up_X(new double());
+            Set_Capsuale_Up_X(0.0);
+
+            Create_Capsuale_Up_Y(new double());
+            Set_Capsuale_Up_Y(0.0);
+
+            Create_Capsuale_Up_Z(new double());
+            Set_Capsuale_Up_Z(0.0);
+
+            Create_Capsuale_Right_X(new double());
+            Set_Capsuale_Right_X(0.0);
+
+            Create_Capsuale_Right_Y(new double());
+            Set_Capsuale_Right_Y(0.0);
+
+            Create_Capsuale_Right_Z(new double());
+            Set_Capsuale_Right_Z(0.0);
         }
 
+// destructor.
+        ~Input_Praise_1()
+        {
+        }
+
+// public.
+    // get.
         public double Get_Item_Of_Input_Praise(byte index)
         {
-            switch(index)
+            switch (index)
             {
-                case 0:
-                    return Get_MouseX();
-                case 1:
-                    return Get_MouseY();
+                case (byte)PRAISE_1.Mouse_Screen_X:
+                    return Get_Mouse_Screen_X();
+
+                case (byte)PRAISE_1.Mouse_Screen_Y:
+                    return Get_Mouse_Screen_Y();
+
+                case (byte)PRAISE_1.Capsuale_Fowards_X:
+                    return Get_Capsuale_Fowards_X();
+
+                case (byte)PRAISE_1.Capsuale_Fowards_Y:
+                    return Get_Capsuale_Fowards_Y();
+
+                case (byte)PRAISE_1.Capsuale_Fowards_Z:
+                    return Get_Capsuale_Fowards_Z();
+
+                case (byte)PRAISE_1.Capsuale_Up_X:
+                    return Get_Capsuale_Up_X();
+
+                case (byte)PRAISE_1.Capsuale_Up_Y:
+                    return Get_Capsuale_Up_Y();
+
+                case (byte)PRAISE_1.Capsuale_Up_Z:
+                    return Get_Capsuale_Up_Z();
+
+                case (byte)PRAISE_1.Capsuale_Right_X:
+                    return Get_Capsuale_Right_X();
+
+                case (byte)PRAISE_1.Capsuale_Right_Y:
+                    return Get_Capsuale_Right_Y();
+
+                case (byte)PRAISE_1.Capsuale_Right_Z:
+                    return Get_Capsuale_Right_Z();
+
                 default:
                     return 0;
             }
         }
-
-        public double Get_MouseX()
-        {
-            return _mouseX;
-        }
-
-        public double Get_MouseY()
-        {
-            return _mouseY;
-        }
-
         public ulong Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
         }
+
+    // set.
         public void Set_Item_Of_Input_Praise(byte index, double value)
         {
             switch (index)
             {
-                case 0:
-                    Set_MouseX(value);
+                case (byte)PRAISE_1.Mouse_Screen_X:
+                    Set_Mouse_Screen_X(value);
                     break;
-                case 1:
-                    Set_MouseY(value);
+
+                case (byte)PRAISE_1.Mouse_Screen_Y:
+                    Set_Mouse_Screen_Y(value);
                     break;
+
+                case (byte)PRAISE_1.Capsuale_Fowards_X:
+                    Set_Capsuale_Fowards_X(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Fowards_Y:
+                    Set_Capsuale_Fowards_Y(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Fowards_Z:
+                    Set_Capsuale_Fowards_Z(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Up_X:
+                    Set_Capsuale_Up_X(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Up_Y:
+                    Set_Capsuale_Up_Y(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Up_Z:
+                    Set_Capsuale_Up_Z(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Right_X:
+                    Set_Capsuale_Right_X(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Right_Y:
+                    Set_Capsuale_Right_Y(value);
+                    break;
+
+                case (byte)PRAISE_1.Capsuale_Right_Z:
+                    Set_Capsuale_Right_Z(value);
+                    break;
+
                 default:
                     break;
             }
         }
 
-        private void Set_MouseX(double mouseX)
+// private.
+        private void Create_NumberOfInputValues(byte numberOfInputValues)
         {
-            _mouseX = mouseX;
+            _numberOfInputValues = numberOfInputValues;
+        }
+        private void Create_Mouse_Screen_X(double mouseX)
+        {
+            _Mouse_Screen_X = mouseX;
+        }
+        private void Create_Mouse_Screen_Y(double mouseY)
+        {
+            _Mouse_Screen_Y = mouseY;
+        }
+        private void Create_Capsuale_Fowards_X(double capsualeFowardsX)
+        {
+            _Capsuale_Fowards_X = capsualeFowardsX;
+        }
+        private void Create_Capsuale_Fowards_Y(double capsualeFowardsY)
+        {
+            _Capsuale_Fowards_Y = capsualeFowardsY;
+        }
+        private void Create_Capsuale_Fowards_Z(double capsualeFowardsZ)
+        {
+            _Capsuale_Fowards_Z = capsualeFowardsZ;
+        }
+        private void Create_Capsuale_Up_X(double capsualeUpX)
+        {
+            _Capsuale_Up_X = capsualeUpX;
+        }
+        private void Create_Capsuale_Up_Y(double capsualeUpY)
+        {
+            _Capsuale_Up_Y = capsualeUpY;
+        }
+        private void Create_Capsuale_Up_Z(double capsualeUpZ)
+        {
+            _Capsuale_Up_Z = capsualeUpZ;
+        }
+        private void Create_Capsuale_Right_X(double capsualeRightX)
+        {
+            _Capsuale_Right_X = capsualeRightX;
+        }
+        private void Create_Capsuale_Right_Y(double capsualeRightY)
+        {
+            _Capsuale_Right_Y = capsualeRightY;
+        }
+        private void Create_Capsuale_Right_Z(double capsualeRightZ)
+        {
+            _Capsuale_Right_Z = capsualeRightZ;
         }
 
-        private void Set_MouseY(double mouseY)
+    // get.
+        private double Get_Capsuale_Fowards_X()
         {
-            _mouseY = mouseY;
+            return _Capsuale_Fowards_X;
+        }
+        private double Get_Capsuale_Fowards_Y()
+        {
+            return _Capsuale_Fowards_Y;
+        }
+        private double Get_Capsuale_Fowards_Z()
+        {
+            return _Capsuale_Fowards_Z;
+        }
+        private double Get_Capsuale_Up_X()
+        {
+            return _Capsuale_Up_X;
+        }
+        private double Get_Capsuale_Up_Y()
+        {
+            return _Capsuale_Up_Y;
+        }
+        private double Get_Capsuale_Up_Z()
+        {
+            return _Capsuale_Up_Z;
+        }
+        private double Get_Capsuale_Right_X()
+        {
+            return _Capsuale_Right_X;
+        }
+        private double Get_Capsuale_Right_Y()
+        {
+            return _Capsuale_Right_Y;
+        }
+        private double Get_Capsuale_Right_Z()
+        {
+            return _Capsuale_Right_Z;
+        }
+        private double Get_Mouse_Screen_X()
+        {
+            return _Mouse_Screen_X;
+        }
+        private double Get_Mouse_Screen_Y()
+        {
+            return _Mouse_Screen_Y;
         }
 
+    // set.
+        private void Set_Capsuale_Fowards_X(double capsualeFowardsX)
+        {
+            _Capsuale_Fowards_X = capsualeFowardsX;
+        }
+        private void Set_Capsuale_Fowards_Y(double capsualeFowardsY)
+        {
+            _Capsuale_Fowards_Y = capsualeFowardsY;
+        }
+        private void Set_Capsuale_Fowards_Z(double capsualeFowardsZ)
+        {
+            _Capsuale_Fowards_Z = capsualeFowardsZ;
+        }
+        private void Set_Capsuale_Up_X(double capsualeUpX)
+        {
+            _Capsuale_Up_X = capsualeUpX;
+        }
+        private void Set_Capsuale_Up_Y(double capsualeUpY)
+        {
+            _Capsuale_Up_Y = capsualeUpY;
+        }
+        private void Set_Capsuale_Up_Z(double capsualeUpZ)
+        {
+            _Capsuale_Up_Z = capsualeUpZ;
+        }
+        private void Set_Capsuale_Right_X(double capsualeRightX)
+        {
+            _Capsuale_Right_X = capsualeRightX;
+        }
+        private void Set_Capsuale_Right_Y(double capsualeRightY)
+        {
+            _Capsuale_Right_Y = capsualeRightY;
+        }
+        private void Set_Capsuale_Right_Z(double capsualeRightZ)
+        {
+            _Capsuale_Right_Z = capsualeRightZ;
+        }
+        private void Set_Mouse_Screen_X(double mouseX)
+        {
+            _Mouse_Screen_X = mouseX;
+        }
+        private void Set_Mouse_Screen_Y(double mouseY)
+        {
+            _Mouse_Screen_Y = mouseY;
+        }
         private void Set_NumberOfInputValues(byte numberOfInputValues)
         {
             _numberOfInputValues = numberOfInputValues;

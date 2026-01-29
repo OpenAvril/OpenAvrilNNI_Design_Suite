@@ -1,4 +1,14 @@
-﻿
+﻿// classes.
+// registers.
+// constructor.
+// destructor
+// public.
+// get.
+// set.
+// private.
+// get.
+// set.
+
 namespace Avril_NNAI
 {
     public class MetaData
@@ -278,7 +288,7 @@ namespace Avril_NNAI
                 switch (praiseID[index_A])
                 {
                     case (ulong)PraiseID.Praise_0:
-                        var subsetOfInput_Praise_0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
+                        Avril_NNAI.Input_Praise_0 subsetOfInput_Praise_0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
                         for (byte index = 0; index < objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues(); index++)
                         {
                             subsetOfInput_Praise_0.Set_Item_Of_Input_Praise(index, 0);
@@ -286,7 +296,7 @@ namespace Avril_NNAI
                         break;
 
                     case (ulong)PraiseID.Praise_1:
-                        var subsetOfInput_Praise_1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
+                        Avril_NNAI.Input_Praise_1 subsetOfInput_Praise_1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
                         for (byte index = 0; index < subsetOfInput_Praise_1.Get_NumberOfInputValues(); index++)
                         {
                             subsetOfInput_Praise_1.Set_Item_Of_Input_Praise(index, 0);
@@ -294,7 +304,7 @@ namespace Avril_NNAI
                         break;
 
                     case (ulong)PraiseID.Praise_2:
-                        var subsetOfInput_Praise_2 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
+                        Avril_NNAI.Input_Praise_2 subsetOfInput_Praise_2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(index_A);
                         for (byte index = 0; index < subsetOfInput_Praise_2.Get_NumberOfInputValues(); index++)
                         {
                             subsetOfInput_Praise_2.Set_Item_Of_Input_Praise(index, 0);
