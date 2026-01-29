@@ -1,7 +1,7 @@
 # AVRIL - Neural Network Artificial Intelligence.
 ## FOLDERS
 ### Pseudocode - Neural_Network_AI.
-#### C++
+#### C++ : Console
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
 Version: 24H2
@@ -9,7 +9,7 @@ Version: 24H2
 Version 17.13.4.
 
 ## #DEVELOPMENT_Avril_NNAI.
-#### C#
+#### C# : Console
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
 Version: 24H2
@@ -50,7 +50,7 @@ Version 17.13.4.
 ````
 
 #### Avril_NNAI_User_Interface.
-#### C#
+#### C# - Forms App
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
 Version: 24H2
@@ -58,7 +58,7 @@ Version: 24H2
 Version 17.13.4.
 
 #### AvrilNNAI_OpenConcurrency_IO_Praise_Nth
-#### C#
+#### C# : Dynamic Link Library
 #### Using Windows 11 Home.
 Edition: Windows 11 Home OEM System Builder
 Version: 24H2
