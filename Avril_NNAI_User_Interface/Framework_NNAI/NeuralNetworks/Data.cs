@@ -15,6 +15,7 @@ namespace Avril_NNAI
 
         public Data()
         {
+            System.Console.WriteLine("entered Data.");
             Create_Input(new Avril_NNAI.Input());
             while (Get_Input() == null) { }
 
@@ -25,7 +26,7 @@ namespace Avril_NNAI
             while (Get_NewMachineAI() == null) { }
 
             Create_AvrilNNAI_OpenCFSD_Praise_IO(new Avril_NNAI.MachineAI[1]);
-            while (Get_AvrilNNAI_OpenCFSD_Praise_IO(0) == null) { }
+            while (Get_AvrilNNAI_OpenCFSD_Praise_IO() == null) { }
 
             _isFirstSave = true;
         }
@@ -65,6 +66,10 @@ namespace Avril_NNAI
             }
         }
 
+        public Avril_NNAI.MachineAI[] Get_AvrilNNAI_OpenCFSD_Praise_IO()
+        {
+            return _AvrilNNAI_OpenCFSD_Praise_IO;
+        }
         public Avril_NNAI.MachineAI Get_AvrilNNAI_OpenCFSD_Praise_IO(ulong praiseID)
         {
             return _AvrilNNAI_OpenCFSD_Praise_IO[praiseID];
