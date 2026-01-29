@@ -10,6 +10,7 @@ namespace Avril_NNAI
 
         public Aglorithms()
         {
+            System.Console.WriteLine("entered Aglorithms.");
             Set_NeuralPath(new Avril_NNAI.NeuralPath());
             while (Get_NeuralPath() == null) { }
 

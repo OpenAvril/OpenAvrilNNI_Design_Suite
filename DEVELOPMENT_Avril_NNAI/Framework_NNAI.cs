@@ -7,6 +7,7 @@ namespace Avril_NNAI
 
         public Framework_NNAI()
         {
+            System.Console.WriteLine("entered Framework_NNAI.");
             Set_NeuralNetworks(new Avril_NNAI.NeuralNetworks());
             while (Get_Neural_Networks() == null) { }
         }
