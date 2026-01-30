@@ -17,7 +17,7 @@ namespace Avril_NNAI
         {
             System.Console.WriteLine("entered Node.");
             Create_NeuralPathOfInput_SubSet(new Avril_NNAI.Linear[1]);
-            while (Get_NeuralPathOfInput_SubSet(0) == null) { }
+            while (Get_List_Of_NeuralPathOfInput_SubSet() == null) { }
             Set_NeuralPathOfInput_SubSet(0, new Avril_NNAI.Linear());
 
             Create_NumberOfInputs(new ulong());
@@ -36,7 +36,7 @@ namespace Avril_NNAI
 
         }
 
-        // public.
+// public.
         public void Create_NeuralPathOfInput_SubSet(Avril_NNAI.Linear[] neuralPathOfInput_SubSet)
         {
             _NeuralPathOfInput_SubSet = neuralPathOfInput_SubSet;
@@ -93,6 +93,10 @@ namespace Avril_NNAI
         }
 
     // get.
+        private Avril_NNAI.Linear[] Get_List_Of_NeuralPathOfInput_SubSet()
+        {
+            return _NeuralPathOfInput_SubSet;
+        }
     // set.
     }
 }
