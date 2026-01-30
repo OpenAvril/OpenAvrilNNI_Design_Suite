@@ -13,8 +13,10 @@ namespace Avril_NNAI
 // constructor.
         public NeuralPath() 
         {
+            System.Console.WriteLine("entered NeuralPath.");
             Create_New_Linear(new Avril_NNAI.Linear());
-            while (Get_New_Linear() == null) { }
+            //while (Get_New_Linear() == null) { }
+            System.Console.WriteLine("exiting NeuralPath.");
         }
 
 // destructor
@@ -35,10 +37,7 @@ namespace Avril_NNAI
             return random.NextDouble() * (maximum - minimum) + minimum;
         }
     // get.
-        public Avril_NNAI.Linear Get_New_Linear()
-        {
-            return _New_Linear;
-        }
+
     // set.
 
 // private.
@@ -47,6 +46,10 @@ namespace Avril_NNAI
             _New_Linear = linear;
         }
     // get.
+        public Avril_NNAI.Linear Get_New_Linear()
+        {
+            return _New_Linear;
+        }
     // set.
     }
 }

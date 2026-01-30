@@ -7,7 +7,7 @@ namespace Avril_NNAI
         private Avril_NNAI.Node_Control _Node_Control;
 
         // registers.
-        private Avril_NNAI.Linear[] _NeuralPathOfInput_SubSet;
+        private Avril_NNAI.Linear[] _List_Of_NeuralPathOfNodeInputs;
         private ulong _NumberOfInputs;
         private double[] _REGISTERED_Inputs;
         private double _REGISTERED_Output;
@@ -16,7 +16,7 @@ namespace Avril_NNAI
         public Node()
         {
             System.Console.WriteLine("entered Node.");
-            Create_NeuralPathOfInput_SubSet(new Avril_NNAI.Linear[1]);
+            Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[1]);
             while (Get_List_Of_NeuralPathOfInput_SubSet() == null) { }
             Set_NeuralPathOfInput_SubSet(0, new Avril_NNAI.Linear());
 
@@ -28,6 +28,7 @@ namespace Avril_NNAI
 
             Create_REGISTERED_Output(new double());
             Set_REGISTERED_Output(0.0);
+            System.Console.WriteLine("exiting Node.");
         }
 
 // destructor.
@@ -37,9 +38,9 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Create_NeuralPathOfInput_SubSet(Avril_NNAI.Linear[] neuralPathOfInput_SubSet)
+        public void Create_List_Of_NeuralPathOfNodeInputs(Avril_NNAI.Linear[] list_Of_NeuralPathOfNodeInputsneuralPathOfInputs)
         {
-            _NeuralPathOfInput_SubSet = neuralPathOfInput_SubSet;
+            _List_Of_NeuralPathOfNodeInputs = list_Of_NeuralPathOfNodeInputsneuralPathOfInputs;
         }
         public void Create_REGISTERED_Inputs(double[] registered_Inputs)
         {
@@ -49,7 +50,7 @@ namespace Avril_NNAI
     // get.
         public Avril_NNAI.Linear Get_NeuralPathOfInput_SubSet(ulong nodeID)
         {
-            return _NeuralPathOfInput_SubSet[nodeID];
+            return _List_Of_NeuralPathOfNodeInputs[nodeID];
         }
         public ulong Get_NumberOfInputs()
         {
@@ -67,7 +68,7 @@ namespace Avril_NNAI
     // set.
         public void Set_NeuralPathOfInput_SubSet(ulong inputID, Avril_NNAI.Linear neuralPathOfInput_SubSet)
         {
-            _NeuralPathOfInput_SubSet[inputID] = neuralPathOfInput_SubSet;
+            _List_Of_NeuralPathOfNodeInputs[inputID] = neuralPathOfInput_SubSet;
         }
         public void Set_NumberOfInputs(ulong numberOfInputs)
         {
@@ -95,7 +96,7 @@ namespace Avril_NNAI
     // get.
         private Avril_NNAI.Linear[] Get_List_Of_NeuralPathOfInput_SubSet()
         {
-            return _NeuralPathOfInput_SubSet;
+            return _List_Of_NeuralPathOfNodeInputs;
         }
     // set.
     }
