@@ -6,11 +6,11 @@ namespace Avril_NNAI
 // classes.
 
 // registers.
-        private double _weight;
         private double _bias;
+        private ulong _numberOfAlgorithmInputs;
+        private double _weight;
 
-    // constructor.
-
+// constructor.
         public Linear()
         {
             System.Console.WriteLine("entered Linear.");
@@ -43,19 +43,31 @@ namespace Avril_NNAI
         }
 
     // get.
-        public double Get_Weight()
-        {
-            return _weight;
-        }
         public double Get_Bias()
         {
             return _bias;
         }
+        public ulong Get_NumberOfAlgorithmInputs()
+        {
+            return _numberOfAlgorithmInputs;
+        }
+        public double Get_Weight()
+        {
+            return _weight;
+        }
 
     // set.
-        public void Set_Number_Of_Inputs_For_Algorithm(Avril_NNAI.Framework_NNAI obj, ulong numberOfInputs)
+        public void Set_Bias(double bias)
         {
-
+            _bias = bias;
+        }
+        public void Set_NumberOfAlgorithmInputs(ulong numberOfAlgorithmInputs)
+        {
+            _numberOfAlgorithmInputs = numberOfAlgorithmInputs;
+        }
+        public void Set_Weight(double weight)
+        {
+            _weight = weight;
         }
 
 // private.
@@ -70,14 +82,5 @@ namespace Avril_NNAI
 
     // get.
     // set
-        private void Set_Weight(double weight)
-        {
-            _weight = weight;
-        }
-        private void Set_Bias(double bias)
-        {
-            _bias = bias;
-
-        }
     }
 }

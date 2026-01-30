@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Avril_NNAI
 {
     public class NeuralPath
@@ -22,6 +24,16 @@ namespace Avril_NNAI
         }
 
 // public.
+        public double Generate_Initial_BIAS_Value(double minimum, double maximum)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (maximum - minimum) + minimum;
+        }
+        public double Generate_Initial_WEIGHT_Value(double minimum, double maximum)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (maximum - minimum) + minimum;
+        }
     // get.
         public Avril_NNAI.Linear Get_New_Linear()
         {

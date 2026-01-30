@@ -8,9 +8,9 @@
 *                   |
 *   		Framework_NNAI
 *					|
-*					|
-*					|
-*			NeuralNetworks
+*					|________________
+*					|               |
+*			NeuralNetworks      SIMULATION
 *					|
 *			   _____|__________________________________________________________________________________________________________________________________________________________________________________________________
 *			   |                    |																 |																												  |
@@ -44,8 +44,10 @@ namespace Avril_NNAI
             framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
 
+// SIMULATION
             ulong[] praiseIDs = { 1 };
             Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseIDs);
+            
             //ToDO: train network
         }
 

@@ -73,9 +73,9 @@ namespace Avril_NNAI
         {
             _NumberOfInputs = numberOfInputs;
         }
-        public void Set_REGISTERED_Inputs(ulong praiseID, double registered_Input)
+        public void Set_REGISTERED_Inputs(ulong valueID, double registered_Input)
         {
-            _REGISTERED_Inputs[praiseID] = registered_Input;
+            _REGISTERED_Inputs[valueID] = registered_Input;
         }
         public void Set_REGISTERED_Output(double registered_Output)
         {

@@ -35,9 +35,7 @@ namespace Avril_NNAI
             _AvrilNNAI.Get_MetaData().Calculate_NumberOfPraiseInputValues(obj, _AvrilNNAI, praiseID);
             _AvrilNNAI.Get_MetaData().Generate_REGISTERED_Inputs_List(obj, _AvrilNNAI, praiseID);
             _AvrilNNAI.Get_MetaData().Create_Nodes(obj, _AvrilNNAI, _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
-            //ToDo
-            _AvrilNNAI.Get_MetaData().Initialise_Node_WEIGHT_and_BIAS(obj);
-
+            _AvrilNNAI.Get_MetaData().Initialise_Node_WEIGHT_and_BIAS(obj, _AvrilNNAI);
             obj.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(_AvrilNNAI);
             return _AvrilNNAI;
         }
