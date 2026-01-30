@@ -14,6 +14,7 @@ namespace Avril_NNAI
 // constructor.
         public Input()
         {
+            System.Console.WriteLine("entered Input.");
             Create_ListOfInputSubsets(new Object[3]);
 
             Create_Input_Praise_0(new Avril_NNAI.Input_Praise_0());

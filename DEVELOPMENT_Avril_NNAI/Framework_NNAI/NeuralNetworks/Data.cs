@@ -18,16 +18,17 @@ namespace Avril_NNAI
             System.Console.WriteLine("entered Data.");
             Create_Input(new Avril_NNAI.Input());
             while (Get_Input() == null) { }
-
+            System.Console.WriteLine("ALPHA.");
             Create_Output(new Avril_NNAI.Output());
             while (Get_Output() == null) { }
-
+            System.Console.WriteLine("BRAVO.");
             Create_NewMachineAI(new Avril_NNAI.MachineAI());
             while (Get_NewMachineAI() == null) { }
-
+            System.Console.WriteLine("CHARLIE.");
             Create_Neural_Network_Preservation_List(new Avril_NNAI.MachineAI[1]);
             while (Get_List_Of_Neural_Network_Preservation() == null) { }
-
+            Set_NewMachineAI(0, new Avril_NNAI.MachineAI());
+            System.Console.WriteLine("ECHO.");
             _isFirstSave = true;
         }
 

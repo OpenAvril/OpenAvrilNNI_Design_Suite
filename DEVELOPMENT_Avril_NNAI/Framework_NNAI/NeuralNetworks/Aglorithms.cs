@@ -38,7 +38,7 @@ namespace Avril_NNAI
             //ToDo
             _AvrilNNAI.Get_MetaData().Initialise_Node_WEIGHT_and_BIAS(obj);
 
-            obj.Get_Neural_Networks().Get_Data().Save_New_Neural_Network(_AvrilNNAI);
+            obj.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(_AvrilNNAI);
             return _AvrilNNAI;
         }
     // get.

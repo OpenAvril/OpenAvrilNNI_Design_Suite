@@ -6,7 +6,7 @@ namespace Avril_NNAI
 // classes.
 
 // registers.
-        enum PRAISE_0 : byte
+        private enum PRAISE_0 : byte
         {
             Ping
         }

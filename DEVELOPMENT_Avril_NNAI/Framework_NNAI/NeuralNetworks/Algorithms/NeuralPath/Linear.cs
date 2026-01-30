@@ -9,10 +9,11 @@ namespace Avril_NNAI
         private double _weight;
         private double _bias;
 
-// constructor.
+    // constructor.
 
-        public Linear() 
+        public Linear()
         {
+            System.Console.WriteLine("entered Linear.");
             Create_Weight(new double());
             Set_Weight(0.0);
 
@@ -50,13 +51,13 @@ namespace Avril_NNAI
         {
             return _bias;
         }
-    
+
     // set.
         public void Set_Number_Of_Inputs_For_Algorithm(Avril_NNAI.Framework_NNAI obj, ulong numberOfInputs)
         {
 
         }
-        
+
 // private.
         private void Create_Weight(double weight)
         {
@@ -78,4 +79,5 @@ namespace Avril_NNAI
             _bias = bias;
 
         }
+    }
 }
