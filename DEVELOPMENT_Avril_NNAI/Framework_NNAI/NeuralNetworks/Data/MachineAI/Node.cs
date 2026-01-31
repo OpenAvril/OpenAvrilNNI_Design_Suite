@@ -15,7 +15,7 @@ namespace Avril_NNAI
 // constructor.
         public Node()
         {
-            System.Console.WriteLine("entered Node.");
+            //System.Console.WriteLine("entered Node.");
             Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[1]);
             while (Get_List_Of_NeuralPathOfInput_SubSet() == null) { }
             Set_NeuralPathOfInput_SubSet(0, new Avril_NNAI.Linear());
@@ -28,7 +28,7 @@ namespace Avril_NNAI
 
             Create_REGISTERED_Output(new double());
             Set_REGISTERED_Output(0.0);
-            System.Console.WriteLine("exiting Node.");
+            //System.Console.WriteLine("exiting Node.");
         }
 
 // destructor.

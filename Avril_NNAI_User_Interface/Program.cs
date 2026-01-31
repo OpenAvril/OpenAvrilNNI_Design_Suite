@@ -45,12 +45,12 @@ namespace Avril_NNAI
         {
             Create_And_Run_UI();
 
-            System.Console.WriteLine("started progrma entry.");
+            //System.Console.WriteLine("started progrma entry.");
             framework = new Avril_NNAI.Framework_NNAI();
             while (framework == null) { /* wait untill is created */ }
-            System.Console.WriteLine("created framework.");
+            //System.Console.WriteLine("created framework.");
             //framework.Initialise(framework);
-            System.Console.WriteLine("framework initialised.");
+            //System.Console.WriteLine("framework initialised.");
         }
         static private void Create_And_Run_UI()
         {

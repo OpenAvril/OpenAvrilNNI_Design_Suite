@@ -14,7 +14,7 @@ namespace Avril_NNAI
 // constructor.
         public Output()
         {
-            System.Console.WriteLine("entered Output.");
+            //System.Console.WriteLine("entered Output.");
             _ListOfOutputSubsets = new Object[3];
             
             Create_Output_Praise_0(new Avril_NNAI.Output_Praise_0());

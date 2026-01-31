@@ -16,13 +16,13 @@ namespace Avril_NNAI
 // constructor.
         public Global()
         {
-            System.Console.WriteLine("entered Global.");
+            //System.Console.WriteLine("entered Global.");
         }
 
 // destructor
         ~Global()
         {
-            System.Console.WriteLine("exited Global.");
+            //System.Console.WriteLine("exited Global.");
         }
 
 // public.

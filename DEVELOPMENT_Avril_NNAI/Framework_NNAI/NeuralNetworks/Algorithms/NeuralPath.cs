@@ -13,10 +13,10 @@ namespace Avril_NNAI
 // constructor.
         public NeuralPath() 
         {
-            System.Console.WriteLine("entered NeuralPath.");
+            //System.Console.WriteLine("entered NeuralPath.");
             Create_New_Linear(new Avril_NNAI.Linear());
             //while (Get_New_Linear() == null) { }
-            System.Console.WriteLine("exiting NeuralPath.");
+            //System.Console.WriteLine("exiting NeuralPath.");
         }
 
 // destructor
@@ -26,12 +26,7 @@ namespace Avril_NNAI
         }
 
 // public.
-        public double Generate_Initial_BIAS_Value(double minimum, double maximum)
-        {
-            Random random = new Random();
-            return random.NextDouble() * (maximum - minimum) + minimum;
-        }
-        public double Generate_Initial_WEIGHT_Value(double minimum, double maximum)
+        public double Generate_Initial_Random_Small_Value(double minimum, double maximum)
         {
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;

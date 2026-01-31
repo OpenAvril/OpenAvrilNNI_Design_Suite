@@ -12,13 +12,13 @@ namespace Avril_NNAI
 // constructor.
         public Linear()
         {
-            System.Console.WriteLine("entered Linear.");
+            //System.Console.WriteLine("entered Linear.");
             Create_Weight(new double());
             Set_Weight(0.0);
 
             Create_Bias(new double());
             Set_Bias(0.0);
-            System.Console.WriteLine("exiting Linear.");
+            //System.Console.WriteLine("exiting Linear.");
         }
 
 // destructor.

@@ -13,13 +13,13 @@ namespace Avril_NNAI
 // constructor.
         public MachineAI()
         {
-            System.Console.WriteLine("entered MachineAI.");
+            //System.Console.WriteLine("entered MachineAI.");
             Create_MetaData(new Avril_NNAI.MetaData());
             while (Get_MetaData() == null) { }
-            System.Console.WriteLine("ALPHA.");
+            //System.Console.WriteLine("ALPHA.");
             Create_NameOfNNAI(new string("nil"));
             Set_NameOfNNAI("Undefined_NNAI");
-            System.Console.WriteLine("BRAVO.");
+            //System.Console.WriteLine("BRAVO.");
             Create_UsedPraiseIDs(new ulong[1]);
             Set_UsedPraiseIDs(0, 0);
         }

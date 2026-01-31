@@ -12,7 +12,7 @@ namespace Avril_NNAI
 // constructor.
         public Aglorithms()
         {
-            System.Console.WriteLine("entered Aglorithms.");
+            //System.Console.WriteLine("entered Aglorithms.");
             Create_NeuralPath(new Avril_NNAI.NeuralPath());
             while (Get_NeuralPath() == null) { }
 
@@ -23,7 +23,7 @@ namespace Avril_NNAI
 // destructor.
         ~Aglorithms()
         {
-            System.Console.WriteLine("exited Aglorithms.");
+            //System.Console.WriteLine("exited Aglorithms.");
         }
 
 // public.

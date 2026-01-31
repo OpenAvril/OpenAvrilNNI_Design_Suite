@@ -10,7 +10,7 @@ namespace Avril_NNAI
 
         public NeuralNetworks()
         {
-            System.Console.WriteLine("entered NeuralNetworks.");
+            //System.Console.WriteLine("entered NeuralNetworks.");
             Set_Global(new Avril_NNAI.Global());
             while (Get_Global() == null) { }
 

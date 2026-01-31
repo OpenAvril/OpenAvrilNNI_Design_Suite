@@ -15,7 +15,7 @@ namespace Avril_NNAI
 
         public Data()
         {
-            System.Console.WriteLine("entered Data.");
+            //System.Console.WriteLine("entered Data.");
             Create_Input(new Avril_NNAI.Input());
             while (Get_Input() == null) { }
 

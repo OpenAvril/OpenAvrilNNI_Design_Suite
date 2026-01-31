@@ -12,7 +12,7 @@ namespace Avril_NNAI
 
         public Global()
         {
-            System.Console.WriteLine("entered Global.");
+            //System.Console.WriteLine("entered Global.");
         }
     }
 }

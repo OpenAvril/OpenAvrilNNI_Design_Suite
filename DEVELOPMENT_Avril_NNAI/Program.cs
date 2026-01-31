@@ -40,7 +40,7 @@ namespace Avril_NNAI
             framework = new Avril_NNAI.Framework_NNAI();
             System.Console.WriteLine("created Avril_NNAI.Framework_NNAI()");
             while (framework == null) { /* wait untill is created */ }
-            System.Console.WriteLine("created framework.");
+            System.Console.WriteLine("Framework_NNAI ready.");
             framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
 

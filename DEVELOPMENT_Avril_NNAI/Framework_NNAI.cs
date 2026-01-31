@@ -11,7 +11,7 @@ namespace Avril_NNAI
 // constructor.
         public Framework_NNAI()
         {
-            System.Console.WriteLine("entered Framework_NNAI.");
+            //System.Console.WriteLine("entered Framework_NNAI.");
             Create_NeuralNetworks(new Avril_NNAI.NeuralNetworks());
             while (Get_Neural_Networks() == null) { }
         }
@@ -19,7 +19,7 @@ namespace Avril_NNAI
 // destructor.
         ~Framework_NNAI()
         {
-            System.Console.WriteLine("exited Framework_NNAI.");
+            //System.Console.WriteLine("exited Framework_NNAI.");
         }
 
         // public.

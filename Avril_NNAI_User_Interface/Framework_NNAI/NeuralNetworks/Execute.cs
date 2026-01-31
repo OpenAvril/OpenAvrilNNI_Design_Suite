@@ -5,7 +5,7 @@ namespace Avril_NNAI
     {
         public Execute()
         {
-            System.Console.WriteLine("entered Execute.");
+            //System.Console.WriteLine("entered Execute.");
         }
 
         public void Create_And_Run_UI()

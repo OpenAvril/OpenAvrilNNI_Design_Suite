@@ -10,7 +10,7 @@ namespace Avril_NNAI
 // constructor.
         public Execute()
         {
-            System.Console.WriteLine("entered Execute.");
+            //System.Console.WriteLine("entered Execute.");
         }
 
 // destructor.

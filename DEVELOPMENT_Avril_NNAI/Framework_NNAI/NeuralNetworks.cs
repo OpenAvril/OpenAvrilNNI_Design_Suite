@@ -13,7 +13,7 @@ namespace Avril_NNAI
 // constructor.
         public NeuralNetworks()
         {
-            System.Console.WriteLine("entered NeuralNetworks.");
+            //System.Console.WriteLine("entered NeuralNetworks.");
             Create_Global(new Avril_NNAI.Global());
             while (Get_Global() == null) { }
 
@@ -30,7 +30,7 @@ namespace Avril_NNAI
 // destructor
         ~NeuralNetworks()
         {
-            System.Console.WriteLine("exited NeuralNetworks.");
+            //System.Console.WriteLine("exited NeuralNetworks.");
         }
 
 // public.
