@@ -45,19 +45,24 @@ namespace Avril_NNAI
             System.Console.WriteLine("framework initialised.");
 
 // SIMULATION
+/*
             ulong[] praiseIDs = { 1 };
             Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseIDs);
-            for (byte index_A = 0; index_A < 5; index_A++)
+            for (byte layerID = 6; layerID >= 0; layerID--)
             {
-                for(ulong index_B = 0; index_B < myNeuralNetwork.Get_MetaData().Get_NumberOfNodesInLayer(index_A); index_B++)
+                for (ulong nodeID = 0; nodeID < myNeuralNetwork.Get_MetaData().Get_NumberOfNodesInLayer(layerID); nodeID++)
                 {
-                    for (ulong index_C = 0; index_C < myNeuralNetwork.Get_MetaData().Get_NumberOfPraiseInputValues(); index_C++)
+                    if (layerID <= 5)
                     {
-                        System.Console.WriteLine("weight = " + myNeuralNetwork.Get_MetaData().Get_Node(index_A, index_B).Get_NeuralPathOfInput_SubSet(index_C).Get_Weight());
-                        System.Console.WriteLine("bias" + myNeuralNetwork.Get_MetaData().Get_Node(index_A, index_B).Get_NeuralPathOfInput_SubSet(index_C).Get_Bias());
+                        for (ulong inputValuID = 0; inputValuID < myNeuralNetwork.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); inputValuID++)
+                        {
+                            System.Console.WriteLine("weight = " + myNeuralNetwork.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Get_Weight());
+                            System.Console.WriteLine("bias" + myNeuralNetwork.Get_MetaData().Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputValuID).Get_Bias());
+                        }
                     }
                 }
             }
+*/
             //ToDO: train network
         }
 

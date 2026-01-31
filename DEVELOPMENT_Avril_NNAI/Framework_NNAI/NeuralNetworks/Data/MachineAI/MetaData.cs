@@ -110,19 +110,21 @@ namespace Avril_NNAI
 
                     default:
                         if (numberOfPraiseInputValues > 5) objNNAI.Get_MetaData().Set_NumberOfNodesInLayer(layerID, Convert.ToUInt64(numberOfPraiseInputValues * (double)((ulong)(layerID - 1) / 5)));
-
-                        newEmptyNode.Set_NumberOfInputs(objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)));
-                        newEmptyNode.Create_REGISTERED_Inputs(new double[objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1))]);
-                        for (ulong index = 0; index < objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); index++)
-                        {
-                            newEmptyNode.Set_REGISTERED_Inputs(index, 0.0);
-                        }
-                        newEmptyNode.Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1))]);
-                        for (ulong index = 0; index < objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); index++)
-                        {
-                            newEmptyNode.Set_NeuralPathOfInput_SubSet(index, newLinearPath);
-                        }
                         break;
+                }
+                if (layerID <= 5)
+                {
+                    newEmptyNode.Set_NumberOfInputs(objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)));
+                    newEmptyNode.Create_REGISTERED_Inputs(new double[objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1))]);
+                    for (ulong index = 0; index < objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); index++)
+                    {
+                        newEmptyNode.Set_REGISTERED_Inputs(index, 0.0);
+                    }
+                    newEmptyNode.Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1))]);
+                    for (ulong index = 0; index < objNNAI.Get_MetaData().Get_NumberOfNodesInLayer((ulong)(layerID + 1)); index++)
+                    {
+                        newEmptyNode.Set_NeuralPathOfInput_SubSet(index, newLinearPath);
+                    }
                 }
                 switch (layerID)
                 {
