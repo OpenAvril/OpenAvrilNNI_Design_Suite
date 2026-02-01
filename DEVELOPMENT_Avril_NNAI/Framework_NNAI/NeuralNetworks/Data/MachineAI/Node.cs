@@ -9,7 +9,6 @@ namespace Avril_NNAI
         // registers.
         private Avril_NNAI.Linear[] _List_Of_NeuralPathOfNodeInputs;
         private ulong _NumberOfInputs;
-        private double[] _REGISTERED_Inputs;
         private double _REGISTERED_Output;
 
 // constructor.
@@ -22,9 +21,6 @@ namespace Avril_NNAI
 
             Create_NumberOfInputs(new ulong());
             Set_NumberOfInputs(1);
-
-            Create_REGISTERED_Inputs(new double[1]);
-            Set_REGISTERED_Inputs(0, 0.0);
 
             Create_REGISTERED_Output(new double());
             Set_REGISTERED_Output(0.0);
@@ -42,10 +38,6 @@ namespace Avril_NNAI
         {
             _List_Of_NeuralPathOfNodeInputs = list_Of_NeuralPathOfNodeInputsneuralPathOfInputs;
         }
-        public void Create_REGISTERED_Inputs(double[] registered_Inputs)
-        {
-            _REGISTERED_Inputs = registered_Inputs;
-        }
     
     // get.
         public Avril_NNAI.Linear Get_NeuralPathOfInput_SubSet(ulong nodeID)
@@ -55,10 +47,6 @@ namespace Avril_NNAI
         public ulong Get_NumberOfInputs()
         {
             return _NumberOfInputs;
-        }
-        public double Get_REGISTERED_Input(ulong praiseID)
-        {
-            return _REGISTERED_Inputs[praiseID];
         }
         public double Get_REGISTERED_Output()
         {
@@ -73,10 +61,6 @@ namespace Avril_NNAI
         public void Set_NumberOfInputs(ulong numberOfInputs)
         {
             _NumberOfInputs = numberOfInputs;
-        }
-        public void Set_REGISTERED_Inputs(ulong valueID, double registered_Input)
-        {
-            _REGISTERED_Inputs[valueID] = registered_Input;
         }
         public void Set_REGISTERED_Output(double registered_Output)
         {
