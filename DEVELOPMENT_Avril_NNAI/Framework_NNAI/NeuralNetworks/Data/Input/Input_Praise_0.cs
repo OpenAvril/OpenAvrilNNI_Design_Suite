@@ -41,7 +41,7 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public ulong Get_NumberOfInputValues()
+        public byte Get_NumberOfInputValues()
         {
             return _numberOfInputValues;
         }

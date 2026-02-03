@@ -21,7 +21,7 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z
         }
-        private byte _numberOfInputValues;
+        private byte _numberOfOutputValues;
         private double _direction_X;
         private double _direction_y;
         private double _direction_Z;
@@ -53,7 +53,7 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_Of_Output_Praise(byte index)
         {
             switch (index)
             {
@@ -97,13 +97,13 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public ulong Get_NumberOfInputValues()
+        public byte Get_NumberOfOutputValues()
         {
-            return _numberOfInputValues;
+            return _numberOfOutputValues;
         }
         
     // set.
-        public void Set_Item_Of_Input_Praise(byte index, double value)
+        public void Set_Item_Of_Output_Praise(byte index, double value)
         {
             switch (index)
             {
@@ -161,9 +161,9 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfOutputValues = numberOfOutputValues;
         }
         private void Create_Capsule_Position_X(double capsule_Position_X)
         {
@@ -266,9 +266,9 @@ namespace Avril_NNAI
 
     // set.
 
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
+        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfOutputValues = numberOfOutputValues;
         }
         private void Set_Capsule_Position_X(double value)
         {

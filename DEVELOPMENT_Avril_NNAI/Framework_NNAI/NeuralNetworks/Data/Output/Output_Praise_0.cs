@@ -10,14 +10,14 @@ namespace Avril_NNAI
         {
             Ping
         }
-        private byte _numberOfInputValues;
+        private byte _numberOfOutputValues;
         private double _Ping;
 
         // constructor.
         public Output_Praise_0()
         {
-            Create_NumberOfInputValues(new byte());
-            Set_NumberOfInputValues(1);
+            Create_NumberOfOutputValues(new byte());
+            Set_NumberOfOutputValues(1);
 
             Create_Ping(new double());
             Set_Ping(0.0);
@@ -31,7 +31,7 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_Of_Output_Praise(byte index)
         {
             switch (index)
             {
@@ -41,13 +41,13 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public ulong Get_NumberOfInputValues()
+        public byte Get_NumberOfOutputValues()
         {
-            return _numberOfInputValues;
+            return _numberOfOutputValues;
         }
 
     // set.
-        public void Set_Item_Of_Input_Praise(byte index, double value)
+        public void Set_Item_Of_Output_Praise(byte index, double value)
         {
             switch (index)
             {
@@ -60,9 +60,9 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfOutputValues = numberOfOutputValues;
         }
         private void Create_Ping(double ping)
         {
@@ -76,9 +76,9 @@ namespace Avril_NNAI
         }
 
     // set.
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
+        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _numberOfOutputValues = numberOfOutputValues;
         }
         private void Set_Ping(double value)
         {

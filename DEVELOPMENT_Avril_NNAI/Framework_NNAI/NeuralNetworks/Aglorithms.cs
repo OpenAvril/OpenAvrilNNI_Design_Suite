@@ -35,18 +35,13 @@ namespace Avril_NNAI
             _AvrilNNAI.Get_MetaData().Set_NameOfNNAI(nameOfNNAI);
             obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Calculate_NumberOfPraiseInputValues(obj, _AvrilNNAI, praiseID);
             System.Console.WriteLine("NumberOfPraiseInputValues = " + _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
-            
-            
-            
-            System.Console.WriteLine("DELTA.");
-            _AvrilNNAI.Get_MetaData().Generate_REGISTERED_Inputs_List(obj, _AvrilNNAI, praiseID);
-            System.Console.WriteLine("ECHO.");
-            _AvrilNNAI.Get_MetaData().Create_Nodes(obj, _AvrilNNAI, _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues());
-            System.Console.WriteLine("FOXTROT.");
-
-            System.Console.WriteLine("GIGA.");
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Calculate_NumberOfPraiseOutputValues(obj, _AvrilNNAI, praiseID);
+            System.Console.WriteLine("NumberOfPraiseOutputValues = " + _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues());
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_REGISTERED_Inputs_List(obj, _AvrilNNAI, praiseID);
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_REGISTERED_Outputs_List(obj, _AvrilNNAI, praiseID);
+            _AvrilNNAI.Create_PraiseSet(new Avril_NNAI.PraiseSet[_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues()]);
+            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Create_Nodes(obj, _AvrilNNAI, _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues(), _AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues());
             obj.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(_AvrilNNAI);
-            System.Console.WriteLine("HEX.");
             return _AvrilNNAI;
         }
     // get.

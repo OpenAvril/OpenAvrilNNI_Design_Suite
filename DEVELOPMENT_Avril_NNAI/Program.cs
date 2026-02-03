@@ -50,9 +50,9 @@ namespace Avril_NNAI
 
 // SIMULATION
 
-            ulong[] praiseIDs = new ulong[1];
-            praiseIDs[0] = 1;
-            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseIDs);
+            ulong praiseID = new ulong();
+            praiseID = 1;
+            Avril_NNAI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().ConstructNeuralNetworkAI_Frame(framework, "Avril_NNAI_OpenCFSD_Praise_1_IO.nnai", praiseID);
 /*
             for (byte layerID = 6; layerID >= 0; layerID--)
             {

@@ -20,7 +20,7 @@ namespace Avril_NNAI
             Capsule_Right_Y,
             Capsule_Right_Z,
         }
-        private byte _numberOfInputValues;
+        private byte _NumberOfOutputValues;
         private double _Mouse_Screen_X;
         private double _Mouse_Screen_Y;
         private double _Capsule_Fowards_X;
@@ -36,7 +36,34 @@ namespace Avril_NNAI
 // constructor.
         public Output_Praise_1()
         {
+            Create_NumberOfOutputValues(new byte());
+            Set_NumberOfOutputValues(11);
 
+            Create_Mouse_Screen_X(new double());
+            Set_Mouse_Screen_X_ZERO();
+            Create_Mouse_Screen_Y(new double());
+            Set_Mouse_Screen_Y_ZERO();
+
+            Create_Capsule_Fowards_X(new double());
+            Set_Capsule_Fowards_X(0.0);
+            Create_Capsule_Fowards_Y(new double());
+            Set_Capsule_Fowards_Y(0.0);
+            Create_Capsule_Fowards_Z(new double());
+            Set_Capsule_Fowards_Z(0.0);
+
+            Create_Capsule_Up_X(new double());
+            Set_Capsule_Up_X(0.0);
+            Create_Capsule_Up_Y(new double());
+            Set_Capsule_Up_Y(0.0);
+            Create_Capsule_Up_Z(new double());
+            Set_Capsule_Up_Z(0.0);
+
+            Create_Capsule_Right_X(new double());
+            Set_Capsule_Right_X(0.0);
+            Create_Capsule_Right_Y(new double());
+            Set_Capsule_Right_Y(0.0);
+            Create_Capsule_Right_Z(new double());
+            Set_Capsule_Right_Z(0.0);
         }
 
 // destructor.
@@ -47,7 +74,7 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public double Get_Item_Of_Input_Praise(byte index)
+        public double Get_Item_Of_Output_Praise(byte index)
         {
             switch (index)
             {
@@ -88,22 +115,22 @@ namespace Avril_NNAI
                     return 0;
             }
         }
-        public ulong Get_NumberOfInputValues()
+        public byte Get_NumberOfOutputValues()
         {
-            return _numberOfInputValues;
+            return _NumberOfOutputValues;
         }
 
     // set.
-        public void Set_Item_Of_Input_Praise(byte index, double value)
+        public void Set_Item_Of_Output_Praise(byte index, double value)
         {
             switch (index)
             {
                 case (byte)PRAISE_1.Mouse_Screen_X:
-                    Set_Mouse_Screen_X(value);
+                    Set_Mouse_Screen_X_ZERO();
                     break;
 
                 case (byte)PRAISE_1.Mouse_Screen_Y:
-                    Set_Mouse_Screen_Y(value);
+                    Set_Mouse_Screen_Y_ZERO();
                     break;
 
                 case (byte)PRAISE_1.Capsule_Fowards_X:
@@ -119,15 +146,15 @@ namespace Avril_NNAI
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_X:
-                    Set_Capsule_Up_X(value);
+                    Set_Capsule_Up_X(0.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Y:
-                    Set_Capsule_Up_Y(value);
+                    Set_Capsule_Up_Y(1.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Up_Z:
-                    Set_Capsule_Up_Z(value);
+                    Set_Capsule_Up_Z(0.0);
                     break;
 
                 case (byte)PRAISE_1.Capsule_Right_X:
@@ -148,9 +175,9 @@ namespace Avril_NNAI
         }
         
 // private.
-        private void Create_NumberOfInputValues(byte numberOfInputValues)
+        private void Create_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _NumberOfOutputValues = numberOfOutputValues;
         }
         private void Create_Mouse_Screen_X(double mouseX)
         {
@@ -280,17 +307,17 @@ namespace Avril_NNAI
         {
             _Capsule_Right_Z = capsualeRightZ;
         }
-        private void Set_Mouse_Screen_X(double mouseX)
+        private void Set_Mouse_Screen_X_ZERO()
         {
-            _Mouse_Screen_X = mouseX;
+            _Mouse_Screen_X = 0;
         }
-        private void Set_Mouse_Screen_Y(double mouseY)
+        private void Set_Mouse_Screen_Y_ZERO()
         {
-            _Mouse_Screen_Y = mouseY;
+            _Mouse_Screen_Y = 0;
         }
-        private void Set_NumberOfInputValues(byte numberOfInputValues)
+        private void Set_NumberOfOutputValues(byte numberOfOutputValues)
         {
-            _numberOfInputValues = numberOfInputValues;
+            _NumberOfOutputValues = numberOfOutputValues;
         }
     }
 }
