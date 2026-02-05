@@ -37,20 +37,32 @@
             Set_NumberOfNodesInHiddenLayer(0, 1);
 
             Create_Layer4_Nodes(5, new Avril_NNAI.Node());
-            while (Get_Layer4_Node(0) == null) { }
-            Set_Layer4_Nodes(0, newEmpty);
+            while (Get_Layer4_Nodes() == null) { }
+            for (ulong nodeID = 0; nodeID < 5; nodeID++) 
+            {
+                Set_Layer4_Nodes(nodeID, newEmpty);
+            }
 
             Create_Layer3_Nodes(4, new Avril_NNAI.Node());
             while (Get_Layer3_Nodes() == null) { }
-            Set_Layer3_Nodes(0, newEmpty);
+            for (ulong nodeID = 0; nodeID < 4; nodeID++)
+            {
+                Set_Layer3_Nodes(nodeID, newEmpty);
+            }
 
             Create_Layer2_Nodes(3, new Avril_NNAI.Node());
             while (Get_Layer2_Nodes() == null) { }
-            Set_Layer2_Nodes(0, newEmpty);
+            for (ulong nodeID = 0; nodeID < 3; nodeID++)
+            {
+                Set_Layer2_Nodes(nodeID, newEmpty);
+            }
 
             Create_Layer1_Nodes(2, new Avril_NNAI.Node());
             while (Get_Layer1_Nodes() == null) { }
-            Set_Layer1_Nodes(0, newEmpty);
+            for (ulong nodeID = 0; nodeID < 2; nodeID++)
+            {
+                Set_Layer1_Nodes(nodeID, newEmpty);
+            }
 
             Create_Layer0_Node(new Avril_NNAI.Node());
             while (Get_Layer0_Node() == null) { }
@@ -67,6 +79,7 @@
         public void Create_Layer4_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
             _Layer4_Nodes = new Avril_NNAI.Node[numberOfNodes];
+            while (Get_Layer4_Nodes() == null)
             for (ulong index = 0; index < numberOfNodes; index++)
             {
                 _Layer4_Nodes[index] = newEmpty_Node;
@@ -75,6 +88,7 @@
         public void Create_Layer3_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
             _Layer3_Nodes = new Avril_NNAI.Node[numberOfNodes];
+            while(Get_Layer3_Nodes() == null)
             for (ulong index = 0; index < numberOfNodes; index++)
             {
                 _Layer3_Nodes[index] = newEmpty_Node;
@@ -83,6 +97,7 @@
         public void Create_Layer2_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
             _Layer2_Nodes = new Avril_NNAI.Node[numberOfNodes];
+            while (Get_Layer2_Nodes() == null)
             for (ulong index = 0; index < numberOfNodes; index++)
             {
                 _Layer2_Nodes[index] = newEmpty_Node;
@@ -91,6 +106,7 @@
         public void Create_Layer1_Nodes(ulong numberOfNodes, Avril_NNAI.Node newEmpty_Node)
         {
             _Layer1_Nodes = new Avril_NNAI.Node[numberOfNodes];
+            while (Get_Layer1_Nodes() == null)
             for (ulong index = 0; index < numberOfNodes; index++)
             {
                 _Layer1_Nodes[index] = newEmpty_Node;
@@ -99,6 +115,7 @@
         public void Create_Layer0_Node(Avril_NNAI.Node newEmpty_Node)
         {
             _Layer0_Node = newEmpty_Node;
+            while(Get_Layer0_Node() == null) { }
         }
         public void Create_NumberOfNodesInLayer(ulong[] liatOfNumberOfNodesInLayer)
         {

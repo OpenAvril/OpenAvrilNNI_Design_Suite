@@ -23,9 +23,11 @@ namespace Avril_NNAI
             Set_REGISTERED_Output(0.0);
 
             Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[Get_NumberOfInputs()]);
-            while (Get_List_Of_NeuralPathOfInput_SubSet() == null) { }
+            while (Get_List_Of_NeuralPathOfInput() == null) { }
             Set_NeuralPathOfInput_SubSet(0, new Avril_NNAI.Linear());
+            while (Get_List_Of_NeuralPathOfInput()[0] == null) { }
             Set_NeuralPathOfInput_SubSet(1, new Avril_NNAI.Linear());
+            while (Get_List_Of_NeuralPathOfInput()[1] == null) { }
 
             //System.Console.WriteLine("exiting Node.");
         }
@@ -43,9 +45,13 @@ namespace Avril_NNAI
         }
     
     // get.
-        public Avril_NNAI.Linear Get_NeuralPathOfInput_SubSet(ulong nodeID)
+        public Avril_NNAI.Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong nodeID)
         {
             return _List_Of_NeuralPathOfNodeInputs[nodeID];
+        }
+        public Avril_NNAI.Linear[] Get_List_Of_NeuralPathOfInput()
+        {
+            return _List_Of_NeuralPathOfNodeInputs;
         }
         public ulong Get_NumberOfInputs()
         {
@@ -81,10 +87,7 @@ namespace Avril_NNAI
         }
 
     // get.
-        private Avril_NNAI.Linear[] Get_List_Of_NeuralPathOfInput_SubSet()
-        {
-            return _List_Of_NeuralPathOfNodeInputs;
-        }
+
     // set.
     }
 }

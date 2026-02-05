@@ -51,8 +51,43 @@ namespace Avril_NNAI
             System.Console.WriteLine("NumberOfPraiseOutputValues = " + objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues());
 
             Calculate_NumberOfResetToConstantValues_INPUT(obj, objNNAI, praiseID);
+            System.Console.WriteLine("NumberOfResetToConstantValues_INPUT = " + objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_INPUT());
 
             Calculate_NumberOfResetToConstantValues_OUTPUT(obj, objNNAI, praiseID);
+            System.Console.WriteLine("NumberOfResetToConstantValues_OUTPUT = " + objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
+        }
+        public void Create_Layer_Nodes(Avril_NNAI.MachineAI objNNAI, byte outputID, byte layerID)
+        {
+            var newEmptyNode = new Avril_NNAI.Node();
+            while (newEmptyNode == null) { }
+
+            switch (layerID)
+            {
+                case (byte)NodeLayer.Layer_4:
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer4_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    break;
+
+                case (byte)NodeLayer.Layer_3:
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer3_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    break;
+
+                case (byte)NodeLayer.Layer_2:
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer2_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    break;
+
+                case (byte)NodeLayer.Layer_1:
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer1_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    break;
+
+                case (byte)NodeLayer.Layer_0:
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer0_Node(newEmptyNode);
+                    break;
+            }
+            for (ulong nodeID = 0; nodeID < objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
+            {
+                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Set_Node(layerID, nodeID, newEmptyNode);
+            }
+            
         }
         public double Generate_Initial_Random_Small_Value(double minimum, double maximum)
         {
@@ -137,34 +172,6 @@ namespace Avril_NNAI
         }
 
     // set.
-        public void Set_Layer_Nodes(Avril_NNAI.MachineAI objNNAI, byte outputID, byte layerID)
-        {
-            var newEmptyNode = new Avril_NNAI.Node();
-            while (newEmptyNode == null) { }
-
-            switch (layerID)
-            {
-                case (byte)NodeLayer.Layer_4:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer4_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)NodeLayer.Layer_3:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer3_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)NodeLayer.Layer_2:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer2_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)NodeLayer.Layer_1:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer1_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)NodeLayer.Layer_0:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer0_Node(newEmptyNode);
-                    break;
-            }
-        }
         public void Set_Neural_Path_For_Input(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, byte outputID, byte layerID, ulong nodeID)
         {
             System.Console.WriteLine("entered Create_Nodes.");
@@ -174,7 +181,7 @@ namespace Avril_NNAI
 
             ulong numberOfInputsForNode = new ulong();
             numberOfInputsForNode = 0;
-            if (layerID == 4)
+            if (layerID == (byte)4)
             {
                 numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
             }
@@ -182,24 +189,15 @@ namespace Avril_NNAI
             {
                 numberOfInputsForNode = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
             }
-
             objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Set_NumberOfInputs(numberOfInputsForNode);
+            System.Console.WriteLine("NumberOfInputs = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NumberOfInputs());
 
-            for (ulong inputID = 0; inputID < (ulong)(objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues()); inputID++)
+            for (ulong inputID = 0; inputID < numberOfInputsForNode; inputID++)
             {
-                if (inputID < (ulong)(objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()))
-                {
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Set_NeuralPathOfInput_SubSet(inputID, newLinearPath);
-
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                    System.Console.WriteLine("outputID = " + outputID + "  layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID + "  bias = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Get_Bias() + "  weight = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NeuralPathOfInput_SubSet(inputID).Get_Weight());
-                }
-                else if (inputID >= (ulong)(objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()))
-                {
-
-                    
-                }
+                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Set_NeuralPathOfInput_SubSet(inputID, newLinearPath);
+                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                System.Console.WriteLine("outputID = " + outputID + "  layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID + "  bias = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Bias() + "  weight = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Get_Weight());
             }
             System.Console.WriteLine("exiting Create_Nodes.");
         }
@@ -233,7 +231,7 @@ namespace Avril_NNAI
             System.Console.WriteLine("outputID = " + outputID + "  layerID == " + layerID + "  Set_NumberOfNodesInLayer = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID));
         }
 
-        // private.
+// private.
         private void Create_New_Linear(Avril_NNAI.Linear linear)
         {
             _New_Linear = linear;
@@ -305,17 +303,17 @@ namespace Avril_NNAI
             {
                 case (ulong)PraiseID.Praise_0:
                     var objValue_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
-                    objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise0.Get_NumberOfResetToConstantValues());
+                    objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise0.Get_NumberOfResetToConstantValues());
                     break;
 
                 case (ulong)PraiseID.Praise_1:
                     var objValue_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(1);
-                    objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise1.Get_NumberOfResetToConstantValues());
+                    objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise1.Get_NumberOfResetToConstantValues());
                     break;
 
                 case (ulong)PraiseID.Praise_2:
                     var objValue_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(2);
-                    objNNAI.Get_MetaData().Set_NumberOfPraiseOutputValues(objValue_Praise2.Get_NumberOfResetToConstantValues());
+                    objNNAI.Get_MetaData().Set_NumberOfResetToConstantValues_OUTPUT(objValue_Praise2.Get_NumberOfResetToConstantValues());
                     break;
             }
         }
