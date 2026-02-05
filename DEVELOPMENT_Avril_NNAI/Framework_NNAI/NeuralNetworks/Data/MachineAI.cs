@@ -3,7 +3,8 @@ namespace Avril_NNAI
 {
     public class MachineAI
     {
-// classes.
+        // classes.
+        private Avril_NNAI.Constant[] _constants;
         private Avril_NNAI.MetaData _metaData;
         private Avril_NNAI.PraiseSet[] _praiseSet;
 
@@ -17,21 +18,24 @@ namespace Avril_NNAI
             //System.Console.WriteLine("entered MachineAI.");
             Create_MetaData(new Avril_NNAI.MetaData());
             while (Get_MetaData() == null) { }
-            
-            Create_PraiseSet(new Avril_NNAI.PraiseSet[Get_MetaData().Get_NumberOfPraiseOutputValues()]);
-            while (_praiseSet == null) { }
 
             Create_REGISTERED_Inputs(new double[Get_MetaData().Get_NumberOfPraiseInputValues()]);
             for (ulong index = 0; index < Get_MetaData().Get_NumberOfPraiseInputValues(); index++)
             {
                 Set_REGISTERED_Input(index, 0.0);
             }
+
+            Create_PraiseSet(new Avril_NNAI.PraiseSet[Get_MetaData().Get_NumberOfPraiseInputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()]);
+            while (Get_List_Of_PraiseSet() == null) { }
+
+            Create_Constants(new Avril_NNAI.Constant[Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()]);
+            while(Get_List_Of_Constant() == null) { }
+
             Create_REGISTERED_Outputs(new double[Get_MetaData().Get_NumberOfPraiseOutputValues()]);
             for (ulong index = 0; index < Get_MetaData().Get_NumberOfPraiseOutputValues(); index++)
             {
                 Set_REGISTERED_Output(index, 0.0);
             }
-
         }
 
 // destructor.
@@ -40,6 +44,10 @@ namespace Avril_NNAI
         }
 
 // public.
+        public void Create_Constants(Avril_NNAI.Constant[] value)
+        {
+            _constants = value;
+        }
         public void Create_REGISTERED_Inputs(double[] value)
         {
             _REGISTERED_Inputs = value;
@@ -53,7 +61,11 @@ namespace Avril_NNAI
             _praiseSet = value;
         }
 
-    // get.
+        // get.
+        public Avril_NNAI.Constant[] Get_List_Of_Constant()
+        {
+            return _constants;
+        }
         public double[] Get_List_Of_REGISTERED_Inputs()
         {
             return _REGISTERED_Inputs;
@@ -62,15 +74,19 @@ namespace Avril_NNAI
         {
             return _REGISTERED_Outputs;
         }
-        public Avril_NNAI.PraiseSet[] Get_PraiseSet()
+        public Avril_NNAI.PraiseSet[] Get_List_Of_PraiseSet()
         {
             return _praiseSet;
         }
-        public double Get_REGISTERED_Inputs(ulong registerID)
+        public Avril_NNAI.Constant Get_Item_On_List_Of_Constant(byte index)
+        {
+            return _constants[index];
+        }
+        public double Get_Item_On_REGISTERED_Inputs(ulong registerID)
         {
             return _REGISTERED_Inputs[registerID];
         }
-        public double Get_REGISTERED_Outputs(ulong registerID)
+        public double Get_Item_On_REGISTERED_Outputs(ulong registerID)
         {
             return _REGISTERED_Outputs[registerID];
         }
@@ -84,6 +100,10 @@ namespace Avril_NNAI
         }
 
     // set.
+        public void Set_Item_On_List_Of_Constant(byte index, Avril_NNAI.Constant value)
+        {
+            _constants[index] = value;
+        }
         public void Set_REGISTERED_Input(ulong registerID, double value)
         {
             _REGISTERED_Inputs[registerID] = value;
@@ -97,7 +117,7 @@ namespace Avril_NNAI
             _praiseSet[index] = value;
         }
 
-        // private.
+// private.
         private void Create_MetaData(Avril_NNAI.MetaData value)
         {
             _metaData = value;

@@ -22,6 +22,7 @@ namespace Avril_NNAI
         }
 
 // classes.
+        private Avril_NNAI.Constant _New_Constant;
         private Avril_NNAI.Linear _New_Linear;
             
 // registers.
@@ -32,6 +33,9 @@ namespace Avril_NNAI
             //System.Console.WriteLine("entered NeuralPath.");
             Create_New_Linear(new Avril_NNAI.Linear());
             while (Get_New_Linear() == null) { }
+            
+            Create_New_Constant(new Avril_NNAI.Constant());
+            while (Get_New_Constant() == null) { }
             //System.Console.WriteLine("exiting NeuralPath.");
         }
 
@@ -166,6 +170,10 @@ namespace Avril_NNAI
         }
         
     // get.
+        public Avril_NNAI.Constant Get_New_Constant()
+        {
+            return _New_Constant;
+        }
         public Avril_NNAI.Linear Get_New_Linear()
         {
             return _New_Linear;
@@ -232,6 +240,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void Create_New_Constant(Avril_NNAI.Constant constant)
+        {
+            _New_Constant = constant;
+        }
         private void Create_New_Linear(Avril_NNAI.Linear linear)
         {
             _New_Linear = linear;
@@ -276,7 +288,6 @@ namespace Avril_NNAI
                     break;
             }
         }
-
         private void Calculate_NumberOfResetToConstantValues_INPUT(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI, ulong praiseID)
         {
             switch (praiseID)
