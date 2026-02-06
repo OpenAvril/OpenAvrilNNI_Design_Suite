@@ -60,7 +60,7 @@ namespace Avril_NNAI
         }
     
     // get.
-        public Avril_NNAI.MachineAI Get_Item_Of_Neural_Network_Preservation(ulong praiseID)
+        public Avril_NNAI.MachineAI Get_Item_On_List_Of_Neural_Network_Preservation(ulong praiseID)
         {
             return _AvrilNNAI_OpenCFSD_Praise_IO[praiseID];
         }

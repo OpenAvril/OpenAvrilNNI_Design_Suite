@@ -41,7 +41,22 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             }
             return sum;
         }
-
+        public double Run_Neural_Path_Calculation(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI, byte outputID, byte hiddenLayerID, ulong nodeID, ulong inputID)
+        {
+            double inputValue = 0.0;
+            double temp = 0.0;
+            if(hiddenLayerID == (byte)AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global.NodeLayer.Layer_4)
+            {
+                inputValue = objNNAI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID);
+            }
+            else
+            {
+                inputValue = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node((byte)(hiddenLayerID + (byte)1), inputID).Get_REGISTERED_Output();
+            }
+            temp = Get_Bias();
+            temp = temp + (inputValue * Get_Weight());
+            return temp;
+        }
     // get.
         public double Get_Bias()
         {

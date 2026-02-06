@@ -51,7 +51,7 @@ namespace Avril_NNAI
             }
             else
             {
-                inputValue = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node((byte)(hiddenLayerID + (byte)1), nodeID).Get_REGISTERED_Output();
+                inputValue = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node((byte)(hiddenLayerID + (byte)1), inputID).Get_REGISTERED_Output();
             }
             temp = Get_Bias();
             temp = temp + (inputValue * Get_Weight());
