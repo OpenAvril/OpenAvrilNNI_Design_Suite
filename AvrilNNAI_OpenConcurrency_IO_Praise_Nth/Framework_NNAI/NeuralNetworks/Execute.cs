@@ -1,18 +1,18 @@
 ﻿
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Execute
     {
 // classes.
 
 // registers.
-        private Avril_NNAI.FileRead _FileReadWrite;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileRead _FileReadWrite;
 
 // constructor.
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileRead(new Avril_NNAI.FileRead());
+            Create_FileRead(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileRead());
             while (Get_FileRead() == null) { }
         }
 
@@ -25,14 +25,14 @@ namespace Avril_NNAI
 // public.
 
     // get.
-        public Avril_NNAI.FileRead Get_FileRead()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileRead Get_FileRead()
         {
             return _FileReadWrite;
         }
     // set.
 
 // private.
-        private void Create_FileRead(Avril_NNAI.FileRead fileReadWrite)
+        private void Create_FileRead(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.FileRead fileReadWrite)
         {
             _FileReadWrite = fileReadWrite;
         }

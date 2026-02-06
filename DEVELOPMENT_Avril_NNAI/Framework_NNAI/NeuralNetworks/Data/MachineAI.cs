@@ -9,6 +9,7 @@ namespace Avril_NNAI
         private Avril_NNAI.PraiseSet[] _praiseSet;
 
 // registers.
+        private bool _isNewDataReady;
         private double[] _REGISTERED_Inputs;
         private double[] _REGISTERED_Outputs;
 
@@ -60,8 +61,16 @@ namespace Avril_NNAI
         {
             _praiseSet = value;
         }
-
-        // get.
+        public bool Run_Neural_Network_Inteligence(Avril_NNAI.MachineAI objNNAI)
+        {
+            //Todo: NNAI comput algorithm.
+            return false;
+        }
+    // get.
+        public bool Get_IsNewDataReady()
+        {
+            return _isNewDataReady;
+        }
         public Avril_NNAI.Constant[] Get_List_Of_Constant()
         {
             return _constants;
@@ -101,6 +110,10 @@ namespace Avril_NNAI
         }
 
     // set.
+        public void Set_IsNewDataReady(bool value)
+        {
+            _isNewDataReady = value;
+        }
         public void Set_Item_On_List_Of_Constant(byte constantID, Avril_NNAI.Constant value)
         {
             _constants[constantID] = value;
@@ -119,6 +132,10 @@ namespace Avril_NNAI
         }
 
 // private.
+        private void Create_IsNewDataReady(bool value)
+        {
+            _isNewDataReady = value;
+        }
         private void Create_MetaData(Avril_NNAI.MetaData value)
         {
             _metaData = value;

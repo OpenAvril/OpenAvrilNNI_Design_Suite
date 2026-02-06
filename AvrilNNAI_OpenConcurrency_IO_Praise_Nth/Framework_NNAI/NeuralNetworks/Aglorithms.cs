@@ -1,5 +1,5 @@
 ﻿
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Aglorithms
     {
@@ -20,10 +20,10 @@ namespace Avril_NNAI
         }
 
         // public.
-        public Avril_NNAI.MachineAI Create_Instance_Of_MachineAI_From_nnai_File(Avril_NNAI.Framework_NNAI obj, string nameOfNNAI)
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI Create_Instance_Of_MachineAI_From_nnai_File(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, string nameOfNNAI)
         {
             System.Console.WriteLine("entering ConstructNeuralNetworkAI_Frame.");
-            Avril_NNAI.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
+            AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
             while (_AvrilNNAI == null) { }
             _AvrilNNAI = obj.Get_Neural_Networks().Get_Execute().Get_FileRead().ReadValuesFromFile(obj, nameOfNNAI);
             return _AvrilNNAI;

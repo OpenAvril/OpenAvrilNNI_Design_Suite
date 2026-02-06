@@ -1,12 +1,12 @@
 ﻿
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Data
     {
 // classes.
-        private Avril_NNAI.Input _input;
-        private Avril_NNAI.MachineAI _newMachineAI;
-        private Avril_NNAI.Output _output;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Input _input;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI _newMachineAI;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Output _output;
 
 // registers.
 
@@ -14,13 +14,13 @@ namespace Avril_NNAI
         public Data()
         {
             //System.Console.WriteLine("entered Data.");
-            Create_Input(new Avril_NNAI.Input());
+            Create_Input(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Input());
             while (Get_Input() == null) { }
             //System.Console.WriteLine("ALPHA.");
-            Create_Output(new Avril_NNAI.Output());
+            Create_Output(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Output());
             while (Get_Output() == null) { }
             //System.Console.WriteLine("BRAVO.");
-            Create_NewMachineAI(new Avril_NNAI.MachineAI());
+            Create_NewMachineAI(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI());
             while (Get_NewMachineAI() == null) { }
         }
 
@@ -33,15 +33,15 @@ namespace Avril_NNAI
 // public.
     
     // get.
-        public Avril_NNAI.MachineAI Get_NewMachineAI()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI Get_NewMachineAI()
         {
             return _newMachineAI;
         }
-        public Avril_NNAI.Input Get_Input()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Input Get_Input()
         {
             return _input;
         }
-        public Avril_NNAI.Output Get_Output()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Output Get_Output()
         {
             return _output;
         }
@@ -50,15 +50,15 @@ namespace Avril_NNAI
 
 
 // private.
-        private void Create_Input(Avril_NNAI.Input input)
+        private void Create_Input(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Input input)
         {
             _input = input;
         }
-        private void Create_NewMachineAI(Avril_NNAI.MachineAI machineAI)
+        private void Create_NewMachineAI(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI machineAI)
         {
             _newMachineAI = machineAI;
         }
-        private void Create_Output(Avril_NNAI.Output output)
+        private void Create_Output(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Output output)
         {
             _output = output;
         }

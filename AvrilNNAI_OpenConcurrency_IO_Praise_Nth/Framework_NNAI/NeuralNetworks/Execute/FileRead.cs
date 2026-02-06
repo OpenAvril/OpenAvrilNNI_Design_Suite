@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text;
 
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class FileRead
     {
@@ -22,9 +22,9 @@ namespace Avril_NNAI
         }
 
 // public.
-        public Avril_NNAI.MachineAI ReadValuesFromFile(Avril_NNAI.Framework_NNAI obj, string fileName)
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI ReadValuesFromFile(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Framework_NNAI obj, string fileName)
         {
-            Avril_NNAI.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
+            AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI _AvrilNNAI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
             while (_AvrilNNAI == null) { }
 
             string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName);

@@ -1,29 +1,29 @@
 ﻿
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class NeuralNetworks
     {
 // classes.
-        private Avril_NNAI.Global _global;
-        private Avril_NNAI.Aglorithms _aglorithms;
-        private Avril_NNAI.Data _data;
-        private Avril_NNAI.Execute _execute;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global _global;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms _aglorithms;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data _data;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute _execute;
 // registers.
 
 // constructor.
         public NeuralNetworks()
         {
             //System.Console.WriteLine("entered NeuralNetworks.");
-            Create_Global(new Avril_NNAI.Global());
+            Create_Global(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global());
             while (Get_Global() == null) { }
 
-            Create_Aglorithms(new Avril_NNAI.Aglorithms());
+            Create_Aglorithms(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms());
             while (Get_Aglorithms() == null) { }
 
-            Create_Data(new Avril_NNAI.Data());
+            Create_Data(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data());
             while (Get_Data() == null) { }
 
-            Create_Execute(new Avril_NNAI.Execute());
+            Create_Execute(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute());
             while (Get_Execute() == null) { }
         }
 
@@ -35,38 +35,38 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public Avril_NNAI.Aglorithms Get_Aglorithms()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms Get_Aglorithms()
         {
             return _aglorithms;
         }
-        public Avril_NNAI.Data Get_Data()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data Get_Data()
         {
             return _data;
         }
-        public Avril_NNAI.Execute Get_Execute()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute Get_Execute()
         {
             return _execute;
         }
-        public Avril_NNAI.Global Get_Global()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global Get_Global()
         {
             return _global;
         }
     // set.
 
 // private.
-        private void Create_Aglorithms(Avril_NNAI.Aglorithms aglorithms)
+        private void Create_Aglorithms(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Aglorithms aglorithms)
         {
             _aglorithms = aglorithms;
         }
-        private void Create_Global(Avril_NNAI.Global global)
+        private void Create_Global(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Global global)
         {
             _global = global;
         }
-        private void Create_Data(Avril_NNAI.Data data)
+        private void Create_Data(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Data data)
         {
             _data = data;
         }
-        private void Create_Execute(Avril_NNAI.Execute execute)
+        private void Create_Execute(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Execute execute)
         {
             _execute = execute;
         }

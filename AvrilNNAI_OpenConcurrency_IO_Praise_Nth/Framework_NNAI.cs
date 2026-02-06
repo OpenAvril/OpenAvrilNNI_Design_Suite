@@ -1,10 +1,11 @@
 ﻿
-namespace Avril_NNAI
+namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 {
     public class Framework_NNAI
     {
 // classes.
-        private Avril_NNAI.NeuralNetworks _neuralNetwork;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks _neuralNetwork;
+        private AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Wrapper _wrapper;
 
 // registers.
 
@@ -12,8 +13,11 @@ namespace Avril_NNAI
         public Framework_NNAI()
         {
             //System.Console.WriteLine("entered Framework_NNAI.");
-            Create_NeuralNetworks(new Avril_NNAI.NeuralNetworks());
+            Create_NeuralNetworks(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks());
             while (Get_Neural_Networks() == null) { }
+
+            Create_Wrapper(new AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Wrapper());
+            while (Get_Wrapper() == null) { }
         }
 
 // destructor.
@@ -24,17 +28,25 @@ namespace Avril_NNAI
 
 // public.
     // get.
-        public Avril_NNAI.NeuralNetworks Get_Neural_Networks()
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks Get_Neural_Networks()
         {
             return _neuralNetwork;
         }
-    // set.
+        public AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Wrapper Get_Wrapper()
+        {
+            return _wrapper;
+        }
+        // set.
 
-// private.
-        private void Create_NeuralNetworks(Avril_NNAI.NeuralNetworks neuralNetwork)
+        // private.
+        private void Create_NeuralNetworks(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.NeuralNetworks neuralNetwork)
         {
             _neuralNetwork = neuralNetwork;
         }
+        private void Create_Wrapper(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.Wrapper wrapper)
+        {
+            _wrapper = wrapper;
+        }   
     // get.
     // set.
     }
