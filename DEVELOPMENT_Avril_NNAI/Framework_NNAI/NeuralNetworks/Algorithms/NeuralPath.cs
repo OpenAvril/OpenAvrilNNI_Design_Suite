@@ -90,7 +90,7 @@ namespace Avril_NNAI
             {
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Input_Praise_0 subsetOfInput_Praise_0 = (Avril_NNAI.Input_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(0);
-                    objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_0.Get_NumberOfInputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Inputs(new double[subsetOfInput_Praise_0.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_0.Get_NumberOfInputValues(); index++)
                     {
                         subsetOfInput_Praise_0.Set_Item_Of_Input_Praise(index, 0.0);
@@ -99,7 +99,7 @@ namespace Avril_NNAI
 
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Input_Praise_1 subsetOfInput_Praise_1 = (Avril_NNAI.Input_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(1);
-                    objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_1.Get_NumberOfInputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Inputs(new double[subsetOfInput_Praise_1.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_1.Get_NumberOfInputValues(); index++)
                     {
                         subsetOfInput_Praise_1.Set_Item_Of_Input_Praise(index, 0.0);
@@ -108,7 +108,7 @@ namespace Avril_NNAI
 
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Input_Praise_2 subsetOfInput_Praise_2 = (Avril_NNAI.Input_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Input().Get_ItemOnListOfInputSubsets(2);
-                    objNNAI.Create_REGISTERED_Inputs(new double[subsetOfInput_Praise_2.Get_NumberOfInputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Inputs(new double[subsetOfInput_Praise_2.Get_NumberOfInputValues()]);
                     for (byte index = 0; index < subsetOfInput_Praise_2.Get_NumberOfInputValues(); index++)
                     {
                         subsetOfInput_Praise_2.Set_Item_Of_Input_Praise(index, 0.0);
@@ -125,7 +125,7 @@ namespace Avril_NNAI
             {
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Output_Praise_0 subsetOfOutput_Praise_0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
-                    objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_0.Get_NumberOfOutputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Outputs(new double[subsetOfOutput_Praise_0.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_0.Get_NumberOfOutputValues(); index++)
                     {
                         subsetOfOutput_Praise_0.Set_Item_Of_Output_Praise(index, 0.0);
@@ -134,7 +134,7 @@ namespace Avril_NNAI
 
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_1:
                     Avril_NNAI.Output_Praise_1 subsetOfOutput_Praise_1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(1);
-                    objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_1.Get_NumberOfOutputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Outputs(new double[subsetOfOutput_Praise_1.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_1.Get_NumberOfOutputValues(); index++)
                     {
                         subsetOfOutput_Praise_1.Set_Item_Of_Output_Praise(index, 0.0);
@@ -143,7 +143,7 @@ namespace Avril_NNAI
 
                 case (ulong)Avril_NNAI.Global.PraiseID.Praise_2:
                     Avril_NNAI.Output_Praise_2 subsetOfOutput_Praise_2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(2);
-                    objNNAI.Create_REGISTERED_Outputs(new double[subsetOfOutput_Praise_2.Get_NumberOfOutputValues()]);
+                    objNNAI.Create_List_Of_REGISTERED_Outputs(new double[subsetOfOutput_Praise_2.Get_NumberOfOutputValues()]);
                     for (byte index = 0; index < subsetOfOutput_Praise_2.Get_NumberOfOutputValues(); index++)
                     {
                         subsetOfOutput_Praise_2.Set_Item_Of_Output_Praise(index, 0.0);
@@ -171,13 +171,13 @@ namespace Avril_NNAI
             byte numberOfInputsForNode = new byte();
             numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
             
-            switch (outputID)
+            switch (objNNAI.Get_MetaData().Get_PraiseID())
             {
                 case (byte)Avril_NNAI.Global.PraiseID.Praise_0:
                     Avril_NNAI.Output_Praise_0 objobjOutputSubset_Praise0 = (Avril_NNAI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
-                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise0.Get_Item_Of_Output_Praise(inputID)); ;
+                        objNNAI.Get_Item_On_List_Of_Constant(constantID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise0.Get_Item_Of_Output_Praise(inputID)); ;
                     }
                     break;
 
@@ -185,7 +185,7 @@ namespace Avril_NNAI
                     Avril_NNAI.Output_Praise_1 objOutputSubset_Praise1 = (Avril_NNAI.Output_Praise_1)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
-                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objOutputSubset_Praise1.Get_Item_Of_Output_Praise(inputID)); ;
+                        objNNAI.Get_Item_On_List_Of_Constant(constantID).Set_Constant_REGISTERED_Output(objOutputSubset_Praise1.Get_Item_Of_Output_Praise(inputID)); ;
                     }
                     break;
 
@@ -193,7 +193,7 @@ namespace Avril_NNAI
                     Avril_NNAI.Output_Praise_2 objobjOutputSubset_Praise2 = (Avril_NNAI.Output_Praise_2)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(outputID);
                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                     {
-                        objNNAI.Get_Item_On_List_Of_Constant(outputID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise2.Get_Item_Of_Output_Praise(inputID)); ;
+                        objNNAI.Get_Item_On_List_Of_Constant(constantID).Set_Constant_REGISTERED_Output(objobjOutputSubset_Praise2.Get_Item_Of_Output_Praise(inputID)); ;
                     }
                     break;
             }

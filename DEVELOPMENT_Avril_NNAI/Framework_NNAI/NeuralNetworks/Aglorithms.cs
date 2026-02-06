@@ -44,57 +44,50 @@ namespace Avril_NNAI
             byte numberOfPraiseSets = (byte)(_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - _AvrilNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
             byte numberOfResetToConstant = _AvrilNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT();
             System.Console.WriteLine("charlie");
-            _AvrilNNAI.Create_PraiseSet(new Avril_NNAI.PraiseSet[numberOfPraiseSets]);
+            _AvrilNNAI.Create_List_Of_PraiseSet(new Avril_NNAI.PraiseSet[numberOfPraiseSets]);
             while (_AvrilNNAI.Get_List_Of_PraiseSet() == null) { }
             System.Console.WriteLine("delta");
-            for (byte outputID = 0; outputID < (numberOfPraiseSets + numberOfResetToConstant); outputID++)
+            for (byte outputID = 0; outputID < numberOfPraiseSets; outputID++)
             {
                 System.Console.WriteLine("echo");
-                if (outputID < numberOfPraiseSets)
+
+                _AvrilNNAI.Set_Item_On_List_Of_PraiseSets(outputID, new Avril_NNAI.PraiseSet());
+                while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID] == null) { }
+
+                for (sbyte layerID = 4; layerID > -1; layerID--)
                 {
-                    _AvrilNNAI.Set_Item_On_List_Of_PraiseSets(outputID, new Avril_NNAI.PraiseSet());
-                    while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID] == null) { }
+                    byte hiddenLayerID = Convert.ToByte(layerID);
+                    System.Console.WriteLine("foxtrot");
+                    obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_NumberOfNodesInHiddenLayer(_AvrilNNAI, outputID, hiddenLayerID);
+                    obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Create_Layer_Nodes(_AvrilNNAI, outputID, hiddenLayerID);
 
-                    for (sbyte layerID = 4; layerID > -1; layerID--)
+                    for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                     {
-                        byte hiddenLayerID = Convert.ToByte(layerID);
-                        System.Console.WriteLine("foxtrot");
-                        obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_NumberOfNodesInHiddenLayer(_AvrilNNAI, outputID, hiddenLayerID);
-                        obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Create_Layer_Nodes(_AvrilNNAI, outputID, hiddenLayerID);
-
-                        for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                        System.Console.WriteLine("delta");
+                        if (layerID == (byte)(4))
                         {
-                            System.Console.WriteLine("delta");
-                            if (layerID == (byte)(4))
-                            {
-                                _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues()]);
-                                while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID].Get_Node(hiddenLayerID, nodeID).Get_List_Of_NeuralPathOfInput() == null) { }
+                            _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseInputValues()]);
+                            while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID].Get_Node(hiddenLayerID, nodeID).Get_List_Of_NeuralPathOfInput() == null) { }
 
-                                _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_NeuralPathOfInput_SubSet(hiddenLayerID, obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Linear());
-                                obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, _AvrilNNAI, outputID, hiddenLayerID, nodeID);
-                            }
-                            else
-                            {
-                                _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1))]);
-                                while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID].Get_Node(hiddenLayerID, nodeID).Get_List_Of_NeuralPathOfInput() == null) { }
+                            _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_NeuralPathOfInput_SubSet(hiddenLayerID, obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Linear());
+                            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, _AvrilNNAI, outputID, hiddenLayerID, nodeID);
+                        }
+                        else
+                        {
+                            _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1))]);
+                            while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID].Get_Node(hiddenLayerID, nodeID).Get_List_Of_NeuralPathOfInput() == null) { }
 
-                                obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, _AvrilNNAI, outputID, hiddenLayerID, nodeID);
-                            }
+                            obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, _AvrilNNAI, outputID, hiddenLayerID, nodeID);
                         }
                     }
                 }
-                else if (outputID < (numberOfPraiseSets + numberOfResetToConstant))
-                {
-                    _AvrilNNAI.Create_Constants(new Avril_NNAI.Constant[(byte)(_AvrilNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - numberOfResetToConstant)]);
-                    _AvrilNNAI.Set_Item_On_List_Of_Constant((byte)(outputID - numberOfPraiseSets), obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Constant());
-                    while (_AvrilNNAI.Get_List_Of_PraiseSet()[(byte)(outputID - numberOfPraiseSets)] == null) { }
-
-                    for (byte constantID = 0; constantID < numberOfResetToConstant; constantID++)
-                    {
-                        obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Constant_Path_To_Output(obj, _AvrilNNAI, outputID, constantID);
-                        //ToDo:
-                    }
-                }
+            }
+            for (byte outputID = 0; outputID < numberOfResetToConstant; outputID++)
+            {
+                _AvrilNNAI.Create_List_Of_Constants(new Avril_NNAI.Constant[numberOfResetToConstant]);
+                while (_AvrilNNAI.Get_List_Of_Constant() == null) { }
+                _AvrilNNAI.Set_Item_On_List_Of_Constant(outputID, obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Constant());
+                obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Constant_Path_To_Output(obj, _AvrilNNAI, outputID, outputID);
             }
             return _AvrilNNAI;
         }

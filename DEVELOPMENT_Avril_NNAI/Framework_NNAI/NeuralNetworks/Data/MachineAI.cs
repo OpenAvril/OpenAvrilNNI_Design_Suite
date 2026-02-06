@@ -19,20 +19,20 @@ namespace Avril_NNAI
             Create_MetaData(new Avril_NNAI.MetaData());
             while (Get_MetaData() == null) { }
 
-            Create_REGISTERED_Inputs(new double[Get_MetaData().Get_NumberOfPraiseInputValues()]);
+            Create_List_Of_REGISTERED_Inputs(new double[Get_MetaData().Get_NumberOfPraiseInputValues()]);
             for (ulong index = 0; index < Get_MetaData().Get_NumberOfPraiseInputValues(); index++)
             {
                 Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
             }
 
-            Create_PraiseSet(new Avril_NNAI.PraiseSet[Get_MetaData().Get_NumberOfPraiseInputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()]);
+            Create_List_Of_PraiseSet(new Avril_NNAI.PraiseSet[Get_MetaData().Get_NumberOfPraiseInputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()]);
             while (Get_List_Of_PraiseSet() == null) { }
 
-            Create_Constants(new Avril_NNAI.Constant[Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()]);
+            Create_List_Of_Constants(new Avril_NNAI.Constant[Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()]);
             while(Get_List_Of_Constant() == null) { }
 
-            Create_REGISTERED_Outputs(new double[Get_MetaData().Get_NumberOfPraiseOutputValues()]);
-            for (ulong index = 0; index < Get_MetaData().Get_NumberOfPraiseOutputValues(); index++)
+            Create_List_Of_REGISTERED_Outputs(new double[Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()]);
+            for (ulong index = 0; index < Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT(); index++)
             {
                 Set_Item_On_List_Of_REGISTERED_Output(index, 0.0);
             }
@@ -44,19 +44,19 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Create_Constants(Avril_NNAI.Constant[] value)
+        public void Create_List_Of_Constants(Avril_NNAI.Constant[] value)
         {
             _constants = value;
         }
-        public void Create_REGISTERED_Inputs(double[] value)
+        public void Create_List_Of_REGISTERED_Inputs(double[] value)
         {
             _REGISTERED_Inputs = value;
         }
-        public void Create_REGISTERED_Outputs(double[] value)
+        public void Create_List_Of_REGISTERED_Outputs(double[] value)
         {
             _REGISTERED_Outputs = value;
         }
-        public void Create_PraiseSet(Avril_NNAI.PraiseSet[] value)
+        public void Create_List_Of_PraiseSet(Avril_NNAI.PraiseSet[] value)
         {
             _praiseSet = value;
         }
@@ -87,11 +87,11 @@ namespace Avril_NNAI
         {
             return _praiseSet[praiseTreeID];
         }
-        public double Get_Item_On_REGISTERED_Inputs(ulong registerID)
+        public double Get_Item_On_List_Of_REGISTERED_Inputs(ulong registerID)
         {
             return _REGISTERED_Inputs[registerID];
         }
-        public double Get_Item_On_REGISTERED_Outputs(ulong registerID)
+        public double Get_Item_On_List_Of_REGISTERED_Outputs(ulong registerID)
         {
             return _REGISTERED_Outputs[registerID];
         }
