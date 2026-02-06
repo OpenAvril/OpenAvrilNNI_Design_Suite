@@ -54,26 +54,26 @@ namespace Avril_NNAI
             switch (layerID)
             {
                 case (byte)Avril_NNAI.Global.NodeLayer.Layer_4:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer4_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer4_Nodes(objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
                 case (byte)Avril_NNAI.Global.NodeLayer.Layer_3:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer3_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer3_Nodes(objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
                 case (byte)Avril_NNAI.Global.NodeLayer.Layer_2:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer2_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer2_Nodes(objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
                 case (byte)Avril_NNAI.Global.NodeLayer.Layer_1:
-                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer1_Nodes(objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
+                    objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer1_Nodes(objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
                     break;
 
                 case (byte)Avril_NNAI.Global.NodeLayer.Layer_0:
                     objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Create_Layer0_Node(newEmptyNode);
                     break;
             }
-            for (ulong nodeID = 0; nodeID < objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
+            for (ulong nodeID = 0; nodeID < objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
             {
                 objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Set_Node(layerID, nodeID, newEmptyNode);
             }
@@ -214,7 +214,7 @@ namespace Avril_NNAI
             }
             else
             {
-                numberOfInputsForNode = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
+                numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
             }
             objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Set_NumberOfInputs(numberOfInputsForNode);
             System.Console.WriteLine("NumberOfInputs = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(layerID, nodeID).Get_NumberOfInputs());
@@ -254,8 +254,8 @@ namespace Avril_NNAI
                     numberOfNodesInLayer = (ulong)1;
                     break;
             }
-            objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Set_NumberOfNodesInHiddenLayer(layerID, numberOfNodesInLayer);
-            System.Console.WriteLine("outputID = " + outputID + "  layerID == " + layerID + "  Set_NumberOfNodesInLayer = " + objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(layerID));
+            objNNAI.Get_MetaData().Set_NumberOfNodesInHiddenLayer(layerID, numberOfNodesInLayer);
+            System.Console.WriteLine("outputID = " + outputID + "  layerID == " + layerID + "  Set_NumberOfNodesInLayer = " + objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID));
         }
 
 // private.

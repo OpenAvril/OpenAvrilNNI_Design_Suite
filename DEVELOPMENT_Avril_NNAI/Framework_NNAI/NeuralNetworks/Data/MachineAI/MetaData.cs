@@ -7,6 +7,7 @@ namespace Avril_NNAI
 
 // registers.
         private string _nameOfNNAI;
+        private ulong[] _NumberOfNodesInLayer;
         private byte _NumberOfResetToConstantValues_INPUT;
         private byte _NumberOfResetToConstantValues_OUTPUT;
         private byte _NumberOfPraiseValues_INPUT;
@@ -36,6 +37,12 @@ namespace Avril_NNAI
             Create_NumberOfResetToConstantValues_OUTPUT(new byte());
             Set_NumberOfResetToConstantValues_OUTPUT(0);
 
+            Create_NumberOfNodesInLayer(new ulong[5]);
+            Set_NumberOfNodesInHiddenLayer(4, 5);
+            Set_NumberOfNodesInHiddenLayer(3, 4);
+            Set_NumberOfNodesInHiddenLayer(2, 3);
+            Set_NumberOfNodesInHiddenLayer(1, 2);
+            Set_NumberOfNodesInHiddenLayer(0, 1);
         }
 
 // destructor.
@@ -45,11 +52,16 @@ namespace Avril_NNAI
         }
 
 // public.
-// get.
+    // get.
         public string Get_NameOfNNAI()
         {
             return _nameOfNNAI;
         }
+        public ulong Get_NumberOfNodesInHiddenLayer(byte hiddenLayerID)
+        {
+            return _NumberOfNodesInLayer[hiddenLayerID];
+        }
+
         public byte Get_NumberOfResetToConstantValues_INPUT()
         {
             return _NumberOfResetToConstantValues_INPUT;
@@ -72,6 +84,14 @@ namespace Avril_NNAI
         }
 
     // set.
+        public void Set_NumberOfNodesInHiddenLayer(byte layerID, ulong numberOfNodes)
+        {
+            _NumberOfNodesInLayer[layerID] = numberOfNodes;
+        }
+        public void Set_NumberOfNodesInLayer(byte layerID, ulong numberOfNodeInLayer)
+        {
+            _NumberOfNodesInLayer[layerID] = numberOfNodeInLayer;
+        }
         public void Set_NumberOfResetToConstantValues_INPUT(byte value)
         {
             _NumberOfResetToConstantValues_INPUT = value;
@@ -88,11 +108,23 @@ namespace Avril_NNAI
         {
             _NumberOfPraiseValues_OUTPUT = value;
         }
+        public void Set_NameOfNNAI(string nameOfNNAI)
+        {
+            _nameOfNNAI = nameOfNNAI;
+        }
+        public void Set_PraiseID(ulong praiseID)
+        {
+            _PraiseID = praiseID;
+        }
 
 // private.
         private void Create_NameOfNNAI(string value)
         {
             _nameOfNNAI = value;
+        }
+        private void Create_NumberOfNodesInLayer(ulong[] liatOfNumberOfNodesInLayer)
+        {
+            _NumberOfNodesInLayer = liatOfNumberOfNodesInLayer;
         }
         private void Create_NumberOfResetToConstantValues_INPUT(byte value)
         {
@@ -115,17 +147,14 @@ namespace Avril_NNAI
         {
             _PraiseID = value;
         }
-        
-    // get.
 
+    // get.
+        private ulong[] Get_List_Of_NumberOfNodesInLayer()
+        {
+            return _NumberOfNodesInLayer;
+        }
+        
     // set.
-        public void Set_NameOfNNAI(string nameOfNNAI)
-        {
-            _nameOfNNAI = nameOfNNAI;
-        }
-        private void Set_PraiseID(ulong praiseID)
-        {
-            _PraiseID = praiseID;
-        }
+
     }
 }

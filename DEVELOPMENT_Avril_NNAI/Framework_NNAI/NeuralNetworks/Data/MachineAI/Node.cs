@@ -45,9 +45,9 @@ namespace Avril_NNAI
         }
     
     // get.
-        public Avril_NNAI.Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong nodeID)
+        public Avril_NNAI.Linear Get_Item_On_List_Of_NeuralPathOfInput(ulong inputID)
         {
-            return _List_Of_NeuralPathOfNodeInputs[nodeID];
+            return _List_Of_NeuralPathOfNodeInputs[inputID];
         }
         public Avril_NNAI.Linear[] Get_List_Of_NeuralPathOfInput()
         {

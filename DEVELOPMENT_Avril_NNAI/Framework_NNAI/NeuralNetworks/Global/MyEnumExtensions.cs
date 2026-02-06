@@ -14,7 +14,7 @@ namespace Avril_NNAI
         // destructor.
 
         // public.
-        public static string ToDescriptionString(this Avril_NNAI.FileReadWrite.FILE_NAME val)
+        public static string ToDescriptionString(Avril_NNAI.Global.FILE_NAME val)
         {
             DescriptionAttribute[] attributes = (DescriptionAttribute[])val
                .GetType()

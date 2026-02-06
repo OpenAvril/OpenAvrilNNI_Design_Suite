@@ -12,7 +12,6 @@
         private Avril_NNAI.Node[] _Layer2_Nodes;
         private Avril_NNAI.Node[] _Layer1_Nodes;
         private Avril_NNAI.Node _Layer0_Node;
-        private ulong[] _NumberOfNodesInLayer;
 
 // constructor.
         public PraiseSet()
@@ -21,13 +20,6 @@
 
             Avril_NNAI.Node newEmpty = new Avril_NNAI.Node();
             while (newEmpty == null) { }
-
-            Create_NumberOfNodesInLayer(new ulong[5]);
-            Set_NumberOfNodesInHiddenLayer(4, 5);
-            Set_NumberOfNodesInHiddenLayer(3, 4);
-            Set_NumberOfNodesInHiddenLayer(2, 3);
-            Set_NumberOfNodesInHiddenLayer(1, 2);
-            Set_NumberOfNodesInHiddenLayer(0, 1);
 
             Create_Layer4_Nodes(5, new Avril_NNAI.Node());
             while (Get_Layer4_Nodes() == null) { }
@@ -110,10 +102,6 @@
             _Layer0_Node = newEmpty_Node;
             while(Get_Layer0_Node() == null) { }
         }
-        public void Create_NumberOfNodesInLayer(ulong[] liatOfNumberOfNodesInLayer)
-        {
-            _NumberOfNodesInLayer = liatOfNumberOfNodesInLayer;
-        }
 
     // get.
         public Avril_NNAI.Node Get_Node(byte layer, ulong nodeID)
@@ -138,10 +126,6 @@
                 default:
                     return null;
             }
-        }
-        public ulong Get_NumberOfNodesInHiddenLayer(byte hiddenLayerID)
-        {
-            return _NumberOfNodesInLayer[hiddenLayerID];
         }
 
     // set.
@@ -172,15 +156,6 @@
                 default:
                     break;
             }
-        }
-
-        public void Set_NumberOfNodesInHiddenLayer(byte layerID, ulong numberOfNodes)
-        {
-            _NumberOfNodesInLayer[layerID] = numberOfNodes;
-        }
-        public void Set_NumberOfNodesInLayer(byte layerID, ulong numberOfNodeInLayer)
-        {
-            _NumberOfNodesInLayer[layerID] = numberOfNodeInLayer;
         }
 
 // private.
@@ -220,10 +195,6 @@
         private Avril_NNAI.Node Get_Layer0_Node()
         {
             return _Layer0_Node;
-        }
-        private ulong[] Get_List_Of_NumberOfNodesInLayer()
-        {
-            return _NumberOfNodesInLayer;
         }
 
     // set.

@@ -62,7 +62,7 @@ namespace Avril_NNAI
                         obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_NumberOfNodesInHiddenLayer(_AvrilNNAI, outputID, hiddenLayerID);
                         obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Create_Layer_Nodes(_AvrilNNAI, outputID, hiddenLayerID);
 
-                        for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                        for (ulong nodeID = 0; nodeID < _AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                         {
                             System.Console.WriteLine("delta");
                             if (layerID == (byte)(4))
@@ -75,7 +75,7 @@ namespace Avril_NNAI
                             }
                             else
                             {
-                                _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1))]);
+                                _AvrilNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Create_List_Of_NeuralPathOfNodeInputs(new Avril_NNAI.Linear[_AvrilNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1))]);
                                 while (_AvrilNNAI.Get_List_Of_PraiseSet()[outputID].Get_Node(hiddenLayerID, nodeID).Get_List_Of_NeuralPathOfInput() == null) { }
 
                                 obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Set_Neural_Path_For_Input(obj, _AvrilNNAI, outputID, hiddenLayerID, nodeID);
@@ -100,8 +100,7 @@ namespace Avril_NNAI
         }
         public void Save_Instance_Of_MachineAI_To_File(Avril_NNAI.Framework_NNAI obj, Avril_NNAI.MachineAI objNNAI)
         {
-
-
+            obj.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(obj, objNNAI, objNNAI.Get_MetaData().Get_NameOfNNAI());
         }
 
         // get.
