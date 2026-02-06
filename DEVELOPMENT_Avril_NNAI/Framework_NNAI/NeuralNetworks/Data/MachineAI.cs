@@ -63,8 +63,41 @@ namespace Avril_NNAI
         }
         public bool Run_Neural_Network_Inteligence(Avril_NNAI.MachineAI objNNAI)
         {
-            //Todo: NNAI comput algorithm.
-            return false;
+            if (objNNAI.Get_IsNewDataReady() == false)
+            {
+                byte numberOfPraiseSets = (byte)(objNNAI.Get_MetaData().Get_NumberOfPraiseOutputValues() - objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
+                byte numberOfResetToConstant = objNNAI.Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT();
+                double outputValue = 0.0;
+                for (byte outputID = 0; outputID < numberOfPraiseSets; outputID++)
+                {
+                    for (sbyte layerID = 4; layerID > -1; layerID--)
+                    {
+                        byte hiddenLayerID = Convert.ToByte(layerID);
+                        for (ulong nodeID = 0; nodeID < objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                        {
+                            ulong numberOfInputsForNode = new ulong();
+                            numberOfInputsForNode = 0;
+                            if (layerID == (byte)4)
+                            {
+                                numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfPraiseInputValues();
+                            }
+                            else
+                            {
+                                numberOfInputsForNode = objNNAI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
+                            }
+                            for (ulong inputID = 0; inputID < numberOfInputsForNode; inputID++)
+                            {
+                                outputValue = objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_NeuralPathOfInput(inputID).Run_Neural_Path_Calculation(objNNAI, outputID, hiddenLayerID, nodeID, inputID);
+                                objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(outputValue);
+                            }
+                        }
+                    }
+                    objNNAI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNAI.Get_Item_On_List_Of_PraiseSets(outputID).Get_Node(0, 1).Get_REGISTERED_Output());
+                }
+                
+            }
+            objNNAI.Set_IsNewDataReady(true);
+            return objNNAI.Get_IsNewDataReady();
         }
     // get.
         public bool Get_IsNewDataReady()

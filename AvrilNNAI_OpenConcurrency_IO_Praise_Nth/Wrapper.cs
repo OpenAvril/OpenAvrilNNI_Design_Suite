@@ -25,11 +25,7 @@
         }
         public bool Run_Neural_Network_Inteligence(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI)
         {
-            if (objNNAI.Get_IsNewDataReady() == false)
-            {
-                objNNAI.Set_IsNewDataReady(objNNAI.Run_Neural_Network_Inteligence(objNNAI));
-            }
-            return objNNAI.Get_IsNewDataReady();
+            return objNNAI.Run_Neural_Network_Inteligence(objNNAI);
         }
         // get.
         public double[] Get_Output_Values(AvrilNNAI_OpenConcurrency_IO_Praise_Nth.MachineAI objNNAI)
