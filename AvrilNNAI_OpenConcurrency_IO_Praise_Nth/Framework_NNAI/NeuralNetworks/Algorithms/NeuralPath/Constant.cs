@@ -8,13 +8,13 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 // classes.
 
 // registers.
-        private double _constant_REGISTERED_Output;
+        private double _constant;
 
 // constructor.
         public Constant()
         {
             //System.Console.WriteLine("entered Constant.");
-            Create_Constant_REGISTERED_Output();
+            Create_Constant();
             //System.Console.WriteLine("exiting Constant.");
         }
 
@@ -26,21 +26,21 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 
 // public.
     // get.
-        public double Get_Constant_REGISTERED_Output()
+        public double Get_Constant()
         {
-            return _constant_REGISTERED_Output;
+            return _constant;
         }
     // set.
-        public void Set_Constant_REGISTERED_Output(double newConstant)
+        public void Set_Constant(double newConstant)
         {
-            _constant_REGISTERED_Output = newConstant;
+            _constant = newConstant;
         }
         
 // private.
-        private void Create_Constant_REGISTERED_Output()
+        private void Create_Constant()
         {
-            _constant_REGISTERED_Output = new double();
-            Set_Constant_REGISTERED_Output(0.0);
+            _constant = new double();
+            Set_Constant(0.0);
         }   
     // get.
     // set

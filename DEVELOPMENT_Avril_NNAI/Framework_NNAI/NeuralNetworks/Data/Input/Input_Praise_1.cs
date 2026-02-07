@@ -33,9 +33,9 @@ namespace Avril_NNAI
             Create_Capsule_Fowards_X();
             Create_Capsule_Fowards_Y();
             Create_Capsule_Fowards_Z();
-            Create_Capsule_Up_X();
-            Create_Capsule_Up_Y();
-            Create_Capsule_Up_Z();
+            Create_Capsule_Up_X_CONST();
+            Create_Capsule_Up_Y_CONST();
+            Create_Capsule_Up_Z_CONST();
             Create_Capsule_Right_X();
             Create_Capsule_Right_Y();
             Create_Capsule_Right_Z();
@@ -187,17 +187,17 @@ namespace Avril_NNAI
             _Capsule_Fowards_Z = new double();
             Set_Capsule_Fowards_Z(0.0);
         }
-        private void Create_Capsule_Up_X()
+        private void Create_Capsule_Up_X_CONST()
         {
             _Capsule_Up_X = new double();
             Set_Capsule_Up_X_CONST();
         }
-        private void Create_Capsule_Up_Y()
+        private void Create_Capsule_Up_Y_CONST()
         {
             _Capsule_Up_Y = new double();
             Set_Capsule_Up_Y_CONST();
         }
-        private void Create_Capsule_Up_Z()
+        private void Create_Capsule_Up_Z_CONST()
         {
             _Capsule_Up_Z = new double();
             Set_Capsule_Up_Z_CONST();
@@ -233,15 +233,15 @@ namespace Avril_NNAI
         }
         private double Get_Capsule_Up_X_CONST()
         {
-            return 0.0;
+            return _Capsule_Up_X;
         }
         private double Get_Capsule_Up_Y_CONST()
         {
-            return 1.0;
+            return _Capsule_Up_Y;
         }
         private double Get_Capsule_Up_Z_CONST()
         {
-            return 0.0;
+            return _Capsule_Up_Z;
         }
         private double Get_Capsule_Right_X()
         {

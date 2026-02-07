@@ -6,6 +6,8 @@ namespace Avril_NNAI
 // classes.
         private Avril_NNAI.Constant[] _constants;
         private Avril_NNAI.MetaData _metaData;
+        private Avril_NNAI.Constant _newConstant;
+        private Avril_NNAI.PraiseSet _newPraiseSet;
         private Avril_NNAI.PraiseSet[] _praiseSet;
 
 // registers.
@@ -17,26 +19,14 @@ namespace Avril_NNAI
         public MachineAI()
         {
             //System.Console.WriteLine("entered MachineAI.");
-            Create_MetaData(new Avril_NNAI.MetaData());
-            while (Get_MetaData() == null) { }
-
-            Create_List_Of_REGISTERED_Inputs(new double[Get_MetaData().Get_NumberOfPraiseInputValues()]);
-            for (ulong index = 0; index < Get_MetaData().Get_NumberOfPraiseInputValues(); index++)
-            {
-                Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
-            }
-
-            Create_List_Of_PraiseSet(new Avril_NNAI.PraiseSet[Get_MetaData().Get_NumberOfPraiseInputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_INPUT()]);
-            while (Get_List_Of_PraiseSet() == null) { }
-
-            Create_List_Of_Constants(new Avril_NNAI.Constant[Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()]);
-            while(Get_List_Of_Constant() == null) { }
-
-            Create_List_Of_REGISTERED_Outputs(new double[Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()]);
-            for (ulong index = 0; index < Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT(); index++)
-            {
-                Set_Item_On_List_Of_REGISTERED_Output(index, 0.0);
-            }
+            Create_MetaData();
+            Create_New_PraiseSet();
+            Create_List_Of_PraiseSet((byte)(Get_MetaData().Get_NumberOfPraiseOutputValues() - Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT()));
+            Create_New_Constant();
+            Create_List_Of_Constants(Get_MetaData().Get_NumberOfResetToConstantValues_OUTPUT());
+            Create_List_Of_REGISTERED_Inputs(Get_MetaData().Get_NumberOfPraiseInputValues());
+            Create_List_Of_REGISTERED_Outputs(Get_MetaData().Get_NumberOfPraiseOutputValues());
+            Create_IsNewDataReady();
         }
 
 // destructor.
@@ -45,21 +35,39 @@ namespace Avril_NNAI
         }
 
 // public.
-        public void Create_List_Of_Constants(Avril_NNAI.Constant[] value)
+        public void Create_List_Of_Constants(byte numberOfResetToConstantValues)
         {
-            _constants = value;
+            _constants = new Avril_NNAI.Constant[numberOfResetToConstantValues];
+            while (Get_List_Of_Constant() == null) { }
+            for(byte index = 0; index < numberOfResetToConstantValues; index++)
+            {
+                Set_Item_On_List_Of_Constant(index, Get_New_Constant());
+            }
         }
-        public void Create_List_Of_REGISTERED_Inputs(double[] value)
+        public void Create_List_Of_REGISTERED_Inputs(byte numberOfInputValues)
         {
-            _REGISTERED_Inputs = value;
+            _REGISTERED_Inputs = new double[numberOfInputValues];
+            for (byte index = 0; index < numberOfInputValues; index++)
+            {
+                Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
+            }
         }
-        public void Create_List_Of_REGISTERED_Outputs(double[] value)
+        public void Create_List_Of_REGISTERED_Outputs(byte numberOfOutputValues)
         {
-            _REGISTERED_Outputs = value;
+            _REGISTERED_Outputs = new double[numberOfOutputValues];
+            for (byte index = 0; index < numberOfOutputValues; index++)
+            {
+                Set_Item_On_List_Of_REGISTERED_Output(index, 0.0);
+            }
         }
-        public void Create_List_Of_PraiseSet(Avril_NNAI.PraiseSet[] value)
+        public void Create_List_Of_PraiseSet( byte numberOfPraiseTrees)
         {
-            _praiseSet = value;
+            _praiseSet = new Avril_NNAI.PraiseSet[numberOfPraiseTrees];
+            while (Get_List_Of_PraiseSet() == null) { }
+            for (byte index = 0; index < numberOfPraiseTrees; index++)
+            {
+                Set_Item_On_List_Of_PraiseSets(index, Get_New_PraiseSet());
+            }
         }
         public bool Run_Neural_Network_Inteligence(Avril_NNAI.MachineAI objNNAI)
         {
@@ -135,7 +143,14 @@ namespace Avril_NNAI
         {
             return _metaData;
         }
-
+        public Avril_NNAI.Constant Get_New_Constant()
+        {
+            return _newConstant;
+        }
+        public Avril_NNAI.PraiseSet Get_New_PraiseSet()
+        {
+            return _newPraiseSet;
+        }
     // set.
         public void Set_IsNewDataReady(bool value)
         {
@@ -159,17 +174,40 @@ namespace Avril_NNAI
         }
 
 // private.
-        private void Create_IsNewDataReady(bool value)
+
+        private void Create_IsNewDataReady()
         {
-            _isNewDataReady = value;
+            _isNewDataReady = new bool();
+            Set_IsNewDataReady(false);
         }
-        private void Create_MetaData(Avril_NNAI.MetaData value)
+        private void Create_MetaData()
+        {
+            Set_MetaData(new Avril_NNAI.MetaData());
+            while (Get_MetaData() == null) { }
+        }
+        private void Create_New_Constant()
+        {
+            Set_New_Constant(new Avril_NNAI.Constant());
+            while (Get_New_Constant() == null) { }
+        }
+        private void Create_New_PraiseSet()
+        {
+            Set_New_PraiseSet(new Avril_NNAI.PraiseSet());
+            while (Get_New_PraiseSet() == null) { }
+        }
+    // get.
+    // set.
+        private void Set_New_Constant(Avril_NNAI.Constant value)
+        {
+            _newConstant = value;
+        }
+        private void Set_New_PraiseSet(Avril_NNAI.PraiseSet value)
+        {
+            _newPraiseSet = value;
+        }
+        private void Set_MetaData(Avril_NNAI.MetaData value)
         {
             _metaData = value;
         }
-
-    // get.
-        
-    // set.
     }
 }

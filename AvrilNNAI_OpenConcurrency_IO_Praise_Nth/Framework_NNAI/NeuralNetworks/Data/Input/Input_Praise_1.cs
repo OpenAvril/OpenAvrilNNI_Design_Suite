@@ -4,20 +4,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
     public class Input_Praise_1
     {
 // definitions.
-        private enum PRAISE_1 : byte
-        {
-            Mouse_Screen_X,
-            Mouse_Screen_Y,
-            Capsule_Fowards_X,
-            Capsule_Fowards_Y,
-            Capsule_Fowards_Z,
-            Capsule_Right_X,
-            Capsule_Right_Y,
-            Capsule_Right_Z,
-            Capsule_Up_X,
-            Capsule_Up_Y,
-            Capsule_Up_Z,
-        }
+
         
 // classes.
 
@@ -46,9 +33,9 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             Create_Capsule_Fowards_X();
             Create_Capsule_Fowards_Y();
             Create_Capsule_Fowards_Z();
-            Create_Capsule_Up_X();
-            Create_Capsule_Up_Y();
-            Create_Capsule_Up_Z();
+            Create_Capsule_Up_X_CONST();
+            Create_Capsule_Up_Y_CONST();
+            Create_Capsule_Up_Z_CONST();
             Create_Capsule_Right_X();
             Create_Capsule_Right_Y();
             Create_Capsule_Right_Z();
@@ -65,37 +52,37 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         {
             switch (index)
             {
-                case (byte)PRAISE_1.Mouse_Screen_X:
+                case (byte)Global.PRAISE_1.Mouse_Screen_X:
                     return Get_Mouse_Screen_X();
 
-                case (byte)PRAISE_1.Mouse_Screen_Y:
+                case (byte)Global.PRAISE_1.Mouse_Screen_Y:
                     return Get_Mouse_Screen_Y();
 
-                case (byte)PRAISE_1.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_X:
                     return Get_Capsule_Fowards_X();
 
-                case (byte)PRAISE_1.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_Y:
                     return Get_Capsule_Fowards_Y();
 
-                case (byte)PRAISE_1.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_Z:
                     return Get_Capsule_Fowards_Z();
 
-                case (byte)PRAISE_1.Capsule_Up_X:
+                case (byte)Global.PRAISE_1.Capsule_Up_X:
                     return Get_Capsule_Up_X_CONST();
 
-                case (byte)PRAISE_1.Capsule_Up_Y:
+                case (byte)Global.PRAISE_1.Capsule_Up_Y:
                     return Get_Capsule_Up_Y_CONST();
 
-                case (byte)PRAISE_1.Capsule_Up_Z:
+                case (byte)Global.PRAISE_1.Capsule_Up_Z:
                     return Get_Capsule_Up_Z_CONST();
 
-                case (byte)PRAISE_1.Capsule_Right_X:
+                case (byte)Global.PRAISE_1.Capsule_Right_X:
                     return Get_Capsule_Right_X();
 
-                case (byte)PRAISE_1.Capsule_Right_Y:
+                case (byte)Global.PRAISE_1.Capsule_Right_Y:
                     return Get_Capsule_Right_Y();
 
-                case (byte)PRAISE_1.Capsule_Right_Z:
+                case (byte)Global.PRAISE_1.Capsule_Right_Z:
                     return Get_Capsule_Right_Z();
 
                 default:
@@ -115,47 +102,47 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         {
             switch (index)
             {
-                case (byte)PRAISE_1.Mouse_Screen_X:
+                case (byte)Global.PRAISE_1.Mouse_Screen_X:
                     Set_Mouse_Screen_X(value);
                     break;
 
-                case (byte)PRAISE_1.Mouse_Screen_Y:
+                case (byte)Global.PRAISE_1.Mouse_Screen_Y:
                     Set_Mouse_Screen_Y(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_X:
                     Set_Capsule_Fowards_X(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_Y:
                     Set_Capsule_Fowards_Y(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_1.Capsule_Fowards_Z:
                     Set_Capsule_Fowards_Z(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Up_X:
+                case (byte)Global.PRAISE_1.Capsule_Up_X:
                     Set_Capsule_Up_X_CONST();
                     break;
 
-                case (byte)PRAISE_1.Capsule_Up_Y:
+                case (byte)Global.PRAISE_1.Capsule_Up_Y:
                     Set_Capsule_Up_Y_CONST();
                     break;
 
-                case (byte)PRAISE_1.Capsule_Up_Z:
+                case (byte)Global.PRAISE_1.Capsule_Up_Z:
                     Set_Capsule_Up_Z_CONST();
                     break;
 
-                case (byte)PRAISE_1.Capsule_Right_X:
+                case (byte)Global.PRAISE_1.Capsule_Right_X:
                     Set_Capsule_Right_X(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Right_Y:
+                case (byte)Global.PRAISE_1.Capsule_Right_Y:
                     Set_Capsule_Right_Y(value);
                     break;
 
-                case (byte)PRAISE_1.Capsule_Right_Z:
+                case (byte)Global.PRAISE_1.Capsule_Right_Z:
                     Set_Capsule_Right_Z(value);
                     break;
 
@@ -200,17 +187,17 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
             _Capsule_Fowards_Z = new double();
             Set_Capsule_Fowards_Z(0.0);
         }
-        private void Create_Capsule_Up_X()
+        private void Create_Capsule_Up_X_CONST()
         {
             _Capsule_Up_X = new double();
             Set_Capsule_Up_X_CONST();
         }
-        private void Create_Capsule_Up_Y()
+        private void Create_Capsule_Up_Y_CONST()
         {
             _Capsule_Up_Y = new double();
             Set_Capsule_Up_Y_CONST();
         }
-        private void Create_Capsule_Up_Z()
+        private void Create_Capsule_Up_Z_CONST()
         {
             _Capsule_Up_Z = new double();
             Set_Capsule_Up_Z_CONST();
@@ -246,15 +233,15 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
         private double Get_Capsule_Up_X_CONST()
         {
-            return 0.0;
+            return _Capsule_Up_X;
         }
         private double Get_Capsule_Up_Y_CONST()
         {
-            return 1.0;
+            return _Capsule_Up_Y;
         }
         private double Get_Capsule_Up_Z_CONST()
         {
-            return 0.0;
+            return _Capsule_Up_Z;
         }
         private double Get_Capsule_Right_X()
         {

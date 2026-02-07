@@ -37,7 +37,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
 
 // public.
     // get.
-        public double Get_Item_On_List_Of_Input_Praise(byte index)
+        public double Get_Item_On_List_Of_Praise_Output(byte index)
         {
             switch (index)
             {
@@ -57,7 +57,7 @@ namespace AvrilNNAI_OpenConcurrency_IO_Praise_Nth
         }
 
     // set.
-        public void Set_Item_On_List_Of_Input_Praise(byte index, double value)
+        public void Set_Item_On_List_Of_Praise_Output(byte index, double value)
         {
             switch (index)
             {
