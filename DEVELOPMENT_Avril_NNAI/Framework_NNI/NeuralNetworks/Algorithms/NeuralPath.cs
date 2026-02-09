@@ -6,14 +6,15 @@ namespace OpenAvrilNNI
 // definitionns.
 
 // classes.
-        private OpenAvrilNNI.Binary _New_Binary;
+        private OpenAvrilNNI.Binary _New_Boolean;
         private OpenAvrilNNI.Constant _New_Constant;
         private OpenAvrilNNI.Linear _New_Linear;
         private OpenAvrilNNI.Linear_NeuralPath _New_Linear_NeuralPath;
+        private OpenAvrilNNI.Node _New_Node;
 
-        // registers.
+// registers.
 
-        // constructor.
+// constructor.
         public NeuralPath() 
         {
             //System.Console.WriteLine("entered NeuralPath.");
@@ -21,6 +22,7 @@ namespace OpenAvrilNNI
             Create_New_Constant();
             Create_New_Boolean();
             Create_New_Linear_NeuralPath();
+            Create_New_Node();
             //System.Console.WriteLine("exiting NeuralPath.");
         }
 
@@ -104,39 +106,6 @@ namespace OpenAvrilNNI
             }
 
 		}
-        public void Create_Layer_Nodes(OpenAvrilNNI.MachineAI objNNI, byte outputID, byte layerID)
-        {
-            var newEmptyNode = new OpenAvrilNNI.Node();
-            while (newEmptyNode == null) { }
-
-            switch (layerID)
-            {
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_4:
-                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer4_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_3:
-                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer3_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_2:
-                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer2_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_1:
-                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer1_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID), newEmptyNode);
-                    break;
-
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_0:
-                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer0_Node(newEmptyNode);
-                    break;
-            }
-            for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID); nodeID++)
-            {
-                objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Set_Node(layerID, nodeID, newEmptyNode);
-            }
-            
-        }
         public double Generate_Initial_Random_Small_Value(double minimum, double maximum)
         {
             Random random = new Random();
@@ -161,7 +130,7 @@ namespace OpenAvrilNNI
     // get.
         public OpenAvrilNNI.Binary Get_New_Boolean()
         {
-            return _New_Binary;
+            return _New_Boolean;
         }
         public OpenAvrilNNI.Constant Get_New_Constant()
         {
@@ -174,6 +143,10 @@ namespace OpenAvrilNNI
         public OpenAvrilNNI.Linear_NeuralPath Get_New_Linear_NeuralPath()
         {
             return _New_Linear_NeuralPath;
+        }
+        public OpenAvrilNNI.Node Get_New_Node()
+        {
+            return _New_Node;
         }
     // set.
         public void Set_Constant_From_Output_Subset(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, byte outputID)
@@ -206,7 +179,7 @@ namespace OpenAvrilNNI
             }
 
         }
-        public void Set_Neural_Path_For_Input(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, byte outputID, byte layerID, byte nodeID)
+        public void Set_Linear_NeuralPath_For_Input(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, byte outputID, byte layerID, byte nodeID)
         {
             System.Console.WriteLine("entered Create_Nodes.");
             byte numberOfInputsForNode = new byte();
@@ -236,29 +209,34 @@ namespace OpenAvrilNNI
 // private.
         private void Create_New_Boolean()
         {
-            _New_Binary = new OpenAvrilNNI.Binary();
+            Set_New_Boolean(new OpenAvrilNNI.Binary());
             while (Get_New_Boolean() == null) { }
         }
         private void Create_New_Constant()
         {
-            _New_Constant = new OpenAvrilNNI.Constant();
+            Set_New_Constant(new OpenAvrilNNI.Constant());
             while (Get_New_Constant() == null) { }
         }
         private void Create_New_Linear()
         {
-            _New_Linear = new OpenAvrilNNI.Linear();
+            Set_New_Linear(new OpenAvrilNNI.Linear());
             while (Get_New_Linear() == null) { }
         }
         private void Create_New_Linear_NeuralPath()
         {
-            _New_Linear_NeuralPath = new OpenAvrilNNI.Linear_NeuralPath();
+            Set_New_Linear_NeuralPath(new OpenAvrilNNI.Linear_NeuralPath());
             while (Get_New_Linear_NeuralPath() == null) { }
         }
-    // get.
-    // set.
+        private void Create_New_Node()
+        {
+            Set_New_Node(new OpenAvrilNNI.Node());
+            while (Get_New_Node() == null) { }
+        }
+        // get.
+        // set.
         private void Set_New_Boolean(OpenAvrilNNI.Binary newValue)
         {
-            _New_Binary = newValue;
+            _New_Boolean = newValue;
         }
         private void Set_New_Constant(OpenAvrilNNI.Constant newValue)
         {
@@ -272,6 +250,10 @@ namespace OpenAvrilNNI
         {
             _New_Linear_NeuralPath = newValue;
         }
+        private void Set_New_Node(OpenAvrilNNI.Node newValue)
+        {
+            _New_Node = newValue;
+        }
         private void Set_NumberOfNodesInHiddenLayer(OpenAvrilNNI.MachineAI objNNI, byte layerID)
         {
             byte numberOfNodesInLayer = new byte();
@@ -279,19 +261,19 @@ namespace OpenAvrilNNI
             switch (layerID)
             {
                 case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_4:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberOfLinearInputs() * (double)0.8);
+                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.8);
                     break;
 
                 case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_3:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberOfLinearInputs() * (double)0.6);
+                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.6);
                     break;
 
                 case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_2:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberOfLinearInputs() * (double)0.4);
+                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.4);
                     break;
 
                 case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_1:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberOfLinearInputs() * (double)0.2);
+                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.2);
                     break;
 
                 case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_0:

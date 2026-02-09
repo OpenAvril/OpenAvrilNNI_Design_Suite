@@ -35,29 +35,29 @@ namespace OpenAvrilNNI
 // public.
         public void Create_List_Of_Binary_Paths(byte numberOfBinaryValues)
         {
-            _List_Of_Binary_Paths = new Binary[numberOfBinaryValues];
+            _List_Of_Binary_Paths = new OpenAvrilNNI.Binary[numberOfBinaryValues];
             while (Get_List_Of_Binary_Paths() == null) { }
             for (byte index =0; index < numberOfBinaryValues; index++)
             {
-                Set_Item_On_List_Of_Binary_Paths(index, new Binary());
+                Set_Item_On_List_Of_Binary_Paths(index, new OpenAvrilNNI.Binary());
             }
         }
         public void Create_List_Of_Constant_Paths(byte numberOfResetToConstantValues)
         {
-            _List_Of_Constant_Paths = new Constant[numberOfResetToConstantValues];
+            _List_Of_Constant_Paths = new OpenAvrilNNI.Constant[numberOfResetToConstantValues];
             while (Get_List_Of_Constant_Paths() == null) { }
             for(byte index = 0; index < numberOfResetToConstantValues; index++)
             {
-                Set_Item_On_List_Of_Constant_Paths(index, new Constant());
+                Set_Item_On_List_Of_Constant_Paths(index, new OpenAvrilNNI.Constant());
             }
         }
         public void Create_List_Of_Linear_Paths(byte numberOfInputValuesForNode)
         {
-            _List_Of_Linear_Paths = new Linear[numberOfInputValuesForNode];
+            _List_Of_Linear_Paths = new OpenAvrilNNI.Linear[numberOfInputValuesForNode];
             while (Get_List_Of_Linear_Paths() == null) { }
             for (byte index = 0; index < numberOfInputValuesForNode; index++)
             {
-                Set_Item_On_List_Of_Linear_Paths(index, new Linear());
+                Set_Item_On_List_Of_Linear_Paths(index, new OpenAvrilNNI.Linear());
             }
         }
         public void Create_List_Of_REGISTERED_Inputs(byte numberOfInputValues)

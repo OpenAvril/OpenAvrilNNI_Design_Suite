@@ -69,7 +69,7 @@ namespace OpenAvrilNNI
         static private void Create_Framework_NNI()
         {
             framework = new OpenAvrilNNI.Framework_NNI();
-            while (framework == null) { }
+            while (Get_Framework_NNI() == null) { }
         }
     // get.
         static public OpenAvrilNNI.Framework_NNI Get_Framework_NNI()

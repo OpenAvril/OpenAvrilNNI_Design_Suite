@@ -22,7 +22,7 @@
             while (newEmpty == null) { }
 
             Create_Layer4_Nodes(5, new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node());
-            while (Get_Layer4_Nodes() == null) { }
+            while (Get_Item_On_List_Of_Nodes_For_Layer_4() == null) { }
             for (byte nodeID = 0; nodeID < 5; nodeID++) 
             {
                 Set_Layer4_Nodes(nodeID, newEmpty);
@@ -64,7 +64,7 @@
         public void Create_Layer4_Nodes(byte numberOfNodes, OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node newEmpty_Node)
         {
             _Layer4_Nodes = new OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node[numberOfNodes];
-            while (Get_Layer4_Nodes() == null)
+            while (Get_Item_On_List_Of_Nodes_For_Layer_4() == null)
             for (byte index = 0; index < numberOfNodes; index++)
             {
                 _Layer4_Nodes[index] = newEmpty_Node;
@@ -164,7 +164,7 @@
         {
             return _Layer4_Nodes[nodeID];
         }
-        private OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node[] Get_Layer4_Nodes()
+        private OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth.Node[] Get_Item_On_List_Of_Nodes_For_Layer_4()
         {
             return _Layer4_Nodes;
         }

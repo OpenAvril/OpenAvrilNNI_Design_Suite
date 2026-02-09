@@ -24,7 +24,7 @@ namespace OpenAvrilNNI
 // public.
         public void WriteValuesToFile(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, string fileName)
         {
-            string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName);
+            string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName + ".nni");
             using (var stream = File.Open(pathName, FileMode.Create))
             {
                 using (var writer = new BinaryWriter(stream, Encoding.UTF8, false))
