@@ -27,7 +27,7 @@ namespace OpenAvrilNNI
 // public.
         public OpenAvrilNNI.MachineAI Create_Instance_Of_MachineAI(OpenAvrilNNI.Framework_NNI obj, string nameOfNNI, byte praiseID)
         {
-            System.Console.WriteLine("entering ConstructNeuralNetworkAI_Frame.");
+            System.Console.WriteLine("entering Create_Instance_Of_MachineAI.");
             OpenAvrilNNI.MachineAI objNNI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
             while (objNNI == null) { }
             

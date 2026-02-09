@@ -62,9 +62,16 @@ namespace OpenAvrilNNI
                     objNNI.Get_MetaData().Set_NumberOfBooleanInputs(objValue_Praise2.Get_NumberOfBooleanInputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantInputs(objValue_Praise2.Get_NumberOfConstantInputs());
                     break;
+
+                case byte.MaxValue:
+                    objNNI.Get_MetaData().Set_NumberInputRegisters(1);
+                    objNNI.Get_MetaData().Set_NumberOfLinearInputs(0);
+                    objNNI.Get_MetaData().Set_NumberOfBooleanInputs(1);
+                    objNNI.Get_MetaData().Set_NumberOfConstantInputs(0);
+                    break;
             }
     // generate output parameters.
-            switch (praiseID)
+            switch (objNNI.Get_MetaData().Get_PraiseID())
             {
                 case (byte)OpenAvrilNNI.Global.PraiseID.Praise_0:
                     var objValue_Praise0 = (OpenAvrilNNI.Output_Praise_0)obj.Get_Neural_Networks().Get_Data().Get_Output().Get_ItemOnListOfOutputSubsets(0);
@@ -89,12 +96,19 @@ namespace OpenAvrilNNI
                     objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(objValue_Praise2.Get_NumberOfBooleanOutputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantOutputs(objValue_Praise2.Get_NumberOfConstantOutputs());
                     break;
+
+                case byte.MaxValue:
+                    objNNI.Get_MetaData().Set_NumberOutputRegisters(1);
+                    objNNI.Get_MetaData().Set_NumberOfLinearOutputs(0);
+                    objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(1);
+                    objNNI.Get_MetaData().Set_NumberOfConstantOutputs(0);
+                    break;
             }
-            System.Console.WriteLine("NumberOfPraiseInputValues = " + objNNI.Get_MetaData().Get_NumberOutputRegisters());
+            System.Console.WriteLine("NumberOfPraiseInputValues = " + objNNI.Get_MetaData().Get_NumberInputRegisters());
             System.Console.WriteLine("NumberOfLinearInputs = " + objNNI.Get_MetaData().Get_NumberOfLinearInputs());
             System.Console.WriteLine("NumberOfBooleanInputs = " + objNNI.Get_MetaData().Get_NumberOfBooleanInputs());
             System.Console.WriteLine("NumberOfConstantInputs = " + objNNI.Get_MetaData().Get_NumberOfConstantInputs());
-            System.Console.WriteLine("NumberOfPraiseOutputValues = " + objNNI.Get_MetaData().Get_NumberOfLinearOutputs());
+            System.Console.WriteLine("NumberOfPraiseOutputValues = " + objNNI.Get_MetaData().Get_NumberOutputRegisters());
             System.Console.WriteLine("NumberOfLinearOutputs = " + objNNI.Get_MetaData().Get_NumberOfLinearOutputs());
             System.Console.WriteLine("NumberOfBooleanOutputs = " + objNNI.Get_MetaData().Get_NumberOfBooleanOutputs());
             System.Console.WriteLine("NumberOfConstantOutputs = " + objNNI.Get_MetaData().Get_NumberOfConstantOutputs());
@@ -104,12 +118,7 @@ namespace OpenAvrilNNI
                 byte hiddenlayerID = Convert.ToByte(layerID);
                 Set_NumberOfNodesInHiddenLayer(objNNI, hiddenlayerID);
             }
-	// create lists.
-			objNNI.Create_List_Of_REGISTERED_Inputs(objNNI.Get_MetaData().Get_NumberInputRegisters());
-			objNNI.Create_List_Of_Linear_Paths(objNNI.Get_MetaData().Get_NumberOfLinearOutputs());
-			objNNI.Create_List_Of_Binary_Paths(objNNI.Get_MetaData().Get_NumberOfBooleanOutputs());
-			objNNI.Create_List_Of_Constant_Paths(objNNI.Get_MetaData().Get_NumberOfConstantOutputs());
-			objNNI.Create_List_Of_REGISTERED_Outputs(objNNI.Get_MetaData().Get_NumberOutputRegisters());
+
 		}
         public void Create_Layer_Nodes(OpenAvrilNNI.MachineAI objNNI, byte outputID, byte layerID)
         {

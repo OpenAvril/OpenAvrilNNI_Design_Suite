@@ -18,7 +18,7 @@ namespace OpenAvrilNNI
 // constructor.
         public Input_Praise_0()
         {
-            Create_NumberOfItemsOnListOfInputRegister();
+			Create_NumberInputRegisters();
             Create_NumberOfLinearInputs();
             Create_NumberOfBooleanInputs();
             Create_NumberOfConstantInputs();
@@ -86,7 +86,7 @@ namespace OpenAvrilNNI
             Set_NumberOfConstantInputs(new byte());
             Set_NumberOfConstantInputs(0);
         }
-        private void Create_NumberOfItemsOnListOfInputRegister()
+        private void Create_NumberInputRegisters()
         {
             Set_NumberInputRegisters(new byte());
             Set_NumberInputRegisters(0);

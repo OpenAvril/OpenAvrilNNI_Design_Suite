@@ -28,11 +28,6 @@ namespace OpenAvrilNNI
         private byte _NumberOfLinearOutputs;
         private byte _NumberOutputRegisters;
         // custom user defined.
-
-        private double _direction_X;
-        private double _direction_y;
-        private double _direction_Z;
-        private double _period;
         private double _Capsule_Position_X;
         private double _Capsule_Position_Y;
         private double _Capsule_Position_Z;
@@ -192,17 +187,17 @@ namespace OpenAvrilNNI
         private void Create_NumberOfConstantOutputs()
         {
             Set_NumberOfConstantOutputs(new byte());
-            Set_NumberOfConstantOutputs(0);
+            Set_NumberOfConstantOutputs(3);
         }
         private void Create_NumberOfLinearOutputs()
         {
             Set_NumberOfLinearOutputs(new byte());
-            Set_NumberOfLinearOutputs(0);
+            Set_NumberOfLinearOutputs(9);
         }
         private void Create_NumberOutputRegisters()
         {
             Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(0);
+            Set_NumberOutputRegisters(12);
         }
         // custom user defined.
         private void Create_Capsule_Position_X(double capsule_Position_X)

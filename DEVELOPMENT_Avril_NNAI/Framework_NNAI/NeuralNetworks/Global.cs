@@ -53,13 +53,32 @@ namespace OpenAvrilNNI
             Capsule_Up_Y,
             Capsule_Up_Z,
         }
-        public enum PRAISE_2 : byte
+		public enum PRAISE_2_I : byte
+		{
+		// linear.
+			Direction_X,
+			Direction_Y,
+			Direction_Z,
+			Period,
+			Capsule_Position_X,
+			Capsule_Position_Y,
+			Capsule_Position_Z,
+			Capsule_Fowards_X,
+			Capsule_Fowards_Y,
+			Capsule_Fowards_Z,
+			Capsule_Right_X,
+			Capsule_Right_Y,
+			Capsule_Right_Z,
+		// boolean.
+		// constants.
+			Capsule_Up_X,
+			Capsule_Up_Y,
+			Capsule_Up_Z
+		}
+
+		public enum PRAISE_2_O : byte
         {
         // linear.
-            Direction_X,
-            Direction_Y,
-            Direction_Z,
-            Period,
             Capsule_Position_X,
             Capsule_Position_Y,
             Capsule_Position_Z,

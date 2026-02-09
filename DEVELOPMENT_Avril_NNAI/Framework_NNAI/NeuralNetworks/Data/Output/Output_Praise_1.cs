@@ -43,9 +43,13 @@ namespace OpenAvrilNNI
         public Output_Praise_1()
         {
             Create_NumberOfBooleanOutputs();
+            Set_NumberOfBooleanOutputs(0);
             Create_NumberOfLinearOutputs();
+            Set_NumberOfLinearOutputs(5);
             Create_NumberOfConstantOutputs();
+            Set_NumberOfConstantOutputs(5);
             Create_NumberOutputRegisters();
+            Set_NumberOfLinearOutputs(11);
             // custom user defined.
 
             Create_Mouse_Screen_X_CONSTANT(new double());

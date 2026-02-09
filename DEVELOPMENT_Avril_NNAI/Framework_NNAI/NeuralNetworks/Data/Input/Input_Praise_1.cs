@@ -29,9 +29,13 @@ namespace OpenAvrilNNI
         public Input_Praise_1()
         {
             Create_NumberInputRegisters();
+            Set_NumberInputRegisters(11);
             Create_NumberOfLinearInputs();
+            Set_NumberOfLinearInputs(9);
             Create_NumberOfBooleanInputs();
+            Set_NumberInputRegisters(0);
             Create_NumberOfConstantInputs();
+            Set_NumberInputRegisters(3);
             // custom user defined.
             Create_Mouse_Screen_X();
             Create_Mouse_Screen_Y();
