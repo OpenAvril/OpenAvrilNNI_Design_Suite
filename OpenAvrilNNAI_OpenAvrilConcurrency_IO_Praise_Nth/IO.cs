@@ -11,11 +11,8 @@
 // constructor.
         public IO()
         {
-            Create_framework_NNI(new Framework_NNI());
-            while (Get_framework_NNI() == null) { }
-
-            Create_machineAI(new MachineAI());
-            while (Get_machineAI() == null) { }
+            Create_framework_NNI();
+            Create_MachineAI();
         }
 
 // destructor.
@@ -56,30 +53,33 @@
                 objNNI.Set_Item_On_List_Of_REGISTERED_Input(inputID, inputValues[inputID]);
             }
         }
+
 // private.
-        static private void Create_framework_NNI(Framework_NNI newFramework)
+        static private void Create_framework_NNI()
         {
-            _framework_NNI = newFramework;
+            Set_Framework_NNI(new Framework_NNI());
+            while (Get_Framework_NNI() == null) { }
         }
-        static private void Create_machineAI(MachineAI newMachineAI)
+        static private void Create_MachineAI()
         {
-            _machineAI = newMachineAI;
+            Set_MachineAI(new MachineAI());
+            while (Get_MachineAI() == null) { }
         }
-        // get.
-        static private Framework_NNI Get_framework_NNI()
+    // get.
+        static private Framework_NNI Get_Framework_NNI()
         {
             return _framework_NNI;
         }
-        static private MachineAI Get_machineAI()
+        static private MachineAI Get_MachineAI()
         {
             return _machineAI;
         }
-        // set.
-        static private void Set_framework_NNI(Framework_NNI newFramework)
+    // set.
+        static private void Set_Framework_NNI(Framework_NNI newFramework)
         {
             _framework_NNI = newFramework;
         }
-        static private void Set_machineAI(MachineAI newMachineAI)
+        static private void Set_MachineAI(MachineAI newMachineAI)
         {
             _machineAI = newMachineAI;
         }

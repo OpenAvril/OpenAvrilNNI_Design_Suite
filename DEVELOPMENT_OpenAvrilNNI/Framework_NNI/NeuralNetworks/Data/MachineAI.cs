@@ -78,15 +78,20 @@ namespace OpenAvrilNNI
         }
         public bool Run_Neural_Network_Inteligence(OpenAvrilNNI.MachineAI objNNI)
         {
+            Console.WriteLine("alpha.");
             if (objNNI.Get_IsNewDataReady() == false)
             {
+                Console.WriteLine("bravo.");
                 for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfLinearOutputs(); outputID++)
                 {
+                    Console.WriteLine("charlie loop.");
                     for (Int16 layerID = 4; layerID > -1; layerID--)
                     {
+                        Console.WriteLine("delta loop.");
                         byte hiddenLayerID = Convert.ToByte(layerID);
                         for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                         {
+                            Console.WriteLine("foxtrot loop.");
                             byte numberOfInputsForNode = new byte();
                             numberOfInputsForNode = 0;
                             if (layerID == (byte)4)

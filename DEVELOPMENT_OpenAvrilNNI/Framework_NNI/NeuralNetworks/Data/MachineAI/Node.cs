@@ -34,6 +34,7 @@ namespace OpenAvrilNNI
             for (byte index = 0; index < numberOfInputs; index++)
             {
                 Set_Item_On_List_Of_Linear_NeuralPath(index, new OpenAvrilNNI.Linear_NeuralPath());
+                while (Get_Item_On_List_Of_Linear_NeuralPath(index) == null) { }
             }
         }
         public void Run_All_Neural_Path_Calculations(OpenAvrilNNI.MachineAI objNNI, byte outputID, byte hiddenLayerID, byte nodeID, byte numberOfInputsForNode)
