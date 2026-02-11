@@ -4,10 +4,10 @@ namespace OpenAvrilNNI
     public class NeuralNetworks
     {
 // classes.
-        private OpenAvrilNNI.Global _global;
-        private OpenAvrilNNI.Aglorithms _aglorithms;
-        private OpenAvrilNNI.Data _data;
-        private OpenAvrilNNI.Execute _execute;
+        private Global _Global;
+        private Aglorithms _Aglorithms;
+        private Data _Data;
+        private Execute _Execute;
 // registers.
 
 // constructor.
@@ -29,46 +29,62 @@ namespace OpenAvrilNNI
 
 // public.
     // get.
-        public OpenAvrilNNI.Aglorithms Get_Aglorithms()
+        public Aglorithms Get_Aglorithms()
         {
-            return _aglorithms;
+            return _Aglorithms;
         }
-        public OpenAvrilNNI.Data Get_Data()
+        public Data Get_Data()
         {
-            return _data;
+            return _Data;
         }
-        public OpenAvrilNNI.Execute Get_Execute()
+        public Execute Get_Execute()
         {
-            return _execute;
+            return _Execute;
         }
-        public OpenAvrilNNI.Global Get_Global()
+        public Global Get_Global()
         {
-            return _global;
+            return _Global;
         }
     // set.
 
 // private.
         private void Create_Aglorithms()
         {
-            _aglorithms = new OpenAvrilNNI.Aglorithms();
+            Set_Aglorithms(new Aglorithms());
             while (Get_Aglorithms() == null) { }
         }
         private void Create_Global()
         {
-            _global = new OpenAvrilNNI.Global();
+            Set_Global(new Global());
             while (Get_Global() == null) { }
         }
         private void Create_Data()
         {
-            _data = new OpenAvrilNNI.Data();
+            Set_Data(new Data());
             while (Get_Data() == null) { }
         }
         private void Create_Execute()
         {
-            _execute = new OpenAvrilNNI.Execute();
+            Set_Execute(new Execute());
             while (Get_Execute() == null) { }
         }
     // get.
     // set.
+        private void Set_Aglorithms(Aglorithms newAglorithms)
+        {
+            _Aglorithms = newAglorithms;
+        }
+        private void Set_Data(Data newData)
+        {
+            _Data = newData;
+        }
+        private void Set_Execute(Execute newExecute)
+        {
+            _Execute = newExecute;
+        }
+        private void Set_Global(Global newGlobal)
+        {
+            _Global = newGlobal;
+        }
     }
 }

@@ -55,14 +55,14 @@ namespace OpenAvrilNNI
             System.Console.WriteLine("started program entry.");
             Create_Framework_NNI();
             System.Console.WriteLine("created OpenAvrilNNI.Framework_NNI()");
-            //framework.Initialise(framework);
+            framework.Initialise(framework);
             System.Console.WriteLine("framework initialised.");
     // SIMULATION
-            OpenAvrilNNI.MachineAI myNeuralNetwork = framework.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(framework, "OpenAvrilNNI_OpenCconcurrency_IO_Praise_1", (byte)1);
+            OpenAvrilNNI.MachineAI myNeuralNetwork = framework.Get_NeuralNetwork().Get_Aglorithms().Initialise_instance_Of_MachineAI(framework, "OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1", (byte)1);
 
-            framework.Get_Neural_Networks().Get_Data().Preserve_New_Neural_Network(myNeuralNetwork);
+            framework.Get_NeuralNetwork().Get_Data().Preserve_New_Neural_Network(myNeuralNetwork);
             //ToDO: train network
-            framework.Get_Neural_Networks().Get_Execute().Get_FileReadWrite().WriteValuesToFile(framework, framework.Get_Neural_Networks().Get_Data().Get_Item_On_List_Of_Neural_Network_Preservation(0), myNeuralNetwork.Get_MetaData().Get_NameOfNNI());
+            framework.Get_NeuralNetwork().Get_Execute().Get_FileReadWrite().WriteValuesToFile(framework, framework.Get_NeuralNetwork().Get_Data().Get_Item_On_list_Of_Neural_Network_Preservation(0), myNeuralNetwork.Get_MetaData().Get_NameOfNNI());
         }
 
 // public.

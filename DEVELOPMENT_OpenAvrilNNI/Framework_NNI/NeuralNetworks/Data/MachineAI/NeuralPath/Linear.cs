@@ -4,7 +4,7 @@ namespace OpenAvrilNNI
     public class Linear
     {
 // classes.
-        private PraiseSet _praiseSet;
+        private PraiseSet _PraiseSet;
 
 // registers.
 
@@ -27,21 +27,21 @@ namespace OpenAvrilNNI
     // get.
         public PraiseSet Get_PraiseSet()
         {
-            return _praiseSet;
+            return _PraiseSet;
         }
     // set.
 
 // private.
         private void Create_PraiseSet()
         {
-            Set_PraiseSet(new OpenAvrilNNI.PraiseSet());
+            Set_PraiseSet(new PraiseSet());
             while (Get_PraiseSet() == null) { }
         }
     // get.
     // set
-        private void Set_PraiseSet(OpenAvrilNNI.PraiseSet newPraiseSet)
+        private void Set_PraiseSet(PraiseSet newPraiseSet)
         {
-            _praiseSet = newPraiseSet;
+            _PraiseSet = newPraiseSet;
         }
     }
 }

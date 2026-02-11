@@ -55,7 +55,7 @@ namespace OpenAvrilNNI
         {
             switch (index)
             {
-                case (byte)Global.PRAISE_0.Ping:
+                case (byte)Global.PRAISE_0_I.Ping:
                     return Get_Ping();
                 default:
                     return 0;
@@ -67,7 +67,7 @@ namespace OpenAvrilNNI
         {
             switch (index)
             {
-                case (byte)Global.PRAISE_0.Ping:
+                case (byte)Global.PRAISE_0_I.Ping:
                     Set_Ping(value);
                     break;
                 default:

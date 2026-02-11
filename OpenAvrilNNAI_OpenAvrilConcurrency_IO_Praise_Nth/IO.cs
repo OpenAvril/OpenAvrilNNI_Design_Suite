@@ -12,7 +12,7 @@
         public IO()
         {
             Create_framework_NNI();
-            Create_MachineAI();
+            Create_instance_Of_MachineAI();
         }
 
 // destructor.
@@ -29,11 +29,11 @@
             return Get_framework_NNI();
 
         }
-        static public MachineAI Initialise_Instance_Of_MachineAI(Framework_NNI obj)
+        static public MachineAI Initialise_Instance_Of_instance_Of_MachineAI(Framework_NNI obj)
         {
             Set_machineAI(new MachineAI());
             while (Get_machineAI() == null) { }
-            Set_machineAI(obj.Get_Neural_Networks().Get_Aglorithms().Create_Instance_Of_MachineAI(obj, "AvrilNNI_OpenConcurrency_IO_Praise_Nth_OpenCFSD_Praise_1_IO.nni", (byte)1));
+            Set_machineAI(obj.Get_NeuralNetwork().Get_Aglorithms().Create_Instance_Of_instance_Of_MachineAI(obj, "AvrilNNI_OpenConcurrency_IO_Praise_Nth_OpenCFSD_Praise_1_IO.nni", (byte)1));
             return Get_machineAI();
         }
         static public bool Run_Neural_Network_Inteligence(MachineAI objNNI)
@@ -43,7 +43,7 @@
     // get.
         static public double[] Get_Output_Values(MachineAI objNNI)
         {
-            return objNNI.Get_List_Of_REGISTERED_Outputs();
+            return objNNI.Get_list_Of_REGISTERED_Outputs();
         }
     // set.
         static public void Set_Input_Values(MachineAI objNNI, double[] inputValues)
@@ -60,17 +60,17 @@
             Set_Framework_NNI(new Framework_NNI());
             while (Get_Framework_NNI() == null) { }
         }
-        static private void Create_MachineAI()
+        static private void Create_instance_Of_MachineAI()
         {
-            Set_MachineAI(new MachineAI());
-            while (Get_MachineAI() == null) { }
+            Set_instance_Of_MachineAI(new MachineAI());
+            while (Get_instance_Of_MachineAI() == null) { }
         }
     // get.
         static private Framework_NNI Get_Framework_NNI()
         {
             return _framework_NNI;
         }
-        static private MachineAI Get_MachineAI()
+        static private MachineAI Get_instance_Of_MachineAI()
         {
             return _machineAI;
         }
@@ -79,7 +79,7 @@
         {
             _framework_NNI = newFramework;
         }
-        static private void Set_MachineAI(MachineAI newMachineAI)
+        static private void Set_instance_Of_MachineAI(MachineAI newMachineAI)
         {
             _machineAI = newMachineAI;
         }

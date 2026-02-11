@@ -4,10 +4,10 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
     public class NeuralNetworks
     {
 // classes.
-        private Global _global;
-        private Aglorithms _aglorithms;
-        private Data _data;
-        private Execute _execute;
+        private Global _Global;
+        private Aglorithms _Aglorithms;
+        private Data _Data;
+        private Execute _Execute;
 // registers.
 
 // constructor.
@@ -31,44 +31,60 @@ namespace OpenAvrilNNAI_OpenAvrilConcurrency_IO_Praise_Nth
     // get.
         public Aglorithms Get_Aglorithms()
         {
-            return _aglorithms;
+            return _Aglorithms;
         }
         public Data Get_Data()
         {
-            return _data;
+            return _Data;
         }
         public Execute Get_Execute()
         {
-            return _execute;
+            return _Execute;
         }
         public Global Get_Global()
         {
-            return _global;
+            return _Global;
         }
     // set.
 
 // private.
         private void Create_Aglorithms()
         {
-            _aglorithms = new Aglorithms();
+            Set_Aglorithms(new Aglorithms());
             while (Get_Aglorithms() == null) { }
         }
         private void Create_Global()
         {
-            _global = new Global();
+            Set_Global(new Global());
             while (Get_Global() == null) { }
         }
         private void Create_Data()
         {
-            _data = new Data();
+            Set_Data(new Data());
             while (Get_Data() == null) { }
         }
         private void Create_Execute()
         {
-            _execute = new Execute();
+            Set_Execute(new Execute());
             while (Get_Execute() == null) { }
         }
     // get.
     // set.
+        private void Set_Aglorithms(Aglorithms newAglorithms)
+        {
+            _Aglorithms = newAglorithms;
+        }
+        private void Set_Data(Data newData)
+        {
+            _Data = newData;
+        }
+        private void Set_Execute(Execute newExecute)
+        {
+            _Execute = newExecute;
+        }
+        private void Set_Global(Global newGlobal)
+        {
+            _Global = newGlobal;
+        }
     }
 }

@@ -33,11 +33,11 @@
 // public.
         public void Create_Tree_Of_Nodes(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI, byte outputID)
         {
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer4_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(4));
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer3_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(3));
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer2_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(2));
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer1_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(1));
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer0_Node();
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer4_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(4));
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer3_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(3));
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer2_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(2));
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Create_List_Of_Layer1_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(1));
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Create_Layer0_Node();
         }
     // get.
         public Node Get_Node(byte layer, byte nodeID)

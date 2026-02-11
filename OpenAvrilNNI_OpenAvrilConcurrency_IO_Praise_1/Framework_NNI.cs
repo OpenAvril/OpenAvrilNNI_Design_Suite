@@ -4,14 +4,14 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     public class Framework_NNI
     {
 // classes.
-        private NeuralNetworks _neuralNetwork;
+        private NeuralNetworks _NeuralNetwork;
 
 // registers.
 
 // constructor.
         public Framework_NNI()
         {
-            Console.WriteLine("entered Framework_NNI.");
+            System.Console.WriteLine("entered Framework_NNI.");
             Create_NeuralNetworks();
         }
 
@@ -24,22 +24,26 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 // public.
         public void Initialise(Framework_NNI obj)
         {
-            obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();
+            obj.Get_NeuralNetwork().Get_Execute().Create_And_Run_UI();
         }
     // get.
-        public NeuralNetworks Get_Neural_Networks()
+        public NeuralNetworks Get_NeuralNetwork()
         {
-            return _neuralNetwork;
+            return _NeuralNetwork;
         }
     // set.
 
 // private.
         private void Create_NeuralNetworks()
         {
-            _neuralNetwork = new NeuralNetworks();
-            while(Get_Neural_Networks() == null) { }
+            Set_NeuralNetwork(new NeuralNetworks());
+            while (Get_NeuralNetwork() == null) { }
         }
     // get.
     // set.
+        private void Set_NeuralNetwork(NeuralNetworks newNeuralNetowrk)
+        {
+            _NeuralNetwork = newNeuralNetowrk;
+        }
     }
 }

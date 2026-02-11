@@ -1,6 +1,5 @@
-﻿
-namespace OpenAvrilNNI
-{
+﻿namespace OpenAvrilNNI
+{ 
     public class Algorithm_Praise_2
     {
 // classes.

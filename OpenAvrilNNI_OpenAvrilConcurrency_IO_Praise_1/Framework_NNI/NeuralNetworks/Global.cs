@@ -8,12 +8,8 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 // definitions.
         public enum FILE_NAME : byte
         {
-            [Description("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1_OpenCFSD_Praise_0_IO.nni")]
-            PRAISE_0 = 0,
-            [Description("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1_OpenCFSD_Praise_1_IO.nni")]
+            [Description("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1")]
             PRAISE_1 = 1,
-            [Description("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1_OpenCFSD_Praise_2_IO.nni")]
-            PRAISE_2 = 2
         }
         public enum NodeLayer : byte
         {
@@ -25,18 +21,9 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         public enum PraiseID : byte
         {
-            Praise_0 = 0,
             Praise_1 = 1,
-            Praise_2 = 2
         }
-        public enum PRAISE_0 : byte
-        {
-        // linear.
-        // boolean.
-            Ping
-        // constants.
-        }
-        public enum PRAISE_1 : byte
+        public enum PRAISE_1_I : byte
         {
         // linear.
             Mouse_Screen_X,
@@ -53,35 +40,9 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
             Capsule_Up_Y,
             Capsule_Up_Z,
         }
-		public enum PRAISE_2_I : byte
-		{
-		// linear.
-			Direction_X,
-			Direction_Y,
-			Direction_Z,
-			Period,
-			Capsule_Position_X,
-			Capsule_Position_Y,
-			Capsule_Position_Z,
-			Capsule_Fowards_X,
-			Capsule_Fowards_Y,
-			Capsule_Fowards_Z,
-			Capsule_Right_X,
-			Capsule_Right_Y,
-			Capsule_Right_Z,
-		// boolean.
-		// constants.
-			Capsule_Up_X,
-			Capsule_Up_Y,
-			Capsule_Up_Z
-		}
-
-		public enum PRAISE_2_O : byte
+        public enum PRAISE_1_O : byte
         {
         // linear.
-            Capsule_Position_X,
-            Capsule_Position_Y,
-            Capsule_Position_Z,
             Capsule_Fowards_X,
             Capsule_Fowards_Y,
             Capsule_Fowards_Z,
@@ -90,11 +51,16 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
             Capsule_Right_Z,
         // boolean.
         // constants.
+            Mouse_Screen_X,
+            Mouse_Screen_Y,
             Capsule_Up_X,
             Capsule_Up_Y,
-            Capsule_Up_Z
+            Capsule_Up_Z,
         }
-        // constructor.
+
+// registers.
+
+// constructor.
         public Global()
         {
             System.Console.WriteLine("entered Global.");
@@ -115,3 +81,4 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     // set.
     }
 }
+    

@@ -26,11 +26,11 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 
 // public.
     // get.
-        public double Get_Bias()
+        public double Get_bias()
         {
             return _bias;
         }
-        public double Get_Weight()
+        public double Get_weight()
         {
             return _weight;
         }

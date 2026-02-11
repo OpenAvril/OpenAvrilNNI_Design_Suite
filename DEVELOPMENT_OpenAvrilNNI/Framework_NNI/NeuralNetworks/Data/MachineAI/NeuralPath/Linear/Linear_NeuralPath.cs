@@ -6,6 +6,7 @@ namespace OpenAvrilNNI
 // classes.
 
 // registers.
+    // double.
         private double _bias;
         private double _weight;
 
@@ -13,8 +14,8 @@ namespace OpenAvrilNNI
         public Linear_NeuralPath() 
         { 
             //System.Console.WriteLine("entered Linear.");
-            Create_Bias();
-            Create_Weight();
+            Create_bias();
+            Create_weight();
             //System.Console.WriteLine("exiting Linear.");
         }
 
@@ -25,37 +26,50 @@ namespace OpenAvrilNNI
         }
 
 // public.
+        public void Initialise_Linear_NeuralPath(Framework_NNI obj)
+        {
+            this.Initialise_bias(obj);
+            this.Initialise_weight(obj);
+        }
     // get.
-        public double Get_Bias()
+        public double Get_bias()
         {
             return _bias;
         }
-        public double Get_Weight()
+        public double Get_weight()
         {
             return _weight;
         }
     // set.
-        public void Set_Bias(double newBias)
+        public void Set_bias(double newBias)
         {
             _bias = newBias;
         }
-        public void Set_Weight(double newWeight)
+        public void Set_weight(double newWeight)
         {
             _weight = newWeight;
         }
 
 // private.
-        private void Create_Bias()
+        private void Create_bias()
         {
-            _bias = new double();
-            Set_Bias(0.0);
+            Set_bias(new double());
+            Set_bias(0.0);
         }
-        private void Create_Weight()
+        private void Create_weight()
         {
-            _weight = new double();
-            Set_Weight(0.0);
+            Set_weight(new double());
+            Set_weight(0.0);
         }
-// get.
-// set.
+        private void Initialise_bias(Framework_NNI obj)
+        {
+            Set_bias(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+        }
+        private void Initialise_weight(Framework_NNI obj)
+        {
+            Set_weight(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+        }
+    // get.
+    // set.
     }
 }

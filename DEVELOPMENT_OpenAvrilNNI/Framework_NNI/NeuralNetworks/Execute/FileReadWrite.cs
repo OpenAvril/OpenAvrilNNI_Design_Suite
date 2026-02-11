@@ -61,12 +61,12 @@ namespace OpenAvrilNNI
                     for (byte inputID = 0; inputID < objNNI.Get_MetaData().Get_NumberInputRegisters(); inputID++)
                     {
                         System.Console.WriteLine("NumberOfPraiseInputValues = " + objNNI.Get_MetaData().Get_NumberInputRegisters() + "  inputID = " + inputID); 
-                        writer.Write(objNNI.Get_Item_On_List_Of_REGISTERED_Inputs(inputID));
+                        writer.Write(objNNI.Get_Item_On_list_Of_REGISTERED_Inputs(inputID));
                     }
             // write register _REGISTERED_Outputs.
                     for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOutputRegisters(); outputID++)
                     {
-                        writer.Write(objNNI.Get_Item_On_List_Of_REGISTERED_Outputs(outputID));
+                        writer.Write(objNNI.Get_Item_On_list_Of_REGISTERED_Outputs(outputID));
                     }
 		// write class MachineAI\Linear.
 			// write class MachineAI\Linear\PraiseSet
@@ -79,9 +79,9 @@ namespace OpenAvrilNNI
                             for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                             {
                     // write register _NumberOfInputs.
-                                writer.Write(objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs());
+                                writer.Write(objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs());
                     // write register _REGISTERED_Output.
-                                writer.Write(objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_REGISTERED_Output());
+                                writer.Write(objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_REGISTERED_Output());
                     // write class MachineAI\PraiseSet\Node\Linear.
                                 byte numberOfInputsForNode = new byte();
                                 numberOfInputsForNode = 0;
@@ -96,9 +96,9 @@ namespace OpenAvrilNNI
                                 for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                                 {
                     // write register _bias.
-                                    writer.Write(objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Get_Bias());
+                                    writer.Write(objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_bias());
                     // write register _weight.
-                                    writer.Write(objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Get_Weight());
+                                    writer.Write(objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_weight());
                                 }
                             }
                         }
@@ -119,9 +119,7 @@ namespace OpenAvrilNNI
 
         public OpenAvrilNNI.MachineAI ReadValuesFromFile(OpenAvrilNNI.Framework_NNI obj, string fileName)
         {
-            OpenAvrilNNI.MachineAI objNNI = obj.Get_Neural_Networks().Get_Data().Get_NewMachineAI();
-            while (objNNI == null) { }
-
+            OpenAvrilNNI.MachineAI objNNI = obj.Get_NeuralNetwork().Get_Data().Get_New_MachineAI();
             string pathName = new string("..\\..\\..\\..\\nnai_extension_files\\" + fileName + ".nni");
             if (File.Exists(pathName))
             {
@@ -178,9 +176,9 @@ namespace OpenAvrilNNI
                                 for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                                 {
                     // write register _NumberOfInputs.
-                                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_NumberOfInputs(reader.ReadByte());
+                                    objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_NumberOfInputs(reader.ReadByte());
                     // write register _REGISTERED_Output.
-                                    objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(reader.ReadDouble());
+                                    objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(reader.ReadDouble());
                     // write class MachineAI\PraiseSet\Node\Linear.
                                     byte numberOfInputsForNode = new byte();
                                     numberOfInputsForNode = 0;
@@ -195,9 +193,9 @@ namespace OpenAvrilNNI
                                     for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
                                     {
                     // write register _bias.
-                                        objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Set_Bias(reader.ReadDouble());
+                                        objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Set_bias(reader.ReadDouble());
                     // write register _weight.
-                                        objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Set_Weight(reader.ReadDouble());
+                                        objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Set_weight(reader.ReadDouble());
                                     }
                                 }
                             }

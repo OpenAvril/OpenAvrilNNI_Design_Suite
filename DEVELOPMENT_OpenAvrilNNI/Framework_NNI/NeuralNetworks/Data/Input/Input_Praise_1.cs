@@ -38,16 +38,27 @@ namespace OpenAvrilNNI
             Set_NumberOfConstantInputs(3);
             // custom user defined.
             Create_Mouse_Screen_X();
+            Set_Mouse_Screen_X(0.0);
             Create_Mouse_Screen_Y();
+            Set_Mouse_Screen_Y(0.0);
             Create_Capsule_Fowards_X();
+            Set_Capsule_Fowards_X(1.0);
             Create_Capsule_Fowards_Y();
+            Set_Capsule_Fowards_Y(0.0);
             Create_Capsule_Fowards_Z();
+            Set_Capsule_Fowards_Z(0.0);
             Create_Capsule_Up_X_CONST();
+            Set_Capsule_Up_X_CONST(0.0);
             Create_Capsule_Up_Y_CONST();
+            Set_Capsule_Up_Y_CONST(1.0);
             Create_Capsule_Up_Z_CONST();
+            Set_Capsule_Up_Z_CONST(0.0);
             Create_Capsule_Right_X();
+            Set_Capsule_Right_X(0.0);
             Create_Capsule_Right_Y();
+            Set_Capsule_Right_Y(0.0);
             Create_Capsule_Right_Z();
+            Set_Capsule_Right_Z(1.0);
         }
 
 // destructor.
@@ -78,37 +89,37 @@ namespace OpenAvrilNNI
         {
             switch (index)
             {
-                case (byte)Global.PRAISE_1.Mouse_Screen_X:
+                case (byte)Global.PRAISE_1_I.Mouse_Screen_X:
                     return Get_Mouse_Screen_X();
 
-                case (byte)Global.PRAISE_1.Mouse_Screen_Y:
+                case (byte)Global.PRAISE_1_I.Mouse_Screen_Y:
                     return Get_Mouse_Screen_Y();
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_X:
                     return Get_Capsule_Fowards_X();
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_Y:
                     return Get_Capsule_Fowards_Y();
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_Z:
                     return Get_Capsule_Fowards_Z();
 
-                case (byte)Global.PRAISE_1.Capsule_Up_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_X:
                     return Get_Capsule_Up_X_CONST();
 
-                case (byte)Global.PRAISE_1.Capsule_Up_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_Y:
                     return Get_Capsule_Up_Y_CONST();
 
-                case (byte)Global.PRAISE_1.Capsule_Up_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_Z:
                     return Get_Capsule_Up_Z_CONST();
 
-                case (byte)Global.PRAISE_1.Capsule_Right_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_X:
                     return Get_Capsule_Right_X();
 
-                case (byte)Global.PRAISE_1.Capsule_Right_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_Y:
                     return Get_Capsule_Right_Y();
 
-                case (byte)Global.PRAISE_1.Capsule_Right_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_Z:
                     return Get_Capsule_Right_Z();
 
                 default:
@@ -121,47 +132,47 @@ namespace OpenAvrilNNI
         {
             switch (index)
             {
-                case (byte)Global.PRAISE_1.Mouse_Screen_X:
+                case (byte)Global.PRAISE_1_I.Mouse_Screen_X:
                     Set_Mouse_Screen_X(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Mouse_Screen_Y:
+                case (byte)Global.PRAISE_1_I.Mouse_Screen_Y:
                     Set_Mouse_Screen_Y(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_X:
                     Set_Capsule_Fowards_X(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_Y:
                     Set_Capsule_Fowards_Y(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Fowards_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Fowards_Z:
                     Set_Capsule_Fowards_Z(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Right_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_X:
                     Set_Capsule_Right_X(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Right_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_Y:
                     Set_Capsule_Right_Y(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Right_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Right_Z:
                     Set_Capsule_Right_Z(value);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Up_X:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_X:
                     Set_Capsule_Up_X_CONST(0.0);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Up_Y:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_Y:
                     Set_Capsule_Up_Y_CONST(1.0);
                     break;
 
-                case (byte)Global.PRAISE_1.Capsule_Up_Z:
+                case (byte)Global.PRAISE_1_I.Capsule_Up_Z:
                     Set_Capsule_Up_Z_CONST(0.0);
                     break;
 
@@ -245,7 +256,7 @@ namespace OpenAvrilNNI
         private void Create_Capsule_Right_Z()
         {
             Set_Capsule_Right_Z(new double());
-            Set_Capsule_Right_Z(1.0);
+            Set_Capsule_Right_Z(0.0);
         }
     // get.
         // custom user defined.

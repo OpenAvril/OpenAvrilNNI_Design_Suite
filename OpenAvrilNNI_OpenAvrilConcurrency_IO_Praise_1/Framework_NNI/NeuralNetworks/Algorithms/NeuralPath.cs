@@ -38,14 +38,14 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     // io id.
             objNNI.Get_MetaData().Set_PraiseID(praiseID);
     // generate io parameters.
-            objNNI.Get_MetaData().Set_NumberInputRegisters(obj.Get_Neural_Networks().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberInputRegisters());
-            objNNI.Get_MetaData().Set_NumberOfLinearInputs(obj.Get_Neural_Networks().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfLinearInputs());
-            objNNI.Get_MetaData().Set_NumberOfBooleanInputs(obj.Get_Neural_Networks().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfBooleanInputs());
-            objNNI.Get_MetaData().Set_NumberOfConstantInputs(obj.Get_Neural_Networks().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfConstantInputs());
-            objNNI.Get_MetaData().Set_NumberOutputRegisters(obj.Get_Neural_Networks().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOutputRegisters());
-            objNNI.Get_MetaData().Set_NumberOfLinearOutputs(obj.Get_Neural_Networks().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfLinearOutputs());
-            objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(obj.Get_Neural_Networks().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfBooleanOutputs());
-            objNNI.Get_MetaData().Set_NumberOfConstantOutputs(obj.Get_Neural_Networks().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfConstantOutputs());
+            objNNI.Get_MetaData().Set_NumberInputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberInputRegisters());
+            objNNI.Get_MetaData().Set_NumberOfLinearInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfLinearInputs());
+            objNNI.Get_MetaData().Set_NumberOfBooleanInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfBooleanInputs());
+            objNNI.Get_MetaData().Set_NumberOfConstantInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfConstantInputs());
+            objNNI.Get_MetaData().Set_NumberOutputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOutputRegisters());
+            objNNI.Get_MetaData().Set_NumberOfLinearOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfLinearOutputs());
+            objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfBooleanOutputs());
+            objNNI.Get_MetaData().Set_NumberOfConstantOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfConstantOutputs());
                    
             System.Console.WriteLine("_NumberInputRegisters = " + objNNI.Get_MetaData().Get_NumberInputRegisters());
             System.Console.WriteLine("_NumberOfLinearInputs = " + objNNI.Get_MetaData().Get_NumberOfLinearInputs());
@@ -70,7 +70,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         public void Generate_REGISTERED_Inputs_List(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI)
         {
-            objNNI.Create_List_Of_REGISTERED_Inputs(objNNI.Get_MetaData().Get_NumberInputRegisters());
+            objNNI.Create_list_Of_REGISTERED_Inputs(objNNI.Get_MetaData().Get_NumberInputRegisters());
             for (byte index = 0; index < objNNI.Get_MetaData().Get_NumberInputRegisters(); index++)
             {
                 objNNI.Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
@@ -78,7 +78,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         public void Generate_REGISTERED_Outputs_List(OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.Framework_NNI obj, OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1.MachineAI objNNI)
         {
-            objNNI.Create_List_Of_REGISTERED_Outputs(objNNI.Get_MetaData().Get_NumberOutputRegisters());
+            objNNI.Create_list_Of_REGISTERED_Outputs(objNNI.Get_MetaData().Get_NumberOutputRegisters());
             for (byte index = 0; index < objNNI.Get_MetaData().Get_NumberOutputRegisters(); index++)
             {
                 objNNI.Set_Item_On_List_Of_REGISTERED_Output(index, 0.0);
@@ -126,15 +126,15 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
             {
                 numberOfInputsForNode = objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
             }
-            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Set_NumberOfInputs(numberOfInputsForNode);
-            System.Console.WriteLine("NumberOfInputs = " + objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_NumberOfInputs());
+            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Set_NumberOfInputs(numberOfInputsForNode);
+            System.Console.WriteLine("NumberOfInputs = " + objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_NumberOfInputs());
 
             for (byte inputID = 0; inputID < numberOfInputsForNode; inputID++)
             {
-                objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Set_Item_On_List_Of_Linear_NeuralPath(inputID, obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Get_New_Linear_NeuralPath());
-                objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Set_Weight(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Set_Bias(obj.Get_Neural_Networks().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
-                System.Console.WriteLine("outputID = " + outputID + "  layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID + "  bias = " + objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Get_Bias() + "  weight = " + objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_List_Of_Linear_NeuralPath(inputID).Get_Weight());
+                objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Set_Item_On_list_Of_Linear_NeuralPath(inputID, obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Get_New_Linear_NeuralPath());
+                objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Set_Weight(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Set_Bias(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+                System.Console.WriteLine("outputID = " + outputID + "  layerID = " + layerID + "  nodeID = " + nodeID + "  inputID = " + inputID + "  bias = " + objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_bias() + "  weight = " + objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(layerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_weight());
             }
             System.Console.WriteLine("exiting Create_Nodes.");
         }

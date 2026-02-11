@@ -4,9 +4,9 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     public class MachineAI
     {
 // classes.
-        private Binary[] _List_Of_Binary_Paths;
-        private Constant[] _List_Of_Constant_Paths;
-        private Linear[] _List_Of_Linear_Paths;
+        private Binary[] _list_Of_Boolean_Paths;
+        private Constant[] _list_Of_Constant_Paths;
+        private Linear[] _list_Of_Linear_Paths;
         private MetaData _MetaData;
 
 // registers.
@@ -19,11 +19,11 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             //System.Console.WriteLine("entered MachineAI.");
             Create_MetaData();
-            Create_List_Of_REGISTERED_Inputs(Get_MetaData().Get_NumberInputRegisters());
-            Create_List_Of_Linear_Paths(Get_MetaData().Get_NumberOfLinearOutputs());
-            Create_List_Of_Binary_Paths(Get_MetaData().Get_NumberOfBooleanOutputs());
-            Create_List_Of_Constant_Paths(Get_MetaData().Get_NumberOfConstantOutputs());
-            Create_List_Of_REGISTERED_Outputs(Get_MetaData().Get_NumberOutputRegisters());
+            Create_list_Of_REGISTERED_Inputs(Get_MetaData().Get_NumberInputRegisters());
+            Create_list_Of_Linear_Paths(Get_MetaData().Get_NumberOfLinearOutputs());
+            Create_list_Of_Boolean_Paths(Get_MetaData().Get_NumberOfBooleanOutputs());
+            Create_list_Of_Constant_Paths(Get_MetaData().Get_NumberOfConstantOutputs());
+            Create_list_Of_REGISTERED_Outputs(Get_MetaData().Get_NumberOutputRegisters());
             Create_IsNewDataReady();
         }
 
@@ -33,34 +33,34 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
 
 // public.
-        public void Create_List_Of_Binary_Paths(byte numberOfBinaryValues)
+        public void Create_list_Of_Boolean_Paths(byte numberOfBinaryValues)
         {
-            _List_Of_Binary_Paths = new Binary[numberOfBinaryValues];
-            while (Get_List_Of_Binary_Paths() == null) { }
+            _list_Of_Boolean_Paths = new Binary[numberOfBinaryValues];
+            while (Get_list_Of_Boolean_Paths() == null) { }
             for (byte index =0; index < numberOfBinaryValues; index++)
             {
-                Set_Item_On_List_Of_Binary_Paths(index, new Binary());
+                Set_Item_On_list_Of_Boolean_Paths(index, new Binary());
             }
         }
-        public void Create_List_Of_Constant_Paths(byte numberOfResetToConstantValues)
+        public void Create_list_Of_Constant_Paths(byte numberOfResetToConstantValues)
         {
-            _List_Of_Constant_Paths = new Constant[numberOfResetToConstantValues];
-            while (Get_List_Of_Constant_Paths() == null) { }
+            _list_Of_Constant_Paths = new Constant[numberOfResetToConstantValues];
+            while (Get_list_Of_Constant_Paths() == null) { }
             for(byte index = 0; index < numberOfResetToConstantValues; index++)
             {
-                Set_Item_On_List_Of_Constant_Paths(index, new Constant());
+                Set_Item_On_list_Of_Constant_Paths(index, new Constant());
             }
         }
-        public void Create_List_Of_Linear_Paths(byte numberOfInputValuesForNode)
+        public void Create_list_Of_Linear_Paths(byte numberOfInputValuesForNode)
         {
-            _List_Of_Linear_Paths = new Linear[numberOfInputValuesForNode];
-            while (Get_List_Of_Linear_Paths() == null) { }
+            _list_Of_Linear_Paths = new Linear[numberOfInputValuesForNode];
+            while (Get_list_Of_Linear_Paths() == null) { }
             for (byte index = 0; index < numberOfInputValuesForNode; index++)
             {
-                Set_Item_On_List_Of_Linear_Paths(index, new Linear());
+                Set_Item_On_list_Of_Linear_Paths(index, new Linear());
             }
         }
-        public void Create_List_Of_REGISTERED_Inputs(byte numberOfInputValues)
+        public void Create_list_Of_REGISTERED_Inputs(byte numberOfInputValues)
         {
             _REGISTERED_Inputs = new double[numberOfInputValues];
             for (byte index = 0; index < numberOfInputValues; index++)
@@ -68,7 +68,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
                 Set_Item_On_List_Of_REGISTERED_Input(index, 0.0);
             }
         }
-        public void Create_List_Of_REGISTERED_Outputs(byte numberOfOutputValues)
+        public void Create_list_Of_REGISTERED_Outputs(byte numberOfOutputValues)
         {
             _REGISTERED_Outputs = new double[numberOfOutputValues];
             for (byte index = 0; index < numberOfOutputValues; index++)
@@ -97,10 +97,10 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
                             {
                                 numberOfInputsForNode = objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer((byte)(layerID + (byte)1));
                             }
-                            objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Run_All_Neural_Path_Calculations(objNNI, outputID, hiddenLayerID, nodeID, numberOfInputsForNode);
+                            objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Run_All_Neural_Path_Calculations(objNNI, outputID, hiddenLayerID, nodeID, numberOfInputsForNode);
                         }
                     }
-                    objNNI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNI.Get_Item_On_List_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(0, 1).Get_REGISTERED_Output());
+                    objNNI.Set_Item_On_List_Of_REGISTERED_Output(outputID, objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(0, 1).Get_REGISTERED_Output());
                 }
                 for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfBooleanOutputs(); outputID++)
                 {
@@ -121,43 +121,43 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             return _isNewDataReady;
         }
-        public Binary[] Get_List_Of_Binary_Paths()
+        public Binary[] Get_list_Of_Boolean_Paths()
         {
-            return _List_Of_Binary_Paths;
+            return _list_Of_Boolean_Paths;
         }
-        public Constant[] Get_List_Of_Constant_Paths()
+        public Constant[] Get_list_Of_Constant_Paths()
         {
-            return _List_Of_Constant_Paths;
+            return _list_Of_Constant_Paths;
         }
-        public Linear[] Get_List_Of_Linear_Paths()
+        public Linear[] Get_list_Of_Linear_Paths()
         {
-            return _List_Of_Linear_Paths;
+            return _list_Of_Linear_Paths;
         }
-        public double[] Get_List_Of_REGISTERED_Inputs()
+        public double[] Get_list_Of_REGISTERED_Inputs()
         {
             return _REGISTERED_Inputs;
         }
-        public double[] Get_List_Of_REGISTERED_Outputs()
+        public double[] Get_list_Of_REGISTERED_Outputs()
         {
             return _REGISTERED_Outputs;
         }
-        public Binary Get_Item_On_List_Of_Binary_Paths(byte binaryID)
+        public Binary Get_Item_On_list_Of_Boolean_Paths(byte binaryID)
         {
-            return _List_Of_Binary_Paths[binaryID];
+            return _list_Of_Boolean_Paths[binaryID];
         }
-        public Constant Get_Item_On_List_Of_Constant_Paths(byte constantID)
+        public Constant Get_Item_On_list_Of_Constant_Paths(byte constantID)
         {
-            return _List_Of_Constant_Paths[constantID];
+            return _list_Of_Constant_Paths[constantID];
         }
-        public Linear Get_Item_On_List_Of_Linear_Paths(byte praiseTreeID)
+        public Linear Get_Item_On_list_Of_Linear_Paths(byte praiseTreeID)
         {
-            return _List_Of_Linear_Paths[praiseTreeID];
+            return _list_Of_Linear_Paths[praiseTreeID];
         }
-        public double Get_Item_On_List_Of_REGISTERED_Inputs(byte registerID)
+        public double Get_Item_On_list_Of_REGISTERED_Inputs(byte registerID)
         {
             return _REGISTERED_Inputs[registerID];
         }
-        public double Get_Item_On_List_Of_REGISTERED_Outputs(byte registerID)
+        public double Get_Item_On_list_Of_REGISTERED_Outputs(byte registerID)
         {
             return _REGISTERED_Outputs[registerID];
         }
@@ -171,17 +171,17 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             _isNewDataReady = value;
         }
-        public void Set_Item_On_List_Of_Binary_Paths(byte binaryID, Binary value)
+        public void Set_Item_On_list_Of_Boolean_Paths(byte binaryID, Binary value)
         {
-            _List_Of_Binary_Paths[binaryID] = value;
+            _list_Of_Boolean_Paths[binaryID] = value;
         }
-        public void Set_Item_On_List_Of_Constant_Paths(byte constantID, Constant value)
+        public void Set_Item_On_list_Of_Constant_Paths(byte constantID, Constant value)
         {
-            _List_Of_Constant_Paths[constantID] = value;
+            _list_Of_Constant_Paths[constantID] = value;
         }
-        public void Set_Item_On_List_Of_Linear_Paths(byte praiseTreeID, Linear value)
+        public void Set_Item_On_list_Of_Linear_Paths(byte praiseTreeID, Linear value)
         {
-            _List_Of_Linear_Paths[praiseTreeID] = value;
+            _list_Of_Linear_Paths[praiseTreeID] = value;
         }
         public void Set_Item_On_List_Of_REGISTERED_Input(byte registerID, double value)
         {

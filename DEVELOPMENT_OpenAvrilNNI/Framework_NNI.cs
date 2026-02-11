@@ -4,7 +4,7 @@ namespace OpenAvrilNNI
     public class Framework_NNI
     {
 // classes.
-        private OpenAvrilNNI.NeuralNetworks _neuralNetwork;
+        private NeuralNetworks _NeuralNetwork;
 
 // registers.
 
@@ -22,24 +22,37 @@ namespace OpenAvrilNNI
         }
 
 // public.
-        public void Initialise(OpenAvrilNNI.Framework_NNI obj)
+        public void Initialise(Framework_NNI obj, MachineAI objNNI)
         {
-            obj.Get_Neural_Networks().Get_Execute().Create_And_Run_UI();
+            Initialise_lists(obj);
+            Create_And_Run_UI(obj);
         }
     // get.
-        public OpenAvrilNNI.NeuralNetworks Get_Neural_Networks()
+        public NeuralNetworks Get_NeuralNetwork()
         {
-            return _neuralNetwork;
+            return _NeuralNetwork;
         }
     // set.
 
 // private.
+        private void Create_And_Run_UI(Framework_NNI obj)
+        {
+            obj.Get_NeuralNetwork().Get_Execute().Create_And_Run_UI();
+        }
         private void Create_NeuralNetworks()
         {
-            _neuralNetwork = new OpenAvrilNNI.NeuralNetworks();
-            while(Get_Neural_Networks() == null) { }
+            Set_NeuralNetwork(new NeuralNetworks());
+            while(Get_NeuralNetwork() == null) { }
+        }
+        private void Initialise_lists(Framework_NNI obj)
+        {
+            obj.Get_NeuralNetwork().Get_Aglorithms().Initialise_Lists(obj);
         }
     // get.
     // set.
+        private void Set_NeuralNetwork(NeuralNetworks newNeuralNetowrk)
+        {
+            _NeuralNetwork = newNeuralNetowrk;
+        }
     }
 }

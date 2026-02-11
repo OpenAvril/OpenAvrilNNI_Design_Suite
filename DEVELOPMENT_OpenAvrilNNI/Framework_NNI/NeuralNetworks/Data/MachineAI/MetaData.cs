@@ -31,7 +31,9 @@ namespace OpenAvrilNNI
             //System.Console.WriteLine("entered MetaData.");
 
             Create_NameOfNNI();
+            Set_NameOfNNI("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_0");
             Create_PraiseID();
+            Set_PraiseID((byte)0);
             Create_NumberInputRegisters();
             Create_NumberOfLinearInputs();
             Create_NumberOfBooleanInputs();

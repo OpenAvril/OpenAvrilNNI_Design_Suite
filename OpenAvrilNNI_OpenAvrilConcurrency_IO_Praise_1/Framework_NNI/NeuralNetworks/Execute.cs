@@ -12,8 +12,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileReadWrite(new FileReadWrite());
-            while (Get_FileReadWrite() == null) { }
+            Create_FileReadWrite();
         }
 
 // destructor.
@@ -35,11 +34,16 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     // set.
 
 // private.
-        private void Create_FileReadWrite(FileReadWrite fileReadWrite)
+        private void Create_FileReadWrite()
         {
-            _FileReadWrite = fileReadWrite;
+            Set_FileReadWrite(new FileReadWrite());
+            while (Get_FileReadWrite() == null) { }
         }
     // get.
     // set.
+        private void Set_FileReadWrite(FileReadWrite newFileReadWrite)
+        {
+            _FileReadWrite = newFileReadWrite;
+        }
     }
 }

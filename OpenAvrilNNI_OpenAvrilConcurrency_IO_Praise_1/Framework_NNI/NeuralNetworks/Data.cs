@@ -4,27 +4,26 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     public class Data
     {
 // classes.
-        private MachineAI[] _List_Of_Neural_Network;
-        private Input _input;
-        private MachineAI _newMachineAI;
-        private Output _output;
+        private Input _Input;
+        private MachineAI _NewMachineAI;
+        private Output _Output;
 
 // registers.
+    // lists.
+        private MachineAI[] _list_Of_Neural_Network;
+    // bool.
         private bool _isFirstSave;
+
 
 // constructor.
         public Data()
         {
             System.Console.WriteLine("entered Data.");
             Create_Input();
-            System.Console.WriteLine("ALPHA.");
             Create_Output();
-            System.Console.WriteLine("BRAVO.");
             Create_NewMachineAI();
-            System.Console.WriteLine("CHARLIE.");
-            Create_List_Of_Neural_Network(1);
-            System.Console.WriteLine("ECHO.");
-            Create_IsFirstSave();
+            Create_list_Of_Neural_Network(1);
+            Create_isFirstSave();
         }
 
 // destructor.
@@ -36,88 +35,100 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
 // public.
         public void Preserve_New_Neural_Network(MachineAI newNeuralNetwork)
         {
-            if (Get_IsFirstSave())
+            if (Get_isFirstSave())
             {
-                Set_Item_On_List_Of_Neural_Network(0, newNeuralNetwork);
-                Set_IsFirstSave(false);
+                Set_Item_On_list_Of_Neural_Network(0, newNeuralNetwork);
+                Set_isFirstSave(false);
             }
             else
             {
-                MachineAI[] old_NeuralNetworkList = Get_List_Of_Neural_Network_Preservation();
-                Create_List_Of_Neural_Network((byte)(Get_List_Of_Neural_Network_Preservation().LongLength + (long)1));
+                MachineAI[] old_NeuralNetworkList = Get_list_Of_Neural_Network_Preservation();
+                Create_list_Of_Neural_Network((byte)(Get_list_Of_Neural_Network_Preservation().LongLength + (long)1));
                 for (byte index = 0; index < (byte)old_NeuralNetworkList.LongLength; index++)
                 {
-                    Set_Item_On_List_Of_Neural_Network(index, old_NeuralNetworkList[index]);
+                    Set_Item_On_list_Of_Neural_Network(index, old_NeuralNetworkList[index]);
                 }
-                Set_Item_On_List_Of_Neural_Network((byte)Get_List_Of_Neural_Network_Preservation().LongLength, newNeuralNetwork);
+                Set_Item_On_list_Of_Neural_Network((byte)Get_list_Of_Neural_Network_Preservation().LongLength, newNeuralNetwork);
             }
         }
     // get.
-        public MachineAI Get_Item_On_List_Of_Neural_Network_Preservation(byte praiseID)
+        public MachineAI Get_Item_On_list_Of_Neural_Network_Preservation(byte praiseID)
         {
-            return _List_Of_Neural_Network[praiseID];
+            return _list_Of_Neural_Network[praiseID];
         }
         public Input Get_Input()
         {
-            return _input;
+            return _Input;
         }
-        public MachineAI[] Get_List_Of_Neural_Network_Preservation()
+        public MachineAI[] Get_list_Of_Neural_Network_Preservation()
         {
-            return _List_Of_Neural_Network;
+            return _list_Of_Neural_Network;
         }
         public MachineAI Get_NewMachineAI()
         {
-            return _newMachineAI;
+            return _NewMachineAI;
         }
         public Output Get_Output()
         {
-            return _output;
+            return _Output;
         }
     // set.
 
 // private.
-        private void Create_List_Of_Neural_Network(byte numberOfNNI)
+        private void Create_list_Of_Neural_Network(byte numberOfNNI)
         {
-            _List_Of_Neural_Network = new MachineAI[numberOfNNI];
-            while (Get_List_Of_Neural_Network_Preservation() == null) { }
+            _list_Of_Neural_Network = new OpenAvrilNNI.MachineAI[numberOfNNI];
+            while (Get_list_Of_Neural_Network_Preservation() == null) { }
             for (byte index = 0; index < numberOfNNI; index++)
             {
-                Set_Item_On_List_Of_Neural_Network(index, Get_NewMachineAI());
+                Set_Item_On_list_Of_Neural_Network(index, Get_NewMachineAI());
             }
         }
-        private void Create_IsFirstSave()
+        private void Create_isFirstSave()
         {
-            _isFirstSave = new bool();
-            Set_IsFirstSave(true);
+            Set_isFirstSave(new bool());
+            Set_isFirstSave(true);
         }
         private void Create_Input()
         {
-            _input = new Input();
+            Set_Input(new Input());
             while (Get_Input() == null) { }
         }
         private void Create_NewMachineAI()
         {
-            _newMachineAI = new MachineAI();
+            Set_NewMachineAI(new MachineAI());
             while (Get_NewMachineAI() == null) { }
         }
         private void Create_Output()
         {
-            _output = new Output();
+            Set_Output(new Output());
             while (Get_Output() == null) { }
         }
     // get.
-        private bool Get_IsFirstSave()
+        private bool Get_isFirstSave()
         {
             return _isFirstSave;
         }
     // set.
-        private void Set_Item_On_List_Of_Neural_Network(byte praiseID, MachineAI newMachineAI)
+        private void Set_Item_On_list_Of_Neural_Network(byte praiseID, MachineAI newMachineAI)
         {
-            _List_Of_Neural_Network[praiseID] = newMachineAI;
+            _list_Of_Neural_Network[praiseID] = newMachineAI;
         }
-        private void Set_IsFirstSave(bool newIsFirstSave)
+        private void Set_isFirstSave(bool new_isFirstSave)
         {
-            _isFirstSave = newIsFirstSave;
+            _isFirstSave = new_isFirstSave;
+        }
+        private void Set_Input(Input newInput)
+        {
+            _Input = newInput;
+        }
+        private void Set_NewMachineAI(MachineAI newNewMachineAI)
+        {
+            _NewMachineAI = newNewMachineAI;
+        }
+        private void Set_Output(Output newOutput)
+        {
+            _Output = newOutput;
         }
     }
 }

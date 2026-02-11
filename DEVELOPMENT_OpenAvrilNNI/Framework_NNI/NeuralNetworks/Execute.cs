@@ -4,16 +4,15 @@ namespace OpenAvrilNNI
     public class Execute
     {
 // classes.
-
-// registers.
         private OpenAvrilNNI.FileReadWrite _FileReadWrite;
+        
+// registers.
 
 // constructor.
         public Execute()
         {
             //System.Console.WriteLine("entered Execute.");
-            Create_FileReadWrite(new OpenAvrilNNI.FileReadWrite());
-            while (Get_FileReadWrite() == null) { }
+            Create_FileReadWrite();
         }
 
 // destructor.
@@ -35,11 +34,16 @@ namespace OpenAvrilNNI
     // set.
 
 // private.
-        private void Create_FileReadWrite(OpenAvrilNNI.FileReadWrite fileReadWrite)
+        private void Create_FileReadWrite()
         {
-            _FileReadWrite = fileReadWrite;
+            Set_FileReadWrite(new FileReadWrite());
+            while (Get_FileReadWrite() == null) { }
         }
     // get.
     // set.
+        private void Set_FileReadWrite(OpenAvrilNNI.FileReadWrite newFileReadWrite)
+        {
+            _FileReadWrite = newFileReadWrite;
+        }
     }
 }
