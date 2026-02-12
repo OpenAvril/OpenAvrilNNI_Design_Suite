@@ -126,28 +126,57 @@ namespace OpenAvrilNNI
         {
             byte numberOfNodesInLayer = new byte();
             numberOfNodesInLayer = 0;
-            switch (layerID)
+            if(objNNI.Get_MetaData().Get_NumberInputRegisters() <= 5)
             {
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_4:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.8);
-                    break;
+                switch (layerID)
+                {
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_4:
+                        numberOfNodesInLayer = (byte)5;
+                        break;
 
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_3:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.6);
-                    break;
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_3:
+                        numberOfNodesInLayer = (byte)4;
+                        break;
 
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_2:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.4);
-                    break;
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_2:
+                        numberOfNodesInLayer = (byte)3;
+                        break;
 
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_1:
-                    numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.2);
-                    break;
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_1:
+                        numberOfNodesInLayer = (byte)2;
+                        break;
 
-                case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_0:
-                    numberOfNodesInLayer = (byte)1;
-                    break;
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_0:
+                        numberOfNodesInLayer = (byte)1;
+                        break;
+                }
             }
+            else
+            {
+                switch (layerID)
+                {
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_4:
+                        numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.8);
+                        break;
+
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_3:
+                        numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.6);
+                        break;
+
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_2:
+                        numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.4);
+                        break;
+
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_1:
+                        numberOfNodesInLayer = (byte)Math.Round((double)objNNI.Get_MetaData().Get_NumberInputRegisters() * (double)0.2);
+                        break;
+
+                    case (byte)OpenAvrilNNI.Global.NodeLayer.Layer_0:
+                        numberOfNodesInLayer = (byte)1;
+                        break;
+                }
+            }
+                
             objNNI.Get_MetaData().Set_NumberOfNodesInHiddenLayer(layerID, numberOfNodesInLayer);
             System.Console.WriteLine("layerID == " + layerID + "  Set_NumberOfNodesInLayer = " + objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(layerID));
         }

@@ -42,7 +42,7 @@ namespace OpenAvrilNNI
             this.Initialise_list_Of_REGISTERED_Outputs(metaData.Get_NumberOutputRegisters());
         // list of Linear.
             this.Initialise_list_Of_Linear_Paths(metaData.Get_NumberOfLinearOutputs());
-            for (byte outputID = 0; outputID < metaData.Get_NumberOfLinearOutputs(); outputID++)
+            for (byte outputID = 1; outputID < metaData.Get_NumberOfLinearOutputs(); outputID++)
             {
                 System.Console.WriteLine("echo loop.");
                 this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_Tree_Of_Nodes(objNNI, outputID);
@@ -50,7 +50,7 @@ namespace OpenAvrilNNI
                 {
                     byte hiddenLayerID = Convert.ToByte(layerID);
                     System.Console.WriteLine("foxtrot loop. outputID = " + outputID + "  hiddenLayerID = " + hiddenLayerID);
-                    for (byte nodeID = 0; nodeID < metaData.Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                    for (byte nodeID = 1; nodeID < metaData.Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                     {
                         System.Console.WriteLine("giga loop.");
                         if (hiddenLayerID == (byte)(4))
@@ -62,9 +62,9 @@ namespace OpenAvrilNNI
                             this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_NumberOfInputs(metaData.Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1)));
                         }
                         this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Initialise_list_Of_Node(this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs());
-                        for (byte inputID = 0; inputID < this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs(); inputID++)
+                        for (byte inputID = 1; inputID < this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs(); inputID++)
                         {
-                            this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Initialise_Linear_NeuralPath(obj);
+                            this.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(outputID).Initialise_Linear_NeuralPath(obj);
                             System.Console.WriteLine("outputID = " + outputID + "  hiddenLayerID = " + hiddenLayerID + "  nodeID = " + nodeID + "  bias = " + objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_bias() + "  weight = " + objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_Item_On_list_Of_Linear_NeuralPath(inputID).Get_weight());
                         }
                     }
@@ -297,7 +297,7 @@ namespace OpenAvrilNNI
         }
         private void Initialise_list_Of_Linear_Paths(byte numberOfLinearPaths)
         {
-            numberOfLinearPaths = (byte)(numberOfLinearPaths + 1);
+            numberOfLinearPaths = (byte)(numberOfLinearPaths + (byte)1);
             this.Set_list_Of_Linear_Paths(new Linear[numberOfLinearPaths]);
             while (this.Get_list_Of_Linear_Paths() == null) { }
             for (byte index = 0; index < numberOfLinearPaths; index++)
@@ -317,22 +317,6 @@ namespace OpenAvrilNNI
         {
             this.Set_MetaData(new OpenAvrilNNI.MetaData());
             while (this.Get_MetaData() == null) { }
-            this.Get_MetaData().Set_NameOfNNI("OpenNNI_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"));
-            this.Get_MetaData().Set_PraiseID(byte.MaxValue);
-            this.Get_MetaData().Set_NumberOfInputRegisters(3);
-            this.Get_MetaData().Set_NumberOfLinearInputs(1);
-            this.Get_MetaData().Set_NumberOfBooleanInputs(1);
-            this.Get_MetaData().Set_NumberOfConstantInputs(1);
-            this.Get_MetaData().Set_NumberOfOutputRegisters(1);
-            this.Get_MetaData().Set_NumberOfLinearOutputs(1);
-            this.Get_MetaData().Set_NumberOfBooleanOutputs(1);
-            this.Get_MetaData().Set_NumberOfConstantOutputs(1);
-            this.Get_MetaData().Set_NumberOfOutputRegisters(3);
-            this.Get_MetaData().Set_NumberOfNodesInHiddenLayer(4, 5);
-            this.Get_MetaData().Set_NumberOfNodesInHiddenLayer(3, 4);
-            this.Get_MetaData().Set_NumberOfNodesInHiddenLayer(2, 3);
-            this.Get_MetaData().Set_NumberOfNodesInHiddenLayer(1, 2);
-            this.Get_MetaData().Set_NumberOfNodesInHiddenLayer(0, 1);
         }
     // get.
     // set.

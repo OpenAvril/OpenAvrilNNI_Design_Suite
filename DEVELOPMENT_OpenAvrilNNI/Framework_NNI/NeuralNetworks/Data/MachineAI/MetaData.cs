@@ -31,31 +31,33 @@ namespace OpenAvrilNNI
             //System.Console.WriteLine("entered MetaData.");
 
             Create_NameOfNNI();
-            Set_NameOfNNI("OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_DEFAULT");
             Create_PraiseID();
-            Set_PraiseID(byte.MaxValue);
             Create_NumberInputRegisters();
-            Set_NumberOfInputRegisters(3);
             Create_NumberOfLinearInputs();
-            Set_NumberOfLinearInputs(1);
             Create_NumberOfBooleanInputs();
-            Set_NumberOfBooleanInputs(1);
             Create_NumberOfConstantInputs();
-            Set_NumberOfConstantInputs(1);
             Create_NumberOutputRegisters();
-            Set_NumberOfOutputRegisters(3);
             Create_NumberOfLinearOutputs();
-            Set_NumberOfLinearOutputs(1);
             Create_NumberOfBooleanOutputs();
-            Set_NumberOfBooleanOutputs(1);
             Create_NumberOfConstantOutputs();
-            Set_NumberOfConstantOutputs(1);
             Create_NumberOfNodesInLayer();
-            Set_NumberOfNodesInHiddenLayer(4, 5);
-            Set_NumberOfNodesInHiddenLayer(3, 4);
-            Set_NumberOfNodesInHiddenLayer(2, 3);
-            Set_NumberOfNodesInHiddenLayer(1, 2);
-            Set_NumberOfNodesInHiddenLayer(0, 1);
+
+            this.Set_NameOfNNI("OpenNNI_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"));
+            this.Set_PraiseID(byte.MaxValue);
+            this.Set_NumberOfInputRegisters(3);
+            this.Set_NumberOfLinearInputs(1);
+            this.Set_NumberOfBooleanInputs(1);
+            this.Set_NumberOfConstantInputs(1);
+            this.Set_NumberOfOutputRegisters(1);
+            this.Set_NumberOfLinearOutputs(1);
+            this.Set_NumberOfBooleanOutputs(1);
+            this.Set_NumberOfConstantOutputs(1);
+            this.Set_NumberOfOutputRegisters(3);
+            this.Set_NumberOfNodesInHiddenLayer(4, 5);
+            this.Set_NumberOfNodesInHiddenLayer(3, 4);
+            this.Set_NumberOfNodesInHiddenLayer(2, 3);
+            this.Set_NumberOfNodesInHiddenLayer(1, 2);
+            this.Set_NumberOfNodesInHiddenLayer(0, 1);
         }
 
 // destructor.
