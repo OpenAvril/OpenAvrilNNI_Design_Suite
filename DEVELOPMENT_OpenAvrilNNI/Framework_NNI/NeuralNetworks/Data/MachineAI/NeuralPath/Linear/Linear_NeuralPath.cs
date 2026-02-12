@@ -14,8 +14,8 @@ namespace OpenAvrilNNI
         public Linear_NeuralPath() 
         { 
             //System.Console.WriteLine("entered Linear.");
-            Create_bias();
-            Create_weight();
+            this.Create_bias();
+            this.Create_weight();
             //System.Console.WriteLine("exiting Linear.");
         }
 
@@ -53,21 +53,21 @@ namespace OpenAvrilNNI
 // private.
         private void Create_bias()
         {
-            Set_bias(new double());
-            Set_bias(0.0);
+            this.Set_bias(new double());
+            this.Set_bias(0.0);
         }
         private void Create_weight()
         {
-            Set_weight(new double());
-            Set_weight(0.0);
+            this.Set_weight(new double());
+            this.Set_weight(0.0);
         }
         private void Initialise_bias(Framework_NNI obj)
         {
-            Set_bias(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+            this.Set_bias(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
         }
         private void Initialise_weight(Framework_NNI obj)
         {
-            Set_weight(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
+            this.Set_weight(obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_Initial_Random_Small_Value(-0.5, 0.5));
         }
     // get.
     // set.

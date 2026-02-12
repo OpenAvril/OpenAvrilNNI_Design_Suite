@@ -22,12 +22,16 @@ namespace OpenAvrilNNI
         }
 
 // public.
-        public void Initialise(Framework_NNI obj, MachineAI objNNI)
+        public void Initialise_Framework_NNI(Framework_NNI obj, MetaData metaData)
         {
-            Initialise_lists(obj);
+            
             Create_And_Run_UI(obj);
         }
-    // get.
+        public void Initialise_MachineAI(Framework_NNI obj, string nameOfNNI, byte praiseID)
+        {
+            obj.Get_NeuralNetwork().Get_Aglorithms().Initialise_instance_Of_MachineAI(obj, nameOfNNI, praiseID);
+        }
+        // get.
         public NeuralNetworks Get_NeuralNetwork()
         {
             return _NeuralNetwork;
@@ -43,10 +47,6 @@ namespace OpenAvrilNNI
         {
             Set_NeuralNetwork(new NeuralNetworks());
             while(Get_NeuralNetwork() == null) { }
-        }
-        private void Initialise_lists(Framework_NNI obj)
-        {
-            obj.Get_NeuralNetwork().Get_Aglorithms().Initialise_Lists(obj);
         }
     // get.
     // set.

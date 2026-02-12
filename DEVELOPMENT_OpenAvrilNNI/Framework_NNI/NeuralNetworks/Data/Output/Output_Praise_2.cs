@@ -196,8 +196,8 @@ namespace OpenAvrilNNI
         }
         private void Create_NumberOutputRegisters()
         {
-            Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(12);
+            Set_NumberOfOutputRegisters(new byte());
+            Set_NumberOfOutputRegisters(12);
         }
         // custom user defined.
         private void Create_Capsule_Position_X(double capsule_Position_X)
@@ -312,7 +312,7 @@ namespace OpenAvrilNNI
         {
             _NumberOfLinearOutputs = numberOfLinearValues;
         }
-        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        private void Set_NumberOfOutputRegisters(byte numberOfOutputValues)
         {
             _NumberOutputRegisters = numberOfOutputValues;
         }

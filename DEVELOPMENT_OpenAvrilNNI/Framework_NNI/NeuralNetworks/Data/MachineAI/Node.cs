@@ -18,8 +18,7 @@ namespace OpenAvrilNNI
         {
             //System.Console.WriteLine("entered Node.");
             Create_NumberOfInputs();
-            Set_NumberOfInputs(1);
-            Create_list_Of_Linear_NeuralPath(Get_NumberOfInputs());
+            Create_list_Of_Linear_NeuralPath();
             Create_REGISTERED_Output();
             //System.Console.WriteLine("exiting Node.");
         }
@@ -31,17 +30,19 @@ namespace OpenAvrilNNI
         }
 
     // public.
-        public void Initialise_list_Of_Node(Framework_NNI obj, byte numberOfInputs)
+        public void Initialise_list_Of_Node(byte numberOfInputs)
         {
-            Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[numberOfInputs]);
-            while (Get_list_Of_Linear_NeuralPath() == null) { }
-            for (byte index = 0; index < numberOfInputs; index++)
-            {
-                Set_Item_On_list_Of_Linear_NeuralPath(index, obj.Get_NeuralNetwork().Get_Data().Get_New_Linear_NeuralPath());
-                while (Get_Item_On_list_Of_Linear_NeuralPath(index) == null) { }
-            }
+            numberOfInputs = (byte)(numberOfInputs + 1);
+            this.Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[numberOfInputs]);
+            while (this.Get_list_Of_Linear_NeuralPath() == null) { }
+            this.Set_Item_On_list_Of_Linear_NeuralPath(0, this.Get_Item_On_list_Of_Linear_NeuralPath(0));
         }
-        public void Run_All_Neural_Path_Calculations(OpenAvrilNNI.MachineAI objNNI, byte outputID, byte hiddenLayerID, byte nodeID, byte numberOfInputsForNode)
+        public void Initialise_NumberOfInputs(byte numberOfInputs)
+        {
+            Set_NumberOfInputs(numberOfInputs);
+        }
+
+        public void Run_All_Neural_Path_Calculations(MachineAI objNNI, byte outputID, byte hiddenLayerID, byte nodeID, byte numberOfInputsForNode)
         {
             double sum_Bias = 0.0;
             double sum_weight = 0.0;
@@ -58,11 +59,11 @@ namespace OpenAvrilNNI
             objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(outputValue);
         }
     // get.
-        public OpenAvrilNNI.Linear_NeuralPath Get_Item_On_list_Of_Linear_NeuralPath(byte inputID)
+        public Linear_NeuralPath Get_Item_On_list_Of_Linear_NeuralPath(byte outputID)
         {
-            return _list_Of_Linear_NeuralPath[inputID];
+            return _list_Of_Linear_NeuralPath[outputID];
         }
-        public OpenAvrilNNI.Linear_NeuralPath[] Get_list_Of_Linear_NeuralPath()
+        public Linear_NeuralPath[] Get_list_Of_Linear_NeuralPath()
         {
             return _list_Of_Linear_NeuralPath;
         }
@@ -76,11 +77,11 @@ namespace OpenAvrilNNI
         }
 
     // set.
-        public void Set_list_Of_Linear_NeuralPath(OpenAvrilNNI.Linear_NeuralPath[] newList)
+        public void Set_list_Of_Linear_NeuralPath(Linear_NeuralPath[] newList)
         {
             _list_Of_Linear_NeuralPath = newList;
         }
-        public void Set_Item_On_list_Of_Linear_NeuralPath(byte inputID, OpenAvrilNNI.Linear_NeuralPath newItem)
+        public void Set_Item_On_list_Of_Linear_NeuralPath(byte inputID, Linear_NeuralPath newItem)
         {
             _list_Of_Linear_NeuralPath[inputID] = newItem;
         }
@@ -94,19 +95,17 @@ namespace OpenAvrilNNI
         }
 
 // private.
-        private void Create_list_Of_Linear_NeuralPath(byte numberOfInputs)
+        private void Create_list_Of_Linear_NeuralPath()
         {
-            Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[numberOfInputs]);
-            while (Get_list_Of_Linear_NeuralPath() == null) { }
-            for (byte index = 0; index < numberOfInputs; index++)
-            {
-                Set_Item_On_list_Of_Linear_NeuralPath(index, null);
-            }
+            this.Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[1]);
+            while (this.Get_list_Of_Linear_NeuralPath() == null) { }
+            this.Set_Item_On_list_Of_Linear_NeuralPath(0, new Linear_NeuralPath());
+            while (this.Get_Item_On_list_Of_Linear_NeuralPath(0) == null) { }
         }
         private void Create_NumberOfInputs()
         {
             Set_NumberOfInputs(new byte());
-            Set_NumberOfInputs(0);
+            Set_NumberOfInputs(1);
         }
         private void Create_REGISTERED_Output()
         {

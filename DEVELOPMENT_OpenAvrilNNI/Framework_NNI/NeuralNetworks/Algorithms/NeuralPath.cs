@@ -34,12 +34,12 @@ namespace OpenAvrilNNI
             {
                 case (byte)OpenAvrilNNI.Global.PraiseID.Praise_0:
                     OpenAvrilNNI.Input_Praise_0 objValue_Praise0_I = (OpenAvrilNNI.Input_Praise_0)obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Item_On_List_Of_Input_Subsets(0);
-                    objNNI.Get_MetaData().Set_NumberInputRegisters(objValue_Praise0_I.Get_NumberInputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfInputRegisters(objValue_Praise0_I.Get_NumberInputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearInputs(objValue_Praise0_I.Get_NumberOfLinearInputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanInputs(objValue_Praise0_I.Get_NumberOfBooleanInputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantInputs(objValue_Praise0_I.Get_NumberOfConstantInputs());
                     OpenAvrilNNI.Output_Praise_0 objValue_Praise0_O = (OpenAvrilNNI.Output_Praise_0)obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Item_On_List_Of_OutputSubsets(0);
-                    objNNI.Get_MetaData().Set_NumberOutputRegisters(objValue_Praise0_O.Get_NumberOutputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfOutputRegisters(objValue_Praise0_O.Get_NumberOutputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearOutputs(objValue_Praise0_O.Get_NumberOfLinearOutputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(objValue_Praise0_O.Get_NumberOfBooleanOutputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantOutputs(objValue_Praise0_O.Get_NumberOfConstantOutputs());
@@ -47,12 +47,12 @@ namespace OpenAvrilNNI
 
                 case (byte)OpenAvrilNNI.Global.PraiseID.Praise_1:
                     OpenAvrilNNI.Input_Praise_1 objValue_Praise1_I = (OpenAvrilNNI.Input_Praise_1)obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Item_On_List_Of_Input_Subsets(1);
-                    objNNI.Get_MetaData().Set_NumberInputRegisters(objValue_Praise1_I.Get_NumberInputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfInputRegisters(objValue_Praise1_I.Get_NumberInputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearInputs(objValue_Praise1_I.Get_NumberOfLinearInputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanInputs(objValue_Praise1_I.Get_NumberOfBooleanInputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantInputs(objValue_Praise1_I.Get_NumberOfConstantInputs());
                     OpenAvrilNNI.Output_Praise_1 objValue_Praise1_O = (OpenAvrilNNI.Output_Praise_1)obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Item_On_List_Of_OutputSubsets(1);
-                    objNNI.Get_MetaData().Set_NumberOutputRegisters(objValue_Praise1_O.Get_NumberOutputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfOutputRegisters(objValue_Praise1_O.Get_NumberOutputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearOutputs(objValue_Praise1_O.Get_NumberOfLinearOutputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(objValue_Praise1_O.Get_NumberOfBooleanOutputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantOutputs(objValue_Praise1_O.Get_NumberOfConstantOutputs());
@@ -60,23 +60,23 @@ namespace OpenAvrilNNI
 
                 case (byte)OpenAvrilNNI.Global.PraiseID.Praise_2:
                     OpenAvrilNNI.Input_Praise_2 objValue_Praise2_I = (OpenAvrilNNI.Input_Praise_2)obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Item_On_List_Of_Input_Subsets(2);
-                    objNNI.Get_MetaData().Set_NumberInputRegisters(objValue_Praise2_I.Get_NumberInputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfInputRegisters(objValue_Praise2_I.Get_NumberInputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearInputs(objValue_Praise2_I.Get_NumberOfLinearInputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanInputs(objValue_Praise2_I.Get_NumberOfBooleanInputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantInputs(objValue_Praise2_I.Get_NumberOfConstantInputs());
                     OpenAvrilNNI.Output_Praise_2 objValue_Praise2_O = (OpenAvrilNNI.Output_Praise_2)obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Item_On_List_Of_OutputSubsets(2);
-                    objNNI.Get_MetaData().Set_NumberOutputRegisters(objValue_Praise2_O.Get_NumberOutputRegisters());
+                    objNNI.Get_MetaData().Set_NumberOfOutputRegisters(objValue_Praise2_O.Get_NumberOutputRegisters());
                     objNNI.Get_MetaData().Set_NumberOfLinearOutputs(objValue_Praise2_O.Get_NumberOfLinearOutputs());
                     objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(objValue_Praise2_O.Get_NumberOfBooleanOutputs());
                     objNNI.Get_MetaData().Set_NumberOfConstantOutputs(objValue_Praise2_O.Get_NumberOfConstantOutputs());
                     break;
 
                 case byte.MaxValue:
-                    objNNI.Get_MetaData().Set_NumberInputRegisters(1);
+                    objNNI.Get_MetaData().Set_NumberOfInputRegisters(3);
                     objNNI.Get_MetaData().Set_NumberOfLinearInputs(1);
                     objNNI.Get_MetaData().Set_NumberOfBooleanInputs(1);
                     objNNI.Get_MetaData().Set_NumberOfConstantInputs(1);
-                    objNNI.Get_MetaData().Set_NumberOutputRegisters(1);
+                    objNNI.Get_MetaData().Set_NumberOfOutputRegisters(3);
                     objNNI.Get_MetaData().Set_NumberOfLinearOutputs(1);
                     objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(1);
                     objNNI.Get_MetaData().Set_NumberOfConstantOutputs(1);

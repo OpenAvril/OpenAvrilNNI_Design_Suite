@@ -49,7 +49,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
             Create_NumberOfConstantOutputs();
             Set_NumberOfConstantOutputs(5);
             Create_NumberOutputRegisters();
-            Set_NumberOutputRegisters(11);
+            Set_NumberOfOutputRegisters(11);
             // custom user defined.
 
             Create_Mouse_Screen_X_CONSTANT(new double());
@@ -217,8 +217,8 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         private void Create_NumberOutputRegisters()
         {
-            Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(0);
+            Set_NumberOfOutputRegisters(new byte());
+            Set_NumberOfOutputRegisters(0);
         }
         // custom user defined.
         private void Create_Mouse_Screen_X_CONSTANT(double mouseX)
@@ -325,7 +325,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             _NumberOfLinearOutputs = numberOfLinearValues;
         }
-        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        private void Set_NumberOfOutputRegisters(byte numberOfOutputValues)
         {
             _NumberOutputRegisters = numberOfOutputValues;
         }

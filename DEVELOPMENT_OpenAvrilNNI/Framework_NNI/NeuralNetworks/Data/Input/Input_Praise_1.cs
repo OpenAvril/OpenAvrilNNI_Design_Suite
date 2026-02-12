@@ -29,7 +29,7 @@ namespace OpenAvrilNNI
         public Input_Praise_1()
         {
             Create_NumberInputRegisters();
-            Set_NumberInputRegisters(11);
+            Set_NumberOfInputRegisters(11);
             Create_NumberOfLinearInputs();
             Set_NumberOfLinearInputs(9);
             Create_NumberOfBooleanInputs();
@@ -194,8 +194,8 @@ namespace OpenAvrilNNI
         }
         private void Create_NumberInputRegisters()
         {
-            Set_NumberInputRegisters(new byte());
-            Set_NumberInputRegisters(0);
+            Set_NumberOfInputRegisters(new byte());
+            Set_NumberOfInputRegisters(0);
         }
         private void Create_NumberOfLinearInputs()
         {
@@ -313,7 +313,7 @@ namespace OpenAvrilNNI
         {
             _NumberOfConstantInputs = numberOfConstantInputs;
         }
-        private void Set_NumberInputRegisters(byte numberOfInputValues)
+        private void Set_NumberOfInputRegisters(byte numberOfInputValues)
         {
             _NumberInputRegisters = numberOfInputValues;
         }

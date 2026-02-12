@@ -126,7 +126,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             _NumberOfConstantOutputs = numberOfResetToConstantValues;
         }
-        public void Set_NumberInputRegisters(byte numberOfInputValues)
+        public void Set_NumberOfInputRegisters(byte numberOfInputValues)
         {
             _NumberInputRegisters = numberOfInputValues;
         }
@@ -142,7 +142,7 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         {
             _NumberOfNodesInLayer[layerID] = numberOfNodes;
         }
-        public void Set_NumberOutputRegisters(byte numberOfInputValues)
+        public void Set_NumberOfOutputRegisters(byte numberOfInputValues)
         {
             _NumberOutputRegisters = numberOfInputValues;
         }
@@ -179,8 +179,8 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         private void Create_NumberInputRegisters()
         {
-            Set_NumberInputRegisters(new byte());
-            Set_NumberInputRegisters(0);
+            Set_NumberOfInputRegisters(new byte());
+            Set_NumberOfInputRegisters(0);
         }
         private void Create_NumberOfLinearInputs()
         {
@@ -204,8 +204,8 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
         }
         private void Create_NumberOutputRegisters()
         {
-            Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(0);
+            Set_NumberOfOutputRegisters(new byte());
+            Set_NumberOfOutputRegisters(0);
         }
     // get.
         private byte[] Get_List_Of_NumberOfNodesInHiddenLayer()

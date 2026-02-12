@@ -207,8 +207,8 @@ namespace OpenAvrilNNI
         }
         private void Create_NumberInputRegisters()
         {
-            Set_NumberInputRegisters(new byte());
-            Set_NumberInputRegisters(16);
+            Set_NumberOfInputRegisters(new byte());
+            Set_NumberOfInputRegisters(16);
         }
         private void Create_NumberOfLinearInputs()
         {
@@ -356,7 +356,7 @@ namespace OpenAvrilNNI
         {
             _NumberOfConstantInputs = numberOfConstantInputs;
         }
-        private void Set_NumberInputRegisters(byte numberOfInputValues)
+        private void Set_NumberOfInputRegisters(byte numberOfInputValues)
         {
             _NumberInputRegisters = numberOfInputValues;
         }

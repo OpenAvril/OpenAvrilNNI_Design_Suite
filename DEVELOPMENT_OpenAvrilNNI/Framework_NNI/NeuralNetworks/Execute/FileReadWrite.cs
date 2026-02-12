@@ -134,7 +134,7 @@ namespace OpenAvrilNNI
             // write register _PraiseID.
                         objNNI.Get_MetaData().Set_PraiseID(reader.ReadByte());
             // write register _NumberOfPraiseInputValues.
-                        objNNI.Get_MetaData().Set_NumberInputRegisters(reader.ReadByte());
+                        objNNI.Get_MetaData().Set_NumberOfInputRegisters(reader.ReadByte());
 			// write register _NumberOfLinearInputs
 						objNNI.Get_MetaData().Set_NumberOfLinearInputs(reader.ReadByte());
 			// write register _NumberOfLinearInputs
@@ -142,7 +142,7 @@ namespace OpenAvrilNNI
 			// write register _NumberOfBooleanInputs
 						objNNI.Get_MetaData().Set_NumberOfConstantInputs(reader.ReadByte());
 			// write register _NumberOfPraiseOutputValues.
-						objNNI.Get_MetaData().Set_NumberOutputRegisters(reader.ReadByte());
+						objNNI.Get_MetaData().Set_NumberOfOutputRegisters(reader.ReadByte());
 			// write register _NumberOutputRegisters
 						objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(reader.ReadByte());
 			// write register _NumberOfBooleanOutputs

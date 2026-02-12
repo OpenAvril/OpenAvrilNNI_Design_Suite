@@ -97,8 +97,8 @@ namespace OpenAvrilNNI
         }
         private void Create_NumberOutputRegisters()
         {
-            Set_NumberOutputRegisters(new byte());
-            Set_NumberOutputRegisters(0);
+            Set_NumberOfOutputRegisters(new byte());
+            Set_NumberOfOutputRegisters(0);
         }
         // custom user defined.
 
@@ -125,7 +125,7 @@ namespace OpenAvrilNNI
         {
             _NumberOfLinearOutputs = numberOfLinearValues;
         }
-        private void Set_NumberOutputRegisters(byte numberOfOutputValues)
+        private void Set_NumberOfOutputRegisters(byte numberOfOutputValues)
         {
             _NumberOutputRegisters = numberOfOutputValues;
         }

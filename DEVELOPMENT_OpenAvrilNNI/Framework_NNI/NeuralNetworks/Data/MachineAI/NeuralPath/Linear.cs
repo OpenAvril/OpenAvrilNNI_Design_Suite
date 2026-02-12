@@ -13,7 +13,7 @@ namespace OpenAvrilNNI
         public Linear()
         {
             //System.Console.WriteLine("entered Linear.");
-            Create_PraiseSet();
+            this.Create_PraiseSet();
             //System.Console.WriteLine("exiting Linear.");
         }
 
@@ -34,8 +34,8 @@ namespace OpenAvrilNNI
 // private.
         private void Create_PraiseSet()
         {
-            Set_PraiseSet(new PraiseSet());
-            while (Get_PraiseSet() == null) { }
+            this.Set_PraiseSet(new PraiseSet());
+            while (this.Get_PraiseSet() == null) { }
         }
     // get.
     // set

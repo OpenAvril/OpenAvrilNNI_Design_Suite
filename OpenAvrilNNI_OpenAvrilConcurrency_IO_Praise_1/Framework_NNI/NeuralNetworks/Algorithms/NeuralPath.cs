@@ -38,11 +38,11 @@ namespace OpenAvrilNNI_OpenAvrilConcurrency_IO_Praise_1
     // io id.
             objNNI.Get_MetaData().Set_PraiseID(praiseID);
     // generate io parameters.
-            objNNI.Get_MetaData().Set_NumberInputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberInputRegisters());
+            objNNI.Get_MetaData().Set_NumberOfInputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberInputRegisters());
             objNNI.Get_MetaData().Set_NumberOfLinearInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfLinearInputs());
             objNNI.Get_MetaData().Set_NumberOfBooleanInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfBooleanInputs());
             objNNI.Get_MetaData().Set_NumberOfConstantInputs(obj.Get_NeuralNetwork().Get_Data().Get_Input().Get_Input_Praise_1().Get_NumberOfConstantInputs());
-            objNNI.Get_MetaData().Set_NumberOutputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOutputRegisters());
+            objNNI.Get_MetaData().Set_NumberOfOutputRegisters(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOutputRegisters());
             objNNI.Get_MetaData().Set_NumberOfLinearOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfLinearOutputs());
             objNNI.Get_MetaData().Set_NumberOfBooleanOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfBooleanOutputs());
             objNNI.Get_MetaData().Set_NumberOfConstantOutputs(obj.Get_NeuralNetwork().Get_Data().Get_Output().Get_Output_Praise_1().Get_NumberOfConstantOutputs());

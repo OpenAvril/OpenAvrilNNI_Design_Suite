@@ -25,16 +25,15 @@ namespace OpenAvrilNNI
 // public.
         public MachineAI Initialise_instance_Of_MachineAI(Framework_NNI obj, string nameOfNNI, byte praiseID)
         {
-            System.Console.WriteLine("entering Create_Instance_Of_instance_Of_MachineAI.");
+            System.Console.WriteLine("entering Initialise_instance_Of_MachineAI.");
             MachineAI objNNI = obj.Get_NeuralNetwork().Get_Data().Get_New_MachineAI();
             System.Console.WriteLine("alpha");
             objNNI.Get_MetaData().Set_NameOfNNI(nameOfNNI);
             System.Console.WriteLine("bravo");
             obj.Get_NeuralNetwork().Get_Aglorithms().Get_NeuralPath().Generate_MetaData_For_Neural_Network(obj, objNNI, praiseID);
             System.Console.WriteLine("charlie");
-            objNNI.Initialise_MachineAI_Architechure(obj, objNNI);
+            //objNNI.Initialise_MachineAI_Architechure(obj, objNNI, objNNI.Get_MetaData());
             System.Console.WriteLine("delta");
-            objNNI.Initialise_Linear_Paths_With_Data(obj, objNNI);
             //ToDO:
 
 
@@ -48,24 +47,6 @@ namespace OpenAvrilNNI
 
             }
             return objNNI;
-        }
-        public void Initialise_Lists(Framework_NNI obj)
-        {
-            obj.Get_NeuralNetwork().Get_Data().Initialise_list_Of_Neural_Network(obj, 1);
-            var objNNI = obj.Get_NeuralNetwork().Get_Data().Get_Item_On_list_Of_Neural_Network_Preservation(0);
-            objNNI.Initialise_MachineAI_Architechure(obj, objNNI);
-            for (byte outputID = 0; outputID < objNNI.Get_MetaData().Get_NumberOfLinearOutputs(); outputID++)
-            {
-                objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_Tree_Of_Nodes(objNNI, outputID);
-                for (Int16 layerID = 4; layerID > -1; layerID--)
-                {
-                    byte hiddenLayerID = Convert.ToByte(layerID);
-                    for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
-                    {
-                        objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(nodeID, hiddenLayerID).Initialise_list_Of_Node(obj, objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(nodeID, hiddenLayerID).Get_NumberOfInputs());
-                    }
-                }
-            }
         }
         public void Save_Instance_Of_instance_Of_MachineAI_To_File(Framework_NNI obj, MachineAI objNNI)
         {
