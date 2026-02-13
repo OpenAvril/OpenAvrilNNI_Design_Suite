@@ -42,22 +42,22 @@ namespace OpenAvrilNNI
             Create_NumberOfConstantOutputs();
             Create_NumberOfNodesInLayer();
 
-            this.Set_NameOfNNI("OpenNNI_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"));
-            this.Set_PraiseID(byte.MaxValue);
-            this.Set_NumberOfInputRegisters(3);
-            this.Set_NumberOfLinearInputs(1);
-            this.Set_NumberOfBooleanInputs(1);
-            this.Set_NumberOfConstantInputs(1);
-            this.Set_NumberOfOutputRegisters(1);
-            this.Set_NumberOfLinearOutputs(1);
-            this.Set_NumberOfBooleanOutputs(1);
-            this.Set_NumberOfConstantOutputs(1);
-            this.Set_NumberOfOutputRegisters(3);
-            this.Set_NumberOfNodesInHiddenLayer(4, 5);
-            this.Set_NumberOfNodesInHiddenLayer(3, 4);
-            this.Set_NumberOfNodesInHiddenLayer(2, 3);
-            this.Set_NumberOfNodesInHiddenLayer(1, 2);
-            this.Set_NumberOfNodesInHiddenLayer(0, 1);
+            Set_NameOfNNI("OpenNNI_" + System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss"));
+            Set_PraiseID(byte.MaxValue);
+            Set_NumberOfInputRegisters(3);
+            Set_NumberOfLinearInputs(1);
+            Set_NumberOfBooleanInputs(1);
+            Set_NumberOfConstantInputs(1);
+            Set_NumberOfOutputRegisters(1);
+            Set_NumberOfLinearOutputs(1);
+            Set_NumberOfBooleanOutputs(1);
+            Set_NumberOfConstantOutputs(1);
+            Set_NumberOfOutputRegisters(3);
+            Set_NumberOfNodesInHiddenLayer(4, 5);
+            Set_NumberOfNodesInHiddenLayer(3, 4);
+            Set_NumberOfNodesInHiddenLayer(2, 3);
+            Set_NumberOfNodesInHiddenLayer(1, 2);
+            Set_NumberOfNodesInHiddenLayer(0, 1);
         }
 
 // destructor.

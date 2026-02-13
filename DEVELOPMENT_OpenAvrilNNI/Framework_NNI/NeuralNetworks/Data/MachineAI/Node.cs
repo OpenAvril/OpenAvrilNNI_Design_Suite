@@ -29,13 +29,16 @@ namespace OpenAvrilNNI
 
         }
 
-    // public.
-        public void Initialise_list_Of_Node(byte numberOfInputs)
+// public.
+        public void Initialise_list_Of_Linear_NeuralPath(byte numberOfInputs)
         {
-            numberOfInputs = (byte)(numberOfInputs + 1);
-            this.Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[numberOfInputs]);
-            while (this.Get_list_Of_Linear_NeuralPath() == null) { }
-            this.Set_Item_On_list_Of_Linear_NeuralPath(0, this.Get_Item_On_list_Of_Linear_NeuralPath(0));
+            Linear_NeuralPath _DEFAULT_Linear_NeuralPath = Get_Item_On_list_Of_Linear_NeuralPath(0);
+            Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[numberOfInputs]);
+            while (Get_list_Of_Linear_NeuralPath() == null) { }
+            for (byte index = 0; index < numberOfInputs; index++)
+            {
+                Set_Item_On_list_Of_Linear_NeuralPath(index, _DEFAULT_Linear_NeuralPath);
+            }
         }
         public void Initialise_NumberOfInputs(byte numberOfInputs)
         {
@@ -85,10 +88,6 @@ namespace OpenAvrilNNI
         {
             _list_Of_Linear_NeuralPath[inputID] = newItem;
         }
-        public void Set_NumberOfInputs(byte numberOfInputs)
-        {
-            _NumberOfInputs = numberOfInputs;
-        }
         public void Set_REGISTERED_Output(double registered_Output)
         {
             _REGISTERED_Output = registered_Output;
@@ -97,15 +96,15 @@ namespace OpenAvrilNNI
 // private.
         private void Create_list_Of_Linear_NeuralPath()
         {
-            this.Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[1]);
-            while (this.Get_list_Of_Linear_NeuralPath() == null) { }
-            this.Set_Item_On_list_Of_Linear_NeuralPath(0, new Linear_NeuralPath());
-            while (this.Get_Item_On_list_Of_Linear_NeuralPath(0) == null) { }
+            Set_list_Of_Linear_NeuralPath(new Linear_NeuralPath[1]);
+            while (Get_list_Of_Linear_NeuralPath() == null) { }
+            Set_Item_On_list_Of_Linear_NeuralPath(0, new Linear_NeuralPath());
+            while (Get_Item_On_list_Of_Linear_NeuralPath(0) == null) { }
         }
         private void Create_NumberOfInputs()
         {
             Set_NumberOfInputs(new byte());
-            Set_NumberOfInputs(1);
+            Set_NumberOfInputs(3);
         }
         private void Create_REGISTERED_Output()
         {
@@ -113,6 +112,9 @@ namespace OpenAvrilNNI
             Set_REGISTERED_Output(0.0);
         }
     // get.
-    // set.
+        private void Set_NumberOfInputs(byte numberOfInputs)
+        {
+            _NumberOfInputs = numberOfInputs;
+        }
     }
 }

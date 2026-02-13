@@ -25,7 +25,58 @@ namespace OpenAvrilNNI
         }
 
 // public.
-        public void Generate_MetaData_For_Neural_Network(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, byte praiseID)
+        public double Generate_Initial_Random_Small_Value(double minimum, double maximum)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (maximum - minimum) + minimum;
+        }
+        public void Gernerate_Lists_From_MetaData_For_MachineAI(Framework_NNI obj, MachineAI objNNI, MetaData metaData)
+        {
+            System.Console.WriteLine("entered Gernerate_Lists_From_MetaData_For_MachineAI.");
+        // class MachaineAI.
+            objNNI.Initialise_list_Of_REGISTERED_Inputs(metaData.Get_NumberInputRegisters());// i registers.
+            objNNI.Initialise_list_Of_REGISTERED_Outputs(metaData.Get_NumberOutputRegisters());// o registers.
+            objNNI.Initialise_list_Of_Linear_Paths(objNNI, metaData.Get_NumberOfLinearOutputs());// list of Linear.
+            // class Linear.
+            for (byte linearOutputID = 0; linearOutputID < metaData.Get_NumberOfLinearOutputs(); linearOutputID++)
+            {
+                // class PraiseSet.
+                objNNI.Get_Item_On_list_Of_Linear_Paths(linearOutputID).Get_PraiseSet().Initialise_Tree_Of_Nodes_In_PraiseSet(objNNI, linearOutputID);// list layer(s) of nodes.
+                for (Int16 layerID = 4; layerID > -1; layerID--)
+                {
+                    // class Node.
+                    byte hiddenLayerID = Convert.ToByte(layerID);
+                    for (byte nodeID = 0; nodeID < metaData.Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
+                    {
+                        var numberofInputsForNode = (byte)0;
+                        if (hiddenLayerID == (byte)(4))
+                        {
+                            objNNI.Get_Item_On_list_Of_Linear_Paths(linearOutputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Initialise_NumberOfInputs(metaData.Get_NumberInputRegisters());// set _NumberOfInputs for node.
+                        }
+                        else
+                        {
+                            objNNI.Get_Item_On_list_Of_Linear_Paths(linearOutputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Initialise_NumberOfInputs(metaData.Get_NumberOfNodesInHiddenLayer((byte)(hiddenLayerID + (byte)1)));// set _NumberOfInputs for node.
+                        }
+                        // class Linear_NeuralPath.
+                        objNNI.Get_Item_On_list_Of_Linear_Paths(linearOutputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Initialise_list_Of_Linear_NeuralPath(objNNI.Get_Item_On_list_Of_Linear_Paths(linearOutputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Get_NumberOfInputs());// list of Linear_NeuralPath(s).
+                    }
+                }
+            }
+            // class Boolean.
+            objNNI.Initialise_list_Of_Boolean_Paths(objNNI, metaData.Get_NumberOfBooleanOutputs());
+            for (byte booleanOutputID = 0; booleanOutputID < metaData.Get_NumberOfBooleanOutputs(); booleanOutputID++)
+            {
+
+            }
+            // class Constant.
+            objNNI.Initialise_list_Of_Constant_Paths(objNNI, metaData.Get_NumberOfConstantOutputs());
+            for (byte constantOutputID = 0; constantOutputID < metaData.Get_NumberOfConstantOutputs(); constantOutputID++)
+            {
+
+            }
+            System.Console.WriteLine("exiting Gernerate_Lists_From_MetaData_For_MachineAI.");
+        }
+        public void Generate_MetaData_For_MachineAI(OpenAvrilNNI.Framework_NNI obj, OpenAvrilNNI.MachineAI objNNI, byte praiseID)
         {
             // io id.
             objNNI.Get_MetaData().Set_PraiseID(praiseID);
@@ -97,11 +148,6 @@ namespace OpenAvrilNNI
                 Set_NumberOfNodesInHiddenLayer(objNNI, hiddenlayerID);
             }
 
-        }
-        public double Generate_Initial_Random_Small_Value(double minimum, double maximum)
-        {
-            Random random = new Random();
-            return random.NextDouble() * (maximum - minimum) + minimum;
         }
     // get.
     // set.

@@ -126,67 +126,67 @@ namespace OpenAvrilNNI
             switch (index)
             {
                 case (byte)Global.PRAISE_2_I.Direction_X:
-                    this.Set_Direction_X(value);
+                    Set_Direction_X(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Direction_Y:
-                    this.Set_Direction_Y(value);
+                    Set_Direction_Y(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Direction_Z:
-                    this.Set_Direction_Z(value);
+                    Set_Direction_Z(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Period:
-                    this.Set_Period(value);
+                    Set_Period(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Position_X:
-                    this.Set_Capsule_Position_X(value);
+                    Set_Capsule_Position_X(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Position_Y:
-                    this.Set_Capsule_Position_Y(value);
+                    Set_Capsule_Position_Y(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Position_Z:
-                    this.Set_Capsule_Position_Z(value);
+                    Set_Capsule_Position_Z(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Fowards_X:
-                    this.Set_Capsule_Fowards_X(value);
+                    Set_Capsule_Fowards_X(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Fowards_Y:
-                    this.Set_Capsule_Fowards_Y(value);
+                    Set_Capsule_Fowards_Y(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Fowards_Z:
-                    this.Set_Capsule_Fowards_Z(value);
+                    Set_Capsule_Fowards_Z(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Up_X:
-                    this.Set_Capsule_Up_X(value);
+                    Set_Capsule_Up_X(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Up_Y:
-                    this.Set_Capsule_Up_Y(value);
+                    Set_Capsule_Up_Y(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Up_Z:
-                    this.Set_Capsule_Up_Z(value);
+                    Set_Capsule_Up_Z(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Right_X:
-                    this.Set_Capsule_Right_X(value);
+                    Set_Capsule_Right_X(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Right_Y:
-                    this.Set_Capsule_Right_Y(value);
+                    Set_Capsule_Right_Y(value);
                     break;
 
                 case (byte)Global.PRAISE_2_I.Capsule_Right_Z:
-                    this.Set_Capsule_Right_Z(value);
+                    Set_Capsule_Right_Z(value);
                     break;
 
                 default:

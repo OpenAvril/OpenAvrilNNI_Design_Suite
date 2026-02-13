@@ -2,24 +2,25 @@
 {
     public class PraiseSet
     {
-        // definitions.
+// definitions.
 
-        // classes.
+// classes.
 
-        // registers.
-        // instance.
+// registers.
+    // instance.
         private Node _New_Node;
-        // lists.
+    // lists.
         private Node[] _List_Of_Layer4_Nodes;
         private Node[] _List_Of_Layer3_Nodes;
         private Node[] _List_Of_Layer2_Nodes;
         private Node[] _List_Of_Layer1_Nodes;
         private Node _Layer0_Node;
 
-        // constructor.
+// constructor.
         public PraiseSet()
         {
             //System.Console.WriteLine("entered MetaData.");
+            Create_New_Node();
             Create_List_Of_Layer4_Nodes();
             Create_List_Of_Layer3_Nodes();
             Create_List_Of_Layer2_Nodes();
@@ -27,14 +28,14 @@
             Create_Layer0_Node();
         }
 
-        // destructor.
+// destructor.
         ~PraiseSet()
         {
 
         }
 
-        // public.
-        public void Initialise_Tree_Of_Nodes(OpenAvrilNNI.MachineAI objNNI, byte outputID)
+// public.
+        public void Initialise_Tree_Of_Nodes_In_PraiseSet(MachineAI objNNI, byte outputID)
         {
             objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_List_Of_Layer4_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(4));
             objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_List_Of_Layer3_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(3));
@@ -42,7 +43,7 @@
             objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_List_Of_Layer1_Nodes(objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(1));
             objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Initialise_Layer0_Node();
         }
-        // get.
+    // get.
         public Node Get_Node(byte layer, byte nodeID)
         {
             switch (layer)
@@ -67,7 +68,7 @@
                     return null;
             }
         }
-        // set.
+    // set.
         public void Set_Node(byte layerID, byte nodeID, OpenAvrilNNI.Node node)
         {
             switch (layerID)
@@ -97,15 +98,14 @@
             }
         }
 
-        // private.
+// private.
         private void Create_List_Of_Layer4_Nodes()
         {
             Set_List_Of_Layer4_Node(new Node[5]);
             while (Get_List_Of_Layer4_Nodes() == null) { }
             for (byte index = 0; index < 5; index++)
             {
-                Set_Item_On_List_Of_Layer4_Node(index, new Node());
-                while (Get_Item_On_List_Of_Layer4_Node(index) == null) { }
+                Set_Item_On_List_Of_Layer4_Node(index, Get_New_Node());
             }
         }
         private void Create_List_Of_Layer3_Nodes()
@@ -114,8 +114,7 @@
             while (Get_List_Of_Layer3_Nodes() == null) { }
             for (byte index = 0; index < 4; index++)
             {
-                Set_Item_On_List_Of_Layer3_Node(index, new Node());
-                while (Get_Item_On_List_Of_Layer3_Node(index) == null) { }
+                Set_Item_On_List_Of_Layer3_Node(index, Get_New_Node());
             }
         }
         private void Create_List_Of_Layer2_Nodes()
@@ -124,8 +123,7 @@
             while (Get_List_Of_Layer2_Nodes() == null) { }
             for (byte index = 0; index < 3; index++)
             {
-                Set_Item_On_List_Of_Layer2_Node(index, new Node());
-                while (Get_Item_On_List_Of_Layer2_Node(index) == null) { }
+                Set_Item_On_List_Of_Layer2_Node(index, Get_New_Node());
             }
         }
         private void Create_List_Of_Layer1_Nodes()
@@ -134,8 +132,7 @@
             while (Get_List_Of_Layer1_Nodes() == null) { }
             for (byte index = 0; index < 2; index++)
             {
-                Set_Item_On_List_Of_Layer1_Node(index, new Node());
-                while (Get_Item_On_List_Of_Layer1_Node(index) == null) { }
+                Set_Item_On_List_Of_Layer1_Node(index, Get_New_Node());
             }
         }
         private void Create_Layer0_Node()
@@ -150,47 +147,47 @@
         }
         private void Initialise_List_Of_Layer4_Nodes(byte numberOfNodes)
         {
-            this.Set_List_Of_Layer4_Node(new Node[numberOfNodes]);
-            while (this.Get_List_Of_Layer4_Nodes() == null) { }
+            Set_List_Of_Layer4_Node(new Node[numberOfNodes]);
+            while (Get_List_Of_Layer4_Nodes() == null) { }
             for (byte index = 0; index < numberOfNodes; index++)
             {
-                this.Set_Item_On_List_Of_Layer4_Node(index, this.Get_New_Node());
+                Set_Item_On_List_Of_Layer4_Node(index, Get_New_Node());
             }
         }
         private void Initialise_List_Of_Layer3_Nodes(byte numberOfNodes)
         {
-            this.Set_List_Of_Layer3_Node(new Node[numberOfNodes]);
-            while (this.Get_List_Of_Layer3_Nodes() == null) { }
+            Set_List_Of_Layer3_Node(new Node[numberOfNodes]);
+            while (Get_List_Of_Layer3_Nodes() == null) { }
             for (byte index = 0; index < numberOfNodes; index++)
             {
-                this.Set_Item_On_List_Of_Layer3_Node(index, this.Get_New_Node());
+                Set_Item_On_List_Of_Layer3_Node(index, Get_New_Node());
             }
         }
         private void Initialise_List_Of_Layer2_Nodes(byte numberOfNodes)
         {
-            this.Set_List_Of_Layer2_Node(new Node[numberOfNodes]);
-            while (this.Get_List_Of_Layer2_Nodes() == null) { }
+            Set_List_Of_Layer2_Node(new Node[numberOfNodes]);
+            while (Get_List_Of_Layer2_Nodes() == null) { }
             for (byte index = 0; index < numberOfNodes; index++)
             {
-                this.Set_Item_On_List_Of_Layer2_Node(index, this.Get_New_Node());
+                Set_Item_On_List_Of_Layer2_Node(index, Get_New_Node());
             }
         }
         private void Initialise_List_Of_Layer1_Nodes(byte numberOfNodes)
         {
-            this.Set_List_Of_Layer1_Node(new Node[numberOfNodes]);
-            while (this.Get_List_Of_Layer1_Nodes() == null) { }
+            Set_List_Of_Layer1_Node(new Node[numberOfNodes]);
+            while (Get_List_Of_Layer1_Nodes() == null) { }
             for (byte index = 0; index < numberOfNodes; index++)
             {
-                this.Set_Item_On_List_Of_Layer1_Node(index, this.Get_New_Node());
+                Set_Item_On_List_Of_Layer1_Node(index, Get_New_Node());
             }
         }
         private void Initialise_Layer0_Node()
         {
-            this.Set_Layer0_Node(new Node());
-            while (this.Get_Layer0_Node() == null) { }
-            this.Set_Layer0_Node(this.Get_New_Node());
+            Set_Layer0_Node(new Node());
+            while (Get_Layer0_Node() == null) { }
+            Set_Layer0_Node(Get_New_Node());
         }
-        // get.
+    // get.
         private Node Get_Item_On_List_Of_Layer4_Node(byte nodeID)
         {
             return _List_Of_Layer4_Nodes[nodeID];
@@ -231,7 +228,7 @@
         {
             return _New_Node;
         }
-        // set.
+    // set.
         private void Set_Item_On_List_Of_Layer4_Node(byte nodeID, Node node)
         {
             _List_Of_Layer4_Nodes[nodeID] = node;

@@ -176,7 +176,7 @@ namespace OpenAvrilNNI
                                 for (byte nodeID = 0; nodeID < objNNI.Get_MetaData().Get_NumberOfNodesInHiddenLayer(hiddenLayerID); nodeID++)
                                 {
                     // write register _NumberOfInputs.
-                                    objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_NumberOfInputs(reader.ReadByte());
+                                    objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Initialise_NumberOfInputs(reader.ReadByte());
                     // write register _REGISTERED_Output.
                                     objNNI.Get_Item_On_list_Of_Linear_Paths(outputID).Get_PraiseSet().Get_Node(hiddenLayerID, nodeID).Set_REGISTERED_Output(reader.ReadDouble());
                     // write class MachineAI\PraiseSet\Node\Linear.

@@ -12,7 +12,7 @@ namespace OpenAvrilNNI
         // data file .nni
         private MachineAI _New_MachineAI;
     // lists.
-        private MachineAI[] _list_Of_Neural_Network;
+        private MachineAI[] _list_Of_MachineAI;
     // bool.
         private bool _isFirstSave;
 
@@ -21,11 +21,11 @@ namespace OpenAvrilNNI
         public Data()
         {
             System.Console.WriteLine("entered Data.");
-            this.Create_Input();
-            this.Create_Output();
-            this.Create_New_MachineAI();
-            this.Create_list_Of_Neural_Network();
-            this.Create_isFirstSave();
+            Create_Input();
+            Create_Output();
+            Create_New_MachineAI();
+            Create_list_Of_MachineAI();
+            Create_isFirstSave();
         }
 
 // destructor.
@@ -35,37 +35,37 @@ namespace OpenAvrilNNI
         }
 
 // public.
-        public void Initialise_list_Of_Neural_Network(byte numberOfNNI)
+        public void Initialise_list_Of_MachineAI(byte numberOfNNI)
         {
-            this.Set_list_Of_Neural_Network(new MachineAI[numberOfNNI]);
-            while (this.Get_list_Of_Neural_Network_Preservation() == null) { }
+            Set_list_Of_MachineAI(new MachineAI[numberOfNNI]);
+            while (Get_list_Of_MachineAI_Preservation() == null) { }
             for (byte index = 0; index < numberOfNNI; index++)
             {
-                this.Set_Item_On_list_Of_Neural_Network(index, this.Get_Item_On_list_Of_list_Of_Neural_Network(0));
+                Set_Item_On_list_Of_MachineAI(index, Get_Item_On_list_Of_MachineAI(0));
             }
         }
         public void Preserve_New_Neural_Network(MachineAI newNeuralNetwork)
         {
-            MachineAI[] oldList = Get_list_Of_Neural_Network_Preservation();
-            this.Initialise_list_Of_Neural_Network((byte)(oldList.LongLength + 1));
+            MachineAI[] oldList = Get_list_Of_MachineAI_Preservation();
+            Initialise_list_Of_MachineAI((byte)(oldList.LongLength + 1));
             for (byte index = 0; index < oldList.LongLength; index++)
             {
-                this.Set_Item_On_list_Of_Neural_Network(index, oldList[index]);
+                Set_Item_On_list_Of_MachineAI(index, oldList[index]);
             }
-            this.Set_Item_On_list_Of_Neural_Network((byte)oldList.LongLength, newNeuralNetwork);
+            Set_Item_On_list_Of_MachineAI((byte)oldList.LongLength, newNeuralNetwork);
         }
     // get.
-        public MachineAI Get_Item_On_list_Of_list_Of_Neural_Network(byte praiseID)
+        public MachineAI Get_Item_On_list_Of_MachineAI(byte praiseID)
         {
-            return _list_Of_Neural_Network[praiseID];
+            return _list_Of_MachineAI[praiseID];
         }
         public Input Get_Input()
         {
             return _Input;
         }
-        public MachineAI[] Get_list_Of_Neural_Network_Preservation()
+        public MachineAI[] Get_list_Of_MachineAI_Preservation()
         {
-            return _list_Of_Neural_Network;
+            return _list_Of_MachineAI;
         }
         public MachineAI Get_New_MachineAI()
         {
@@ -98,12 +98,12 @@ namespace OpenAvrilNNI
             Set_Output(new Output());
             while (Get_Output() == null) { }
         }
-        private void Create_list_Of_Neural_Network()
+        private void Create_list_Of_MachineAI()
         {
-            this.Set_list_Of_Neural_Network(new MachineAI[1]);
-            while (Get_list_Of_Neural_Network_Preservation() == null) { }
-            this.Set_Item_On_list_Of_Neural_Network(0, new MachineAI());
-            while (this.Get_Item_On_list_Of_list_Of_Neural_Network(0) == null) { }
+            Set_list_Of_MachineAI(new MachineAI[1]);
+            while (Get_list_Of_MachineAI_Preservation() == null) { }
+            Set_Item_On_list_Of_MachineAI(0, new MachineAI());
+            while (Get_Item_On_list_Of_MachineAI(0) == null) { }
 
         }
     // get.
@@ -112,9 +112,9 @@ namespace OpenAvrilNNI
             return _isFirstSave;
         }
     // set.
-        private void Set_Item_On_list_Of_Neural_Network(byte praiseID, MachineAI newMachineAI)
+        private void Set_Item_On_list_Of_MachineAI(byte praiseID, MachineAI newMachineAI)
         {
-            _list_Of_Neural_Network[praiseID] = newMachineAI;
+            _list_Of_MachineAI[praiseID] = newMachineAI;
         }
         private void Set_isFirstSave(bool new_isFirstSave)
         {
@@ -124,9 +124,9 @@ namespace OpenAvrilNNI
         {
             _Input = newInput;
         }
-        private void Set_list_Of_Neural_Network(MachineAI[] newList_Of_Neural_Network)
+        private void Set_list_Of_MachineAI(MachineAI[] newList_Of_Neural_Network)
         {
-            _list_Of_Neural_Network = newList_Of_Neural_Network;
+            _list_Of_MachineAI = newList_Of_Neural_Network;
         }
         private void Set_New_MachineAI(MachineAI newMachineAI)
         {
